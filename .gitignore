@@ -21,3 +21,4 @@ build
 resources/Identity-address.json
 resources/unknown-1337.json
 .openzeppelin
+dist
