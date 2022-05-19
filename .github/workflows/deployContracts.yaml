@@ -1,0 +1,58 @@
+name: Deploy contracts
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  deploy_contract:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm
+    - run: npm install
+
+    - name: Start
+      run:  BLOCKCHAIN_HOST=ynet.point.space BLOCKCHAIN_PORT=44444 npm run start
+    - name: Run build
+      run: npm run build
+    - name: Create operations folder
+      run: mkdir -p opt/point
+    - name: Execute latest point node
+      env:
+        POINT_KEY_PHRASE: ${{ secrets.POINT_KEY_PHRASE }}
+      run: node ./dist/scripts/downloadAndStartPointNode.js
+    - name: run deploy script
+      run: npm run upload -- 127.0.0.1 8666
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: identity deploy artifacts
+        path: |
+            build/contracts/Identity.sol/Identity.json
+            resources/Identity-address.json
+            identity_deployed_address.txt

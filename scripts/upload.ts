@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { writeFileSync } from "fs";
 import path from "path";
 import FormData from "form-data";
 import HttpsAgent from "https-proxy-agent";
@@ -45,6 +45,7 @@ const main = async () => {
 main()
   .then((hash) => {
     console.log(`Identity successfully deployed: ${hash}`);
+    writeFileSync("identity_deployed_address.txt", hash);
   })
   .catch((e) => {
     console.error("Upload failed");
