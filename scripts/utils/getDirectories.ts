@@ -1,4 +1,4 @@
-import { readdir } from "fs/promises";
+import { readdir } from 'fs/promises';
 
 export async function getDirectories(source: string) {
   return (await readdir(source, { withFileTypes: true }))

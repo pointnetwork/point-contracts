@@ -1,190 +1,246 @@
-import { task } from "hardhat/config";
+import { task } from 'hardhat/config';
 import fs = require('fs');
 
-//npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
-//npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
-//npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
+// npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
+// npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
+// npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
 
-task("identity-importer", "Will download and upload data to point identity contract")
-  .addPositionalParam("action", 'Use with "download" and "upload options"')
-  .addPositionalParam("contract","Identity contract source address")
-  .addOptionalParam("saveTo", "Saves migration file to specific directory")
-  .addOptionalParam("migrationFile", "Migration file to when uploading data")
-  .addOptionalParam("handlePrefix", "Prefix to prepend to all handles when uploading")
+task(
+  'identity-importer',
+  'Will download and upload data to point identity contract'
+)
+  .addPositionalParam('action', 'Use with "download" and "upload options"')
+  .addPositionalParam('contract', 'Identity contract source address')
+  .addOptionalParam('saveTo', 'Saves migration file to specific directory')
+  .addOptionalParam('migrationFile', 'Migration file to when uploading data')
+  .addOptionalParam(
+    'handlePrefix',
+    'Prefix to prepend to all handles when uploading'
+  )
   .setAction(async (taskArgs, hre) => {
-    const ethers = hre.ethers;
+    const { ethers } = hre;
 
-    if(!ethers.utils.isAddress(taskArgs.contract)) {
-        console.log('Contract not valid.');
-        return false;
+    if (!ethers.utils.isAddress(taskArgs.contract)) {
+      console.log('Contract not valid.');
+      return false;
     }
 
     let migrationFolder = '../resources/migrations/';
 
-    if(taskArgs.saveTo != undefined) {
-        migrationFolder = taskArgs.saveTo;
+    if (taskArgs.saveTo != undefined) {
+      migrationFolder = taskArgs.saveTo;
     }
-    const contract = await hre.ethers.getContractAt("Identity", taskArgs.contract);
+    const contract = await hre.ethers.getContractAt(
+      'Identity',
+      taskArgs.contract
+    );
 
-    if(taskArgs.action == "download") {
+    if (taskArgs.action == 'download') {
+      const fileStructure = {
+        identities: [],
+        ikv: [],
+      } as any;
 
-        const fileStructure = {
-            identities: [],
-            ikv: []
-        } as any;
+      const identitiesFilter = contract.filters.IdentityRegistered();
+      const identityCreatedEvents = await contract.queryFilter(
+        identitiesFilter
+      );
+      const ikvSetFilter = contract.filters.IKVSet();
+      const ikvSetEvents = await contract.queryFilter(ikvSetFilter);
 
-        let identitiesFilter = contract.filters.IdentityRegistered()
-        let identityCreatedEvents = await contract.queryFilter(identitiesFilter);
-        let ikvSetFilter = contract.filters.IKVSet()
-        let ikvSetEvents = await contract.queryFilter(ikvSetFilter);
+      if (identityCreatedEvents.length == 0) {
+        console.log('No identities found.');
+        return false;
+      }
 
-        if(identityCreatedEvents.length == 0) {
-            console.log('No identities found.');
-            return false;
+      console.log(`Found ${identityCreatedEvents.length} identities`);
+
+      const identityData = [];
+      for (const e of identityCreatedEvents) {
+        if (e.args) {
+          const { handle, identityOwner, commPublicKey } = e.args;
+
+          console.log(`migrating handle ${handle} from ${identityOwner}`);
+
+          const identity = {
+            handle,
+            owner: identityOwner,
+            keyPart1: commPublicKey.part1,
+            keyPart2: commPublicKey.part2,
+          };
+
+          identityData.push(identity);
         }
+      }
 
-        console.log(`Found ${identityCreatedEvents.length} identities`);
+      fileStructure.identities = identityData;
 
-        let identityData = [];
-        for (const e of identityCreatedEvents) {
-            if(e.args) {
-                const {handle, identityOwner, commPublicKey} = e.args;
+      console.log(`Found ${ikvSetEvents.length} IKV parameters`);
 
-                console.log(`migrating handle ${handle} from ${identityOwner}`);
+      const ikvData = [];
+      for (const e of ikvSetEvents) {
+        if (e.args) {
+          const { identity, key, value, version } = e.args;
 
-                const identity = {
-                    handle,
-                    owner: identityOwner,
-                    keyPart1: commPublicKey.part1,
-                    keyPart2: commPublicKey.part2
-                };
+          console.log(`migrating key ${key} with value of ${value}`);
 
-                identityData.push(identity);
-            }
+          const ikv = {
+            handle: identity,
+            key,
+            value,
+            version,
+          };
+
+          ikvData.push(ikv);
         }
+      }
 
-        fileStructure.identities = identityData;
+      fileStructure.ikv = ikvData;
 
-        console.log(`Found ${ikvSetEvents.length} IKV parameters`);
+      const timestamp = Math.round(Number(new Date()) / 1000);
+      const filename = `identity-${timestamp}.json`;
 
-        const ikvData = [];
-        for(const e of ikvSetEvents) {
-            if(e.args) {
-                const {identity, key, value, version} = e.args;
+      fs.writeFileSync(
+        migrationFolder + filename,
+        JSON.stringify(fileStructure, null, 4)
+      );
 
-                console.log(`migrating key ${key} with value of ${value}`);
-
-                const ikv = {
-                    handle: identity,
-                    key,
-                    value,
-                    version
-                };
-
-                ikvData.push(ikv);
-            }
-        }
-
-        fileStructure.ikv = ikvData;
-
-        const timestamp = Math.round(Number(new Date()) / 1000);
-        const filename =  `identity-${timestamp}.json`;
-
-        fs.writeFileSync(migrationFolder + filename, JSON.stringify(fileStructure, null, 4));
-
-        console.log('Downloaded');
+      console.log('Downloaded');
     } else {
+      const lockFilePath = '../resources/migrations/identity-lock.json';
 
-        const lockFilePath = '../resources/migrations/identity-lock.json';
+      if (taskArgs.migrationFile === undefined) {
+        console.log(
+          'Please inform the migration file with `--migration-file /path/to/file.json`'
+        );
+        return false;
+      }
 
-        if(taskArgs.migrationFile === undefined) {
-            console.log('Please inform the migration file with `--migration-file /path/to/file.json`');
-            return false;
+      let prefix = '';
+      if (taskArgs.handlePrefix !== undefined) {
+        prefix = taskArgs.handlePrefix;
+      }
+
+      const lockFileStructure = {
+        contract: taskArgs.contract.toString(),
+        migrationFilePath: taskArgs.migrationFile.toString(),
+        identityLastProcessedIndex: 0,
+        ikvLastProcessedIndex: 0,
+      } as any;
+
+      const data = JSON.parse(
+        fs.readFileSync(taskArgs.migrationFile).toString()
+      );
+
+      let processIdentityFrom = 0;
+      let processIkvFrom = 0;
+      let lastIdentityAddedIndex = 0;
+      let lastIkvAddedIndex = 0;
+      let foundLockFile = false;
+
+      if (!fs.existsSync(lockFilePath)) {
+        console.log('Lockfile not found');
+      } else {
+        const lockFile = JSON.parse(fs.readFileSync(lockFilePath).toString());
+        if (
+          lockFile.migrationFilePath == taskArgs.migrationFile.toString() &&
+          lockFile.contract == taskArgs.contract.toString()
+        ) {
+          console.log('Previous lock file found');
+          console.log(
+            `Last processed identity ${lockFile.identityLastProcessedIndex}`
+          );
+          console.log(`Last IVK param ${lockFile.ikvLastProcessedIndex}`);
+          foundLockFile = true;
+          processIdentityFrom = lockFile.identityLastProcessedIndex;
+          processIkvFrom = lockFile.ikvLastProcessedIndex;
         }
+      }
 
-        let prefix = '';
-        if(taskArgs.handlePrefix !== undefined) {
-            prefix = taskArgs.handlePrefix;
+      try {
+        console.log(`found ${data.identities.length}`);
+        console.log('setting handle length to 21');
+        await contract.setMaxHandleLength(21);
+        for (const identity of data.identities) {
+          lastIdentityAddedIndex++;
+          if (
+            lastIdentityAddedIndex > processIdentityFrom ||
+            processIdentityFrom == 0
+          ) {
+            console.log(
+              `${lastIdentityAddedIndex} migrating ${prefix + identity.handle}`
+            );
+            await contract.register(
+              prefix + identity.handle,
+              identity.owner,
+              identity.keyPart1,
+              identity.keyPart2
+            );
+          } else {
+            console.log(
+              `Skipping migrated identity ${prefix + identity.handle}`
+            );
+          }
         }
-
-        const lockFileStructure = {
-            contract:taskArgs.contract.toString(),
-            migrationFilePath:taskArgs.migrationFile.toString(),
-            identityLastProcessedIndex:0,
-            ikvLastProcessedIndex:0
-        } as any;
-
-        const data = JSON.parse(fs.readFileSync(taskArgs.migrationFile).toString());
-
-        let processIdentityFrom = 0;
-        let processIkvFrom = 0;
-        let lastIdentityAddedIndex = 0;
-        let lastIkvAddedIndex = 0;
-        let foundLockFile = false;
-
-        if (!fs.existsSync(lockFilePath)) {
-            console.log('Lockfile not found');
-        }else{
-            const lockFile = JSON.parse(fs.readFileSync(lockFilePath).toString());
-            if (lockFile.migrationFilePath == taskArgs.migrationFile.toString() &&
-                lockFile.contract == taskArgs.contract.toString()) {
-                console.log('Previous lock file found');
-                console.log(`Last processed identity ${lockFile.identityLastProcessedIndex}`);
-                console.log(`Last IVK param ${lockFile.ikvLastProcessedIndex}`);
-                foundLockFile = true;
-                processIdentityFrom = lockFile.identityLastProcessedIndex;
-                processIkvFrom = lockFile.ikvLastProcessedIndex;
-            }
-        }
-
-        try {
-            console.log(`found ${data.identities.length}`);
-            console.log('setting handle length to 21');
-            await contract.setMaxHandleLength(21);
-            for (const identity of data.identities) {
-                lastIdentityAddedIndex++;
-                if(lastIdentityAddedIndex > processIdentityFrom || processIdentityFrom == 0){
-                    console.log(`${lastIdentityAddedIndex} migrating ${prefix + identity.handle}`);
-                    await contract.register(prefix + identity.handle, identity.owner, identity.keyPart1, identity.keyPart2);
-                }else{
-                    console.log(`Skipping migrated identity ${prefix + identity.handle}`)
-                }
-            }
-        } catch (error) {
-            lockFileStructure.identityLastProcessedIndex = lastIdentityAddedIndex;
-            fs.writeFileSync(lockFilePath, JSON.stringify(lockFileStructure, null, 4));
-            console.log(`Error on ${lastIdentityAddedIndex} of ${data.identities.length} identities restart the process to pick-up from last processed item.`);
-            return false;
-        }
-
+      } catch (error) {
         lockFileStructure.identityLastProcessedIndex = lastIdentityAddedIndex;
+        fs.writeFileSync(
+          lockFilePath,
+          JSON.stringify(lockFileStructure, null, 4)
+        );
+        console.log(
+          `Error on ${lastIdentityAddedIndex} of ${data.identities.length} identities restart the process to pick-up from last processed item.`
+        );
+        return false;
+      }
 
-        try {
-            console.log(`found ${data.ikv.length} IKV params`);
-            for (const ikv of data.ikv) {
-                lastIkvAddedIndex++;
-                if(lastIkvAddedIndex > processIkvFrom || processIkvFrom == 0){
-                    console.log(`${lastIkvAddedIndex} Migrating IVK param for ${prefix + ikv.handle} ${ikv.key} ${ikv.value}`)
-                    await contract.ikvImportKV(prefix + ikv.handle, ikv.key, ikv.value, ikv.version);
-                }else{
-                    console.log(`Skipping migrated IVK param for ${prefix + ikv.handle} ${ikv.key} ${ikv.value}`)
-                }
-            }
-        } catch (error) {
-            lockFileStructure.ikvLastProcessedIndex = lastIkvAddedIndex;
-            fs.writeFileSync(lockFilePath, JSON.stringify(lockFileStructure, null, 4));
-            console.log(`Error on ${lastIkvAddedIndex} of ${data.ikv.length} IVK params restart the process to pick-up from last processed item.`);
-            return false;
-        }
+      lockFileStructure.identityLastProcessedIndex = lastIdentityAddedIndex;
 
-        if(lastIdentityAddedIndex == data.identities.length && lastIkvAddedIndex == data.ikv.length) {
-            if(fs.existsSync(lockFilePath)) {
-                fs.unlinkSync(lockFilePath);
-            }
-            console.log('Everything processed and uploaded, lock file removed.');
-            await contract.finishMigrations();
+      try {
+        console.log(`found ${data.ikv.length} IKV params`);
+        for (const ikv of data.ikv) {
+          lastIkvAddedIndex++;
+          if (lastIkvAddedIndex > processIkvFrom || processIkvFrom == 0) {
+            console.log(
+              `${lastIkvAddedIndex} Migrating IVK param for ${
+                prefix + ikv.handle
+              } ${ikv.key} ${ikv.value}`
+            );
+            await contract.ikvImportKV(
+              prefix + ikv.handle,
+              ikv.key,
+              ikv.value,
+              ikv.version
+            );
+          } else {
+            console.log(
+              `Skipping migrated IVK param for ${prefix + ikv.handle} ${
+                ikv.key
+              } ${ikv.value}`
+            );
+          }
         }
+      } catch (error) {
+        lockFileStructure.ikvLastProcessedIndex = lastIkvAddedIndex;
+        fs.writeFileSync(
+          lockFilePath,
+          JSON.stringify(lockFileStructure, null, 4)
+        );
+        console.log(
+          `Error on ${lastIkvAddedIndex} of ${data.ikv.length} IVK params restart the process to pick-up from last processed item.`
+        );
+        return false;
+      }
+
+      if (
+        lastIdentityAddedIndex == data.identities.length &&
+        lastIkvAddedIndex == data.ikv.length
+      ) {
+        if (fs.existsSync(lockFilePath)) {
+          fs.unlinkSync(lockFilePath);
+        }
+        console.log('Everything processed and uploaded, lock file removed.');
+        await contract.finishMigrations();
+      }
     }
-
   });
-
