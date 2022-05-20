@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
 const pointNodeRepoUrl =
-  "https://api.github.com/repos/pointnetwork/pointnetwork/releases/latest";
+  'https://api.github.com/repos/pointnetwork/pointnetwork/releases/latest';
 
 export async function getPointNodeInfo() {
   const {

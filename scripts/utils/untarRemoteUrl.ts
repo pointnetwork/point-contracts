@@ -1,8 +1,8 @@
-import axios from "axios";
-import tar from "tar";
+import axios from 'axios';
+import tar from 'tar';
 
 export async function untarRemoteUrl(fileUrl: string, dest: string) {
-  const fileStream = await axios.get(fileUrl, { responseType: "stream" });
+  const fileStream = await axios.get(fileUrl, { responseType: 'stream' });
   return new Promise((resolve) => {
     fileStream.data
       .pipe(
@@ -10,7 +10,7 @@ export async function untarRemoteUrl(fileUrl: string, dest: string) {
           C: dest,
         })
       )
-      .on("close", () => {
+      .on('close', () => {
         resolve(null);
       });
   });
