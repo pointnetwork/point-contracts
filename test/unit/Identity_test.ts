@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { ethers, upgrades } from 'hardhat';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
-import { Identity__factory } from '../../typechain';
 
 describe('Token identity contract', function () {
   let identityContract: any;
@@ -17,13 +16,13 @@ describe('Token identity contract', function () {
 
     const factory = (await ethers.getContractFactory(
       'Identity'
-    )) as Identity__factory;
+    )) ;
     identityContract = await upgrades.deployProxy(factory, [], {
       kind: 'uups',
     });
     await identityContract.deployed();
 
-    handle = 'ynetunittester';
+    handle = 'ynet_unittester';
 
     await identityContract
       .connect(addr1)
@@ -106,7 +105,7 @@ describe('Token identity contract', function () {
         identityContract
           .connect(addr1)
           .register(
-            'ynetinvalid*hle',
+            'ynet_invalid*hle',
             addr1.address,
             '0xed17268897bbcb67127ed550cee2068a15fdb6f69097eebeb6e2ace46305d1ce',
             '0xe1e032c91d4c8fe6bab1f198871dbafb8842f073acff8ee9b822f748b180d7eb'
