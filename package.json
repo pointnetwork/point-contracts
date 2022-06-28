@@ -53,6 +53,8 @@
   "version": "0.1.1",
   "dependencies": {
     "@types/mime-types": "^2.1.1",
+    "bip39": "^3.0.4",
+    "ethereumjs-wallet": "^1.0.2",
     "follow-redirects": "^1.15.0",
     "tar": "^6.1.11"
   },
