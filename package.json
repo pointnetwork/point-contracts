@@ -48,7 +48,8 @@
     "upload": "NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/scripts/upload.js",
     "fix": "eslint --ext .js --ext .ts --fix ./scripts",
     "lint": "eslint --ext .js --ext .ts ./scripts",
-    "lint:sol": "solhint 'example/**/contracts/*.sol' 'hardhat/contracts/*.sol'"
+    "lint:sol": "solhint 'example/**/contracts/*.sol' 'hardhat/contracts/*.sol'",
+    "test": "hardhat test"
   },
   "version": "0.1.1",
   "dependencies": {
