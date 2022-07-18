@@ -1,6 +1,14 @@
 {
   "name": "@pointnetwork/point-contracts",
   "description": "Point Network Smart Contracts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pointnetwork/point-contracts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pointnetwork/point-contracts/issues"
+  },
+  "homepage": "https://github.com/pointnetwork/point-contracts#readme"
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.0.1",
