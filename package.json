@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/pointnetwork/point-contracts/issues"
   },
-  "homepage": "https://github.com/pointnetwork/point-contracts#readme"
+  "homepage": "https://github.com/pointnetwork/point-contracts#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.0.1",
