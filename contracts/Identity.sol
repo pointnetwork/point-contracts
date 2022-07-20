@@ -23,6 +23,7 @@ contract Identity is
     mapping(string => string) public lowercaseToCanonicalIdentities;
     mapping(string => PubKey64) public identityToCommPublicKey;
     string[] public identityList;
+    mapping(string => string[]) subidentities;
     bool public migrationApplied;
 
     uint256 private MAX_HANDLE_LENGTH;
@@ -99,7 +100,7 @@ contract Identity is
         bytes32 _r,
         bytes32 _s
     ) public override {
-        _validateIdentity(handle, identityOwner, false);
+        _validateIdentity(handle, identityOwner, false, false);
 
         // Check oracle msg for confirming  hat identity can be registered.
         bytes memory prefix = "\x19Ethereum Signed Message:\n32";
@@ -147,7 +148,8 @@ contract Identity is
     function _validateIdentity(
         string calldata handle,
         address identityOwner,
-        bool ynet
+        bool ynet,
+        bool isSubidentity
     ) private view returns (bool) {
         if (ynet == true) {
             require(
@@ -164,8 +166,9 @@ contract Identity is
             );
         }
 
-        if (!_isValidHandle(handle))
+        if (!_isValidHandle(handle)) {
             revert("Only alphanumeric characters and an underscore allowed");
+        }
 
         // Check if the identity is already registered
         string memory lowercase = _toLower(handle);
@@ -173,7 +176,7 @@ contract Identity is
             revert("This identity has already been registered");
         }
 
-        if (migrationApplied == true) {
+        if (migrationApplied == true && !isSubidentity) {
             // Check if this owner already has an identity attached
             if (!_isEmptyString(ownerToIdentity[identityOwner]))
                 revert("This owner already has an identity attached");
@@ -188,7 +191,7 @@ contract Identity is
         bytes32 commPublicKeyPart1,
         bytes32 commPublicKeyPart2
     ) public override {
-        _validateIdentity(handle, identityOwner, !devMode);
+        _validateIdentity(handle, identityOwner, !devMode, false);
 
         //ok, go for registering.
         PubKey64 memory commPublicKey = PubKey64(
@@ -197,6 +200,27 @@ contract Identity is
         );
 
         _selfReg(handle, identityOwner, commPublicKey);
+    }
+
+    function registerSubidentity(
+        string calldata subhandle,
+        string calldata handle,
+        address identityOwner,
+        bytes32 commPublicKeyPart1,
+        bytes32 commPublicKeyPart2
+    ) public override onlyIdentityOwner(handle) {
+        // note: only validating subhandle, because handle was validated at creation,
+        // and non-existing handles would not pass the ownership check
+        _validateIdentity(subhandle, identityOwner, false, true);
+
+        PubKey64 memory commPublicKey = PubKey64(
+            commPublicKeyPart1,
+            commPublicKeyPart2
+        );
+
+        subidentities[handle].push(subhandle);
+
+        emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
     }
 
     function canonical(string memory anyCase)
@@ -216,6 +240,14 @@ contract Identity is
         returns (string memory identity)
     {
         return ownerToIdentity[owner];
+    }
+
+    function getSubidentityByOwner(
+        uint8 index,
+        address owner
+    ) public view override returns (string memory subidentity) {
+        string memory handle = ownerToIdentity[owner];
+        return subidentities[handle][index];
     }
 
     function getOwnerByIdentity(string memory identity)

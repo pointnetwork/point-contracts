@@ -13,6 +13,12 @@ interface IIdentity {
         address identityOwner,
         PubKey64 commPublicKey
     );
+    event SubidentityRegistered(
+        string handle,
+        string subhandle,
+        address identityOwner,
+        PubKey64 commPublicKey
+    );
     event IdentityOwnershipTransferred(
         string indexed handle,
         address indexed oldOwner,
@@ -57,6 +63,14 @@ interface IIdentity {
         bytes32 commPublicKeyPart2
     ) external;
 
+    function registerSubidentity(
+        string calldata subhandle,
+        string calldata handle,
+        address identityOwner,
+        bytes32 commPublicKeyPart1,
+        bytes32 commPublicKeyPart2
+    ) external;
+
     function canonical(string memory anyCase)
         external
         view
@@ -66,6 +80,11 @@ interface IIdentity {
         external
         view
         returns (string memory identity);
+
+    function getSubidentityByOwner(uint8 index, address owner)
+        external
+        view
+        returns (string memory subidentity);
 
     function getOwnerByIdentity(string memory identity)
         external
