@@ -217,8 +217,10 @@ contract Identity is
             commPublicKeyPart2
         );
 
+        // optimized string concatenation
         string memory fullHandle = string(abi.encodePacked(subhandle, ".", handle));
 
+        // updating identityToOwner, but not ownerToIdentity
         identityToOwner[fullHandle] = identityOwner;
         identityToCommPublicKey[fullHandle] = commPublicKey;
         lowercaseToCanonicalIdentities[_toLower(fullHandle)] = fullHandle;
