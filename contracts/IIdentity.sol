@@ -81,11 +81,6 @@ interface IIdentity {
         view
         returns (string memory identity);
 
-    function getSubidentityByOwner(uint8 index, address owner)
-        external
-        view
-        returns (string memory subidentity);
-
     function getOwnerByIdentity(string memory identity)
         external
         view

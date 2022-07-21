@@ -23,7 +23,6 @@ contract Identity is
     mapping(string => string) public lowercaseToCanonicalIdentities;
     mapping(string => PubKey64) public identityToCommPublicKey;
     string[] public identityList;
-    mapping(string => string[]) subidentities;
     bool public migrationApplied;
 
     uint256 private MAX_HANDLE_LENGTH;
@@ -172,7 +171,7 @@ contract Identity is
 
         // Check if the identity is already registered
         string memory lowercase = _toLower(handle);
-        if (!_isEmptyString(lowercaseToCanonicalIdentities[lowercase])) {
+        if (!isSubidentity && !_isEmptyString(lowercaseToCanonicalIdentities[lowercase])) {
             revert("This identity has already been registered");
         }
 
@@ -218,7 +217,12 @@ contract Identity is
             commPublicKeyPart2
         );
 
-        subidentities[handle].push(subhandle);
+        string memory fullHandle = string(abi.encodePacked(subhandle, ".", handle));
+
+        identityToOwner[fullHandle] = identityOwner;
+        identityToCommPublicKey[fullHandle] = commPublicKey;
+        lowercaseToCanonicalIdentities[_toLower(fullHandle)] = fullHandle;
+        identityList.push(fullHandle);
 
         emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
     }
@@ -240,14 +244,6 @@ contract Identity is
         returns (string memory identity)
     {
         return ownerToIdentity[owner];
-    }
-
-    function getSubidentityByOwner(
-        uint8 index,
-        address owner
-    ) public view override returns (string memory subidentity) {
-        string memory handle = ownerToIdentity[owner];
-        return subidentities[handle][index];
     }
 
     function getOwnerByIdentity(string memory identity)
