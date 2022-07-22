@@ -212,18 +212,23 @@ contract Identity is
         // and non-existing handles would not pass the ownership check
         _validateIdentity(subhandle, identityOwner, false, true);
 
+        // optimized string concatenation
+        string memory fullHandle = string(abi.encodePacked(subhandle, ".", handle));
+        string memory fullHandleLowercase = _toLower(fullHandle);
+
+        if (!_isEmptyString(lowercaseToCanonicalIdentities[fullHandleLowercase])) {
+            revert("This identity has already been registered");
+        }
+
         PubKey64 memory commPublicKey = PubKey64(
             commPublicKeyPart1,
             commPublicKeyPart2
         );
 
-        // optimized string concatenation
-        string memory fullHandle = string(abi.encodePacked(subhandle, ".", handle));
-
         // updating identityToOwner, but not ownerToIdentity
         identityToOwner[fullHandle] = identityOwner;
         identityToCommPublicKey[fullHandle] = commPublicKey;
-        lowercaseToCanonicalIdentities[_toLower(fullHandle)] = fullHandle;
+        lowercaseToCanonicalIdentities[fullHandleLowercase] = fullHandle;
         identityList.push(fullHandle);
 
         emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
