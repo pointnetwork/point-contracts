@@ -13,6 +13,12 @@ interface IIdentity {
         address identityOwner,
         PubKey64 commPublicKey
     );
+    event SubidentityRegistered(
+        string handle,
+        string subhandle,
+        address identityOwner,
+        PubKey64 commPublicKey
+    );
     event IdentityOwnershipTransferred(
         string indexed handle,
         address indexed oldOwner,
@@ -51,6 +57,14 @@ interface IIdentity {
     ) external;
 
     function register(
+        string calldata handle,
+        address identityOwner,
+        bytes32 commPublicKeyPart1,
+        bytes32 commPublicKeyPart2
+    ) external;
+
+    function registerSubidentity(
+        string calldata subhandle,
         string calldata handle,
         address identityOwner,
         bytes32 commPublicKeyPart1,

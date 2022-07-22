@@ -1,5 +1,5 @@
 {
-  "name": "point-contract-manager",
+  "name": "@pointnetwork/point-contracts",
   "description": "Point Network contract manager",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
