@@ -10,7 +10,7 @@ import '@openzeppelin/hardhat-upgrades';
 import './tasks/importer/identity';
 import './tasks/importer/blog';
 import './tasks/importer/pointSocial';
-import './tasks/importer/social-migrator.ts';
+import './tasks/importer/social-migrator';
 import './tasks/importer/sms';
 import './tasks/importer/identity-clone';
 import './tasks/identity/identity-update-contract';
@@ -26,12 +26,19 @@ try {
   if (ynetPrivateKey === undefined) {
     const homedir = require('os').homedir();
     require('path').resolve(homedir, '.point', 'keystore', 'key.json');
-    const wallet = require('ethereumjs-wallet').hdkey.fromMasterSeed(
-        require('bip39').mnemonicToSeedSync(require(
-            require('path').resolve(homedir, '.point', 'keystore', 'key.json')).phrase
+    const wallet = require('ethereumjs-wallet')
+      .hdkey.fromMasterSeed(
+        require('bip39').mnemonicToSeedSync(
+          require(require('path').resolve(
+            homedir,
+            '.point',
+            'keystore',
+            'key.json'
+          )).phrase
         )
-      ).getWallet();
-      ynetPrivateKey = wallet.getPrivateKey().toString('hex');
+      )
+      .getWallet();
+    ynetPrivateKey = wallet.getPrivateKey().toString('hex');
   }
 } catch (e) {
   if (!ynetPrivateKey) {
