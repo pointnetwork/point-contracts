@@ -23,7 +23,7 @@ task('sms-importer', 'Will download and upload data to point identity contract')
       return false;
     }
 
-    let migrationFolder = '../resources/migrations/';
+    let migrationFolder = './resources/migrations/';
 
     if (taskArgs.saveTo != undefined) {
       migrationFolder = taskArgs.saveTo;
