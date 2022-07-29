@@ -31,6 +31,12 @@ contract Identity is
     address private oracleAddress;
     bool private devMode;
 
+    struct IdentityQuery{
+        string handle;
+        address owner;
+        bool hasDomain;
+    }
+
     function initialize() public initializer onlyProxy {
         __Ownable_init();
         __UUPSUpgradeable_init();
@@ -473,4 +479,30 @@ contract Identity is
 
         emit IKVSet(identity, key, value, version);
     }
+
+    function getIdentitiesLength() public view returns (uint){
+        return identityList.length;
+    }
+    
+    function getPaginatedIdentities(uint256 cursor, uint256 howMany) public view returns (IdentityQuery[] memory) {
+        uint256 length = howMany;
+        if(length > identityList.length - cursor) {
+            length = identityList.length - cursor;
+        }
+
+        IdentityQuery[] memory _identities = new IdentityQuery[](length);
+        for (uint256 i = length; i > 0; i--) {
+            string memory identity = identityList[identityList.length - cursor - i];
+            address owner = identityToOwner[identity];
+
+            //check if it has a dapp
+            if (bytes(ikv[identity]["zdns/routes"]).length != 0) {
+                _identities[length-i] = IdentityQuery(identity, owner, true);
+            }else{
+                _identities[length-i] = IdentityQuery(identity, owner, false);
+            }
+        }
+        return _identities;
+    }
+
 }
