@@ -183,6 +183,7 @@ task(
           }
         }
       } catch (error) {
+        lastIdentityAddedIndex--;
         lockFileStructure.identityLastProcessedIndex = lastIdentityAddedIndex;
         fs.writeFileSync(
           lockFilePath,
