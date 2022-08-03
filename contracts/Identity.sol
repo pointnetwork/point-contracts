@@ -69,6 +69,10 @@ contract Identity is
     function getDevMode() public view override returns (bool) {
         return devMode;
     }
+    
+    function setMigrationApplied(bool value) public onlyOwner {
+        migrationApplied = value;
+    }
 
     function _authorizeUpgrade(address) internal override onlyOwner {}
 

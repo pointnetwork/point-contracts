@@ -4,6 +4,9 @@ import fs = require('fs');
 // npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
+// npx hardhat identity-importer latestBlockMigrated 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --handle An77u --network ynet
+// npx hardhat identity-importer download 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --from-block 8496819 --network ynet
+// npx hardhat identity-importer latestIdentityMigrated 0x8E34Fc67034b8A593E87d5f2644D098A3dBd2Fe7 --network xnetPluto
 
 task(
   'identity-importer',
@@ -17,6 +20,14 @@ task(
     'handlePrefix',
     'Prefix to prepend to all handles when uploading'
   )
+  .addOptionalParam(
+    'handle',
+    'Handle to check the latest block migrated'
+  )
+  .addOptionalParam(
+    'fromBlock',
+    'The first block that should be considered to download data for migrations'
+  )
   .setAction(async (taskArgs, hre) => {
     const { ethers } = hre;
 
@@ -25,11 +36,18 @@ task(
       return false;
     }
 
-    let migrationFolder = '../resources/migrations/';
+    let migrationFolder = './resources/';
 
     if (taskArgs.saveTo != undefined) {
       migrationFolder = taskArgs.saveTo;
     }
+
+    let fromBlock = 0;
+    if (taskArgs.fromBlock !== undefined) {
+      fromBlock = parseInt(taskArgs.fromBlock);
+    }
+    console.log(fromBlock);
+
     const contract = await hre.ethers.getContractAt(
       'Identity',
       taskArgs.contract
@@ -43,10 +61,10 @@ task(
 
       const identitiesFilter = contract.filters.IdentityRegistered();
       const identityCreatedEvents = await contract.queryFilter(
-        identitiesFilter
+        identitiesFilter, fromBlock
       );
       const ikvSetFilter = contract.filters.IKVSet();
-      const ikvSetEvents = await contract.queryFilter(ikvSetFilter);
+      const ikvSetEvents = await contract.queryFilter(ikvSetFilter, fromBlock);
 
       if (identityCreatedEvents.length == 0) {
         console.log('No identities found.');
@@ -106,8 +124,8 @@ task(
       );
 
       console.log('Downloaded');
-    } else {
-      const lockFilePath = '../resources/migrations/identity-lock.json';
+    } else if (taskArgs.action == 'upload') {
+      const lockFilePath = './resources/identity-lock.json';
 
       if (taskArgs.migrationFile === undefined) {
         console.log(
@@ -161,8 +179,8 @@ task(
         console.log(`found ${data.identities.length}`);
         console.log('setting handle length to 21');
         await contract.setMaxHandleLength(21);
+        await contract.setMigrationApplied(false);
         for (const identity of data.identities) {
-          lastIdentityAddedIndex++;
           if (
             lastIdentityAddedIndex > processIdentityFrom ||
             processIdentityFrom == 0
@@ -181,6 +199,7 @@ task(
               `Skipping migrated identity ${prefix + identity.handle}`
             );
           }
+          lastIdentityAddedIndex++;
         }
       } catch (error) {
         lastIdentityAddedIndex--;
@@ -192,6 +211,8 @@ task(
         console.log(
           `Error on ${lastIdentityAddedIndex} of ${data.identities.length} identities restart the process to pick-up from last processed item.`
         );
+        console.log(error);
+        await contract.setMigrationApplied(true);
         return false;
       }
 
@@ -230,12 +251,13 @@ task(
         console.log(
           `Error on ${lastIkvAddedIndex} of ${data.ikv.length} IVK params restart the process to pick-up from last processed item.`
         );
+        await contract.setMigrationApplied(true);
         return false;
       }
 
       if (
-        lastIdentityAddedIndex == data.identities.length &&
-        lastIkvAddedIndex == data.ikv.length
+        (lastIdentityAddedIndex == (data.identities.length)) &&
+        (lastIkvAddedIndex == (data.ikv.length))
       ) {
         if (fs.existsSync(lockFilePath)) {
           fs.unlinkSync(lockFilePath);
@@ -243,5 +265,65 @@ task(
         console.log('Everything processed and uploaded, lock file removed.');
         await contract.finishMigrations();
       }
+    } else if (taskArgs.action == 'latestBlockMigrated') {
+
+      const contract = await hre.ethers.getContractAt(
+        'Identity',
+        taskArgs.contract
+      );
+
+      const identitiesFilter = contract.filters.IdentityRegistered();
+      const identityCreatedEvents = await contract.queryFilter(
+        identitiesFilter
+      );
+      const ikvSetFilter = contract.filters.IKVSet();
+      const ikvSetEvents = await contract.queryFilter(ikvSetFilter);
+
+      if (identityCreatedEvents.length == 0) {
+        console.log('No identities found.');
+        return false;
+      }
+
+      console.log(`Found ${identityCreatedEvents.length} identities`);
+
+      //get the block of latest identity migrated
+      const blockNumbers = identityCreatedEvents.filter(e => e.args?.handle === taskArgs.handle).map(e => e.blockNumber);
+      const maxBlockNumber = Math.max(...blockNumbers);
+      console.log('Max block number migrated for IdentityRegistered: ' + maxBlockNumber);
+
+
+      //consider that ikv can have registers after the latest identity migrated.
+      const identityCreatedEventsMigrated = await contract.queryFilter(
+        identitiesFilter, 0, maxBlockNumber
+      );
+      const handlesMigrated = identityCreatedEventsMigrated.map(e => e.args?.handle);
+      const blockNumbersIkv = ikvSetEvents.filter(e => handlesMigrated.includes(e.args?.identity)).map(e => e.blockNumber)
+      const maxBlockNumberIkv = Math.max(...blockNumbersIkv);
+      console.log('Max block number migrated for ikvSetEvents: ' + maxBlockNumberIkv);
+
+      console.log('Max block number migrated: ' + Math.max(maxBlockNumber, maxBlockNumberIkv))
+    } else if (taskArgs.action == 'latestIdentityMigrated') {
+      const contract = await hre.ethers.getContractAt(
+        'Identity',
+        taskArgs.contract
+      );
+
+      const identitiesFilter = contract.filters.IdentityRegistered();
+      const identityCreatedEvents = await contract.queryFilter(
+        identitiesFilter
+      );
+
+      if (identityCreatedEvents.length == 0) {
+        console.log('No identities found.');
+        return false;
+      }
+      console.log(`Found ${identityCreatedEvents.length} identities`);
+
+      const blockNumbers = identityCreatedEvents.map(e => e.blockNumber);
+      const maxBlockNumber = Math.max(...blockNumbers);
+      const latestIdentites = identityCreatedEvents.filter(e => e.blockNumber == maxBlockNumber).map(e => e.args?.handle);
+      console.log('Latest identities registered: ' + latestIdentites);
+      console.log('Block: ' + maxBlockNumber);
+
     }
   });

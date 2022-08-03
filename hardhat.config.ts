@@ -43,7 +43,7 @@ try {
 } catch (e) {
   if (!productionPrivateKey) {
     console.log(
-      'Warn: YNet account not found. Will not be possible to deploy to YNet.'
+      'Warn: Production account not found. Will not be possible to deploy to Production Network.'
     );
   }
 }
@@ -61,22 +61,19 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
 const developmentPrivateKey =
   process.env.DEPLOYER_ACCOUNT ||
   '0x011967d88c6b79116bb879d4c2bc2c3caa23569edd85dfe0bc596846837bbc8e';
-const host = process.env.BLOCKCHAIN_HOST || 'blockchain_node';
+const host = process.env.BLOCKCHAIN_HOST || 'localhost';
 const port = process.env.BLOCKCHAIN_PORT || 7545;
 const buildPath = process.env.DEPLOYER_BUILD_PATH || './build';
 
 const devaddress = `http://${host}:${port}`;
 
-const ynetConfig: HttpNetworkUserConfig = {
-  url: 'http://ynet.point.space:44444',
-};
-const xnetPlutoConfig: HttpNetworkUserConfig = {
-  url: 'https://xnet-pluto-1.point.space/',
-};
+const ynetConfig: any = {url: 'http://ynet.point.space:44444'};
+const xnetPlutoConfig: any = {url: 'https://xnet-pluto-1.point.space'};
 
-if (productionPrivateKey) {
-  ynetConfig.accounts = [productionPrivateKey];
-  xnetPlutoConfig.accounts = [productionPrivateKey];
+if (productionPrivateKey){
+    ynetConfig.accounts = [productionPrivateKey];
+    xnetPlutoConfig.accounts = [productionPrivateKey];
+    xnetPlutoConfig.gasPrice = 1;
 }
 
 // You need to export an object to set up your config
