@@ -179,7 +179,8 @@ task(
         console.log(`found ${data.identities.length}`);
         console.log('setting handle length to 21');
         await contract.setMaxHandleLength(21);
-        await contract.setMigrationApplied(false);
+        await (await contract.setMigrationApplied(false)).wait()
+        await (await contract.setDevMode(true)).wait()
         for (const identity of data.identities) {
           if (
             lastIdentityAddedIndex > processIdentityFrom ||
@@ -212,6 +213,7 @@ task(
         );
         console.log(error);
         await contract.setMigrationApplied(true);
+        await contract.setDevMode(false);
         return false;
       }
 
@@ -251,6 +253,7 @@ task(
           `Error on ${lastIkvAddedIndex} of ${data.ikv.length} IVK params restart the process to pick-up from last processed item.`
         );
         await contract.setMigrationApplied(true);
+        await contract.setDevMode(false);
         return false;
       }
 
