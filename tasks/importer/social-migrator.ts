@@ -274,7 +274,7 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
         const identities = (await getAllIdentities(ethers, taskArgs.contract));        
         const data = await pointSocial.getAllPosts();
-        const posts  = [];
+        const posts: any[] = new Array();
 
         if(data.length == 0) {
             console.log('No posts found.');
@@ -307,16 +307,14 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
         console.log(`Downloading user profiles`);
 
-        const profiles = 
-        (   await Promise.all(
-                identities.map((i:string) => pointSocial.getProfile(i))
-            )
-        )
-        .map((v:any, i:number, a:any) => ({ id: identities[i], data: v }))
-        .filter((i:any) =>
-            i.data.reduce((p:string, c:string) => (p || (c !== EMPTY)), false)
-        );
-
+        const profiles: any[] = new Array();
+        for (const identity of identities) {
+            const value = await pointSocial.getProfile(identity);
+            if (value.reduce((p:string, c:string) => (p || (c !== EMPTY)))) {
+                console.log(identity);            
+                profiles.push({ id: identity, data: value});
+            }
+        }
 
         fileStructure.posts = posts;
         fileStructure.profiles = profiles;
