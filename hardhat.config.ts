@@ -76,7 +76,7 @@ if (productionPrivateKey){
     xnetPlutoConfig.accounts = [productionPrivateKey];
     xnetPlutoConfig.gasPrice = 1;
     xnetNeptuneConfig.accounts = [productionPrivateKey];
-    xnetNeptuneConfig.gasPrice = 1;
+    xnetNeptuneConfig.gasPrice = 7;
 }
 
 // You need to export an object to set up your config
