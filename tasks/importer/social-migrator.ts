@@ -31,6 +31,9 @@ var mimeDb = require("mime-db");
  *          export POINT_NODE=localhost
  *          export POINT_NODE_PORT=8666
  *          npx hardhat social-migrator upload $(cat ../pointnetwork/config/default.yaml | grep "identity_contract_address" | awk '{ print $2 }' | sed -e 's/"//g') --migration-file ../backup/pointsocial-DATE.json --network ynet
+ *
+ *    You can specify to download/upload files using the --cache flag
+ *    You can specify the handle (social or socialdev) using the --handle flag
  */
  
 const EMPTY = '0x0000000000000000000000000000000000000000000000000000000000000000';
@@ -249,9 +252,11 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
   .addOptionalParam("migrationFile", "Migration file to when uploading data")
   .addOptionalParam("fromPort", "Port of point node to download data")
   .addOptionalParam("toPort", "Port of point node to upload data")
+  .addOptionalParam("cache", "Enable filesystem cache to download/upload arweave data")
+  .addOptionalParam("handle", "Set the app handle")
   .setAction(async (taskArgs, hre) => {
     const ethers = hre.ethers;
-    const zappHandle = 'social';
+    const zappHandle = taskArgs.handle || 'social';
     if(!ethers.utils.isAddress(taskArgs.contract)) {
         console.log('Contract address not valid.');
         return false;
@@ -262,6 +267,8 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
     if(taskArgs.saveTo != undefined) {
         migrationFolder = taskArgs.saveTo;
     }
+
+    const useCache = (taskArgs.cache !== undefined)? true:false;
 
     if(taskArgs.action == "download") {
 
@@ -305,13 +312,13 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
         }
 
 
-        console.log(`Downloading user profiles`);
+        console.log(`Downloading users profiles`);
 
         const profiles: any[] = new Array();
         for (const identity of identities) {
             const value = await pointSocial.getProfile(identity);
-            if (value.reduce((p:string, c:string) => (p || (c !== EMPTY)))) {
-                console.log(identity);            
+            if (value.reduce((p:string, c:string) => (p || (c !== EMPTY)), false)) {
+                console.log(`${ profiles.length} : ${identity}`);            
                 profiles.push({ id: identity, data: value});
             }
         }
@@ -329,57 +336,61 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
         fs.writeFileSync(migrationFolder + filename, JSON.stringify(fileStructure, null, 4));
 
-        for (const post of posts) {
-            console.log(`Downloading content for post ${post.id}`);
-            if (post.contents !== EMPTY) {
-                console.log("Text:");
-                const result = await download(post.contents, 'content', directory);
-                console.log((result)?"OK":"NO");                
-            }
-            if (post.image !== EMPTY) {
-                console.log("Media:");
-                const result = await download(post.image, 'media', directory);
-                console.log((result)?"OK":"NO");                
-            }
-            console.log(`Downloading comments for post ${post.id}`);
-            for (const comment of post.comments) {
-                console.log(`Comment id: ${comment[0]}`);
-                if (comment[2] !== EMPTY) {
-                    const result = await download(comment[2], 'content', directory);
-                    console.log((result)?"OK":"NO");                    
+        // Download files lo local cache
+        if(useCache) {
+
+            for (const post of posts) {
+                console.log(`Downloading content for post ${post.id}`);
+                if (post.contents !== EMPTY) {
+                    console.log("Text:");
+                    const result = await download(post.contents, 'content', directory);
+                    console.log((result)?"OK":"NO");                
+                }
+                if (post.image !== EMPTY) {
+                    console.log("Media:");
+                    const result = await download(post.image, 'media', directory);
+                    console.log((result)?"OK":"NO");                
+                }
+                console.log(`Downloading comments for post ${post.id}`);
+                for (const comment of post.comments) {
+                    console.log(`Comment id: ${comment[0]}`);
+                    if (comment[2] !== EMPTY) {
+                        const result = await download(comment[2], 'content', directory);
+                        console.log((result)?"OK":"NO");                    
+                    }
                 }
             }
-        }
 
-        for (const profile of profiles) {
-            console.log(`Downloading content for profile ${profile.id}`);
+            for (const profile of profiles) {
+                console.log(`Downloading content for profile ${profile.id}`);
 
 
-            if (profile.data[0] !== EMPTY) {
-                console.log("Text:");
-                const result = await download(profile.data[0], 'content', directory);                
-                console.log((result)?"OK":"NO");                
-            }
-            if (profile.data[1] !== EMPTY) {
-                console.log("Text:");
-                const result = await download(profile.data[1], 'content', directory);                
-                console.log((result)?"OK":"NO");                                
-            }
-            if (profile.data[2] !== EMPTY) {
-                console.log("Text:");
-                const result = await download(profile.data[2], 'content', directory);                                
-                console.log((result)?"OK":"NO");                                
-            }
-            if (profile.data[3] !== EMPTY) {
-                console.log("Media:");
-                const result = await download(profile.data[3], 'media', directory);                
-                console.log((result)?"OK":"NO");                                
-            }
-            if (profile.data[4] !== EMPTY) {
-                console.log("Media:");
-                const result = await download(profile.data[4], 'media', directory);                
-                console.log((result)?"OK":"NO");                                
-            }
+                if (profile.data[0] !== EMPTY) {
+                    console.log("Text:");
+                    const result = await download(profile.data[0], 'content', directory);                
+                    console.log((result)?"OK":"NO");                
+                }
+                if (profile.data[1] !== EMPTY) {
+                    console.log("Text:");
+                    const result = await download(profile.data[1], 'content', directory);                
+                    console.log((result)?"OK":"NO");                                
+                }
+                if (profile.data[2] !== EMPTY) {
+                    console.log("Text:");
+                    const result = await download(profile.data[2], 'content', directory);                                
+                    console.log((result)?"OK":"NO");                                
+                }
+                if (profile.data[3] !== EMPTY) {
+                    console.log("Media:");
+                    const result = await download(profile.data[3], 'media', directory);                
+                    console.log((result)?"OK":"NO");                                
+                }
+                if (profile.data[4] !== EMPTY) {
+                    console.log("Media:");
+                    const result = await download(profile.data[4], 'media', directory);                
+                    console.log((result)?"OK":"NO");                                
+                }
+            }            
         }
 
         console.log('Download complete!');
@@ -450,19 +461,17 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
         try {
             console.log(`found ${data.posts.length}`);
-            const postComments = [];
+            const postComments: any[] = new Array();
 
             console.log("****************** MIGRATING POSTS ******************");
 
             for (const post of data.posts) {
                 postComments[post.id] = post.comments;
-                lastProcessedPost++;
                 if(lastProcessedPost > processPostsFrom || processPostsFrom == 0){
-                   console.log(`${lastProcessedPost} Migrating: PointSocial post from ${post.from} contents ${post.contents}`);
-                    
-                    const importedContents = await upload(post.contents, 'content', directory);
-                    const importedImage = await upload(post.image, 'media', directory);
+                   console.log(`${lastProcessedPost} Migrating: PointSocial post from ${post.from} contents ${post.contents}`);                    
 
+                    const importedContents = (useCache)? await upload(post.contents, 'content', directory) : post.contents;
+                    const importedImage = (useCache)? await upload(post.image, 'media', directory) : post.image;
                     await pointSocial.add(
                         post.id,
                         post.from,
@@ -471,14 +480,14 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
                         post.likesCount,
                         post.createdAt
                     );
-                }else{
+                }
+                else{
                     console.log(`Skipping migrated post from ${post.from}`);
                 }
+                lastProcessedPost++;                
             }
-
             for (const postId in postComments){
                 for (const comment of postComments[postId]) {
-                    lastProcessedComment++;
                     if(lastProcessedComment > processCommentsFrom || processCommentsFrom == 0){
                         const id = comment[0];
                         const from = comment[1];
@@ -487,7 +496,7 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
                         console.log(`${lastProcessedComment} Migrating comment of post ${postId} from ${from}`);
 
-                        const importedContents = await upload(contents, 'content', directory);
+                        const importedContents = (useCache)? await upload(contents, 'content', directory) : contents;
 
                         await pointSocial.addComment(
                             id,
@@ -499,6 +508,7 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
                     } else {
                         console.log(`Skipping migrated comment from ${postId}`);
                     }
+                    lastProcessedComment++;                    
                 }
             }
 
@@ -507,12 +517,12 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
             for (const profile of data.profiles) {
                 lastProcessedProfile++;
                 if(lastProcessedProfile > processProfilesFrom || processProfilesFrom == 0) {
-                    console.log(`${lastProcessedPost} Migrating: PointSocial profile from ${profile.id}`);
-                    const name = await upload(profile.data[0], 'content', directory);
-                    const location = await upload(profile.data[1], 'content', directory);
-                    const about = await upload(profile.data[2], 'content', directory);
-                    const avatar = await upload(profile.data[3], 'media', directory);
-                    const banner = await upload(profile.data[4], 'media', directory);
+                    console.log(`${lastProcessedProfile} Migrating: PointSocial profile from ${profile.id}`);
+                    const name = (useCache)? await upload(profile.data[0], 'content', directory) : profile.data[0];
+                    const location = (useCache)? await upload(profile.data[1], 'content', directory) : profile.data[1];
+                    const about = (useCache)? await upload(profile.data[2], 'content', directory) : profile.data[2];
+                    const avatar = (useCache)? await upload(profile.data[3], 'media', directory) : profile.data[3];
+                    const banner = (useCache)? await upload(profile.data[4], 'media', directory) : profile.data[4];
 
                     console.log({
                         name,
@@ -543,8 +553,9 @@ task("social-migrator", "Will download and upload data to pointSocial contract")
 
         }
         catch(error) {
-            lockFileStructure.lastProcessedPost = lastProcessedPost;
-            lockFileStructure.lastProcessedComment = lastProcessedComment;
+            lockFileStructure.lastProcessedPost = lastProcessedPost || 0;
+            lockFileStructure.lastProcessedComment = lastProcessedComment || 0;
+            lockFileStructure.lastProcessedProfile = lastProcessedProfile || 0;
             fs.writeFileSync(lockFilePath, JSON.stringify(lockFileStructure, null, 4));
             console.log(`Error on PointSocial import restart the process to pick-up from last processed item.`);
             console.log(error);
