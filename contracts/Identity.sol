@@ -31,6 +31,12 @@ contract Identity is
     address private oracleAddress;
     bool private devMode;
 
+    struct IdentityQuery{
+        string handle;
+        address owner;
+        bool hasDomain;
+    }
+
     function initialize() public initializer onlyProxy {
         __Ownable_init();
         __UUPSUpgradeable_init();
@@ -62,6 +68,10 @@ contract Identity is
 
     function getDevMode() public view override returns (bool) {
         return devMode;
+    }
+    
+    function setMigrationApplied(bool value) public onlyOwner {
+        migrationApplied = value;
     }
 
     function _authorizeUpgrade(address) internal override onlyOwner {}
@@ -99,7 +109,7 @@ contract Identity is
         bytes32 _r,
         bytes32 _s
     ) public override {
-        _validateIdentity(handle, identityOwner, false);
+        _validateIdentity(handle, identityOwner, false, false);
 
         // Check oracle msg for confirming  hat identity can be registered.
         bytes memory prefix = "\x19Ethereum Signed Message:\n32";
@@ -147,7 +157,8 @@ contract Identity is
     function _validateIdentity(
         string calldata handle,
         address identityOwner,
-        bool ynet
+        bool ynet,
+        bool isSubidentity
     ) private view returns (bool) {
         if (ynet == true) {
             require(
@@ -164,16 +175,17 @@ contract Identity is
             );
         }
 
-        if (!_isValidHandle(handle))
+        if (!_isValidHandle(handle)) {
             revert("Only alphanumeric characters and an underscore allowed");
+        }
 
         // Check if the identity is already registered
         string memory lowercase = _toLower(handle);
-        if (!_isEmptyString(lowercaseToCanonicalIdentities[lowercase])) {
+        if (!isSubidentity && !_isEmptyString(lowercaseToCanonicalIdentities[lowercase])) {
             revert("This identity has already been registered");
         }
 
-        if (migrationApplied == true) {
+        if (migrationApplied == true && !isSubidentity) {
             // Check if this owner already has an identity attached
             if (!_isEmptyString(ownerToIdentity[identityOwner]))
                 revert("This owner already has an identity attached");
@@ -188,7 +200,7 @@ contract Identity is
         bytes32 commPublicKeyPart1,
         bytes32 commPublicKeyPart2
     ) public override {
-        _validateIdentity(handle, identityOwner, !devMode);
+        _validateIdentity(handle, identityOwner, !devMode, false);
 
         //ok, go for registering.
         PubKey64 memory commPublicKey = PubKey64(
@@ -197,6 +209,39 @@ contract Identity is
         );
 
         _selfReg(handle, identityOwner, commPublicKey);
+    }
+
+    function registerSubidentity(
+        string calldata subhandle,
+        string calldata handle,
+        address identityOwner,
+        bytes32 commPublicKeyPart1,
+        bytes32 commPublicKeyPart2
+    ) public override onlyIdentityOwner(handle) {
+        // note: only validating subhandle, because handle was validated at creation,
+        // and non-existing handles would not pass the ownership check
+        _validateIdentity(subhandle, identityOwner, false, true);
+
+        // optimized string concatenation
+        string memory fullHandle = string(abi.encodePacked(subhandle, ".", handle));
+        string memory fullHandleLowercase = _toLower(fullHandle);
+
+        if (!_isEmptyString(lowercaseToCanonicalIdentities[fullHandleLowercase])) {
+            revert("This identity has already been registered");
+        }
+
+        PubKey64 memory commPublicKey = PubKey64(
+            commPublicKeyPart1,
+            commPublicKeyPart2
+        );
+
+        // updating identityToOwner, but not ownerToIdentity
+        identityToOwner[fullHandle] = identityOwner;
+        identityToCommPublicKey[fullHandle] = commPublicKey;
+        lowercaseToCanonicalIdentities[fullHandleLowercase] = fullHandle;
+        identityList.push(fullHandle);
+
+        emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
     }
 
     function canonical(string memory anyCase)
@@ -438,4 +483,30 @@ contract Identity is
 
         emit IKVSet(identity, key, value, version);
     }
+
+    function getIdentitiesLength() public view returns (uint){
+        return identityList.length;
+    }
+    
+    function getPaginatedIdentities(uint256 cursor, uint256 howMany) public view returns (IdentityQuery[] memory) {
+        uint256 length = howMany;
+        if(length > identityList.length - cursor) {
+            length = identityList.length - cursor;
+        }
+
+        IdentityQuery[] memory _identities = new IdentityQuery[](length);
+        for (uint256 i = length; i > 0; i--) {
+            string memory identity = identityList[identityList.length - cursor - i];
+            address owner = identityToOwner[identity];
+
+            //check if it has a dapp
+            if (bytes(ikv[identity]["zdns/routes"]).length != 0) {
+                _identities[length-i] = IdentityQuery(identity, owner, true);
+            }else{
+                _identities[length-i] = IdentityQuery(identity, owner, false);
+            }
+        }
+        return _identities;
+    }
+
 }

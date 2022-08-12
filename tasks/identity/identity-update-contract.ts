@@ -2,7 +2,7 @@ import { task } from 'hardhat/config';
 import fs = require('fs');
 import { getProxyMetadataFilePath } from '../../scripts/utils/hardhatUtils';
 
-// npx hardhat complie
+// npx hardhat compile
 // npx hardhat identity-update-contract 0xD61e5eFcB183418E1f6e53D0605eed8167F90D4d ./resources/unknown-1337.json --network development
 
 task(
@@ -15,7 +15,7 @@ task(
     'Metadata file with information about the proxy'
   )
   .setAction(async (taskArgs, hre) => {
-    const { ethers } = hre;
+    const { ethers, upgrades } = hre;
 
     if (!ethers.utils.isAddress(taskArgs.address)) {
       console.log('Address of contract not valid.');
@@ -35,8 +35,8 @@ task(
     );
     fs.copyFileSync(taskArgs.metadataFile, proxyMetadataFilePath);
 
-    const contractF = await hre.ethers.getContractFactory('Identity');
-    const proxy = await hre.upgrades.upgradeProxy(taskArgs.address, contractF);
+    const contractF = await ethers.getContractFactory('Identity');
+    const proxy = await upgrades.upgradeProxy(taskArgs.address, contractF);
     await proxy.deployed();
 
     fs.copyFileSync(proxyMetadataFilePath, taskArgs.metadataFile);
