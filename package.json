@@ -57,7 +57,8 @@
     "bip39": "^3.0.4",
     "ethereumjs-wallet": "^1.0.2",
     "follow-redirects": "^1.15.0",
-    "tar": "^6.1.11"
+    "tar": "^6.1.11",
+    "point-contract-manager": "github:pointnetwork/point-contracts#v0.1.0"
   },
   "engines": {
     "node": ">=10.6.0"
