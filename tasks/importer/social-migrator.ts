@@ -34,6 +34,11 @@ const detectContentType = require('detect-content-type');
  *
  *    You can specify to download/upload files using the --cache flag
  *    You can specify the handle (social or socialdev) using the --handle flag
+ *
+ *    For example for current ynet and xnetNeptune the commands are:
+ *
+ *    npx hardhat social-migrator download 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --network ynet
+ *    npx hardhat social-migrator upload 0x8E34Fc67034b8A593E87d5f2644D098A3dBd2Fe7 --migration-file ./backup/pointsocial-2022-08-14.json --network xnetNeptune
  */
 const EMPTY =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
@@ -226,8 +231,6 @@ const getContract = async (
   identityAddress: string,
   appHandle: string
 ): Promise<any> => {
-  console.log('**** IN GETCONTRACT');
-  console.log(process.env.POINT_NODE);
   const identity = await ethers.getContractAt('Identity', identityAddress);
   const contractKey = await identity.ikvList(appHandle, 0);
   const contractAddress = await identity.ikvGet(appHandle, contractKey);
@@ -301,9 +304,6 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
     const useCache = taskArgs.cache !== undefined;
 
     if (taskArgs.action === 'download') {
-      console.log(taskArgs);
-      console.log(zappHandle);
-
       const fileStructure = {
         posts: [],
         profiles: [],
@@ -355,6 +355,7 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
       console.log('Downloading users profiles. Please wait...');
 
       const profiles: any[] = [];
+
       for (const identity of identities) {
         const value = await pointSocial.getProfile(identity);
         if (value.reduce((p: string, c: string) => p || c !== EMPTY, false)) {
@@ -523,7 +524,7 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
 
       try {
         console.log(`found ${data.posts.length}`);
-        const postComments: any[] = new Array();
+        const postComments: any[] = [];
 
         console.log('****************** MIGRATING POSTS ******************');
 
