@@ -239,7 +239,7 @@ const getContract = async (
       process.env.POINT_NODE_PORT || 8666
     }/_storage/0x${contractAbi}`
   );
-  const abi = (await result.json()).abi;
+  const { abi } = await result.json();
   const instance = (await ethers.getContractAt(abi, contractAddress)) as any;
   return { instance, contractAddress };
 };
@@ -251,8 +251,8 @@ const getAllIdentities = async (
   const contract = await ethers.getContractAt('Identity', identityAddress);
   const identitiesFilter = contract.filters.IdentityRegistered();
   const identityCreatedEvents = await contract.queryFilter(identitiesFilter);
-  const ikvSetFilter = contract.filters.IKVSet();
-  const ikvSetEvents = await contract.queryFilter(ikvSetFilter);
+//   const ikvSetFilter = contract.filters.IKVSet();
+//   const ikvSetEvents = await contract.queryFilter(ikvSetFilter);
 
   if (identityCreatedEvents.length == 0) {
     console.log('No identities found.');
@@ -300,8 +300,6 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
 
     const useCache = taskArgs.cache !== undefined;
 
-    console.log(`***** USE CACHE: ${useCache}`);
-
     if (taskArgs.action === 'download') {
       console.log(taskArgs);
       console.log(zappHandle);
@@ -311,19 +309,17 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
         profiles: [],
       } as any;
 
-      const { instance: pointSocial, contractAddress } = await getContract(
+      const { instance: pointSocial } = await getContract(
         ethers,
         taskArgs.contract,
         zappHandle
       );
 
       const identities = await getAllIdentities(ethers, taskArgs.contract);
-      console.log(2);
       const data = await pointSocial.getAllPosts();
-      console.log(3);
-      const posts: any[] = new Array();
+      const posts: any[] = [];
 
-      if (data.length == 0) {
+      if (data.length === 0) {
         console.log('No posts found.');
         return false;
       }
@@ -356,9 +352,9 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
         posts.push(post);
       }
 
-      console.log('Downloading users profiles');
+      console.log('Downloading users profiles. Please wait...');
 
-      const profiles: any[] = new Array();
+      const profiles: any[] = [];
       for (const identity of identities) {
         const value = await pointSocial.getProfile(identity);
         if (value.reduce((p: string, c: string) => p || c !== EMPTY, false)) {
