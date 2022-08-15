@@ -38,7 +38,7 @@ const detectContentType = require('detect-content-type');
  *    For example for current ynet and xnetNeptune the commands are:
  *
  *    npx hardhat social-migrator download 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --network ynet
- *    npx hardhat social-migrator upload 0x8E34Fc67034b8A593E87d5f2644D098A3dBd2Fe7 --migration-file ./backup/pointsocial-2022-08-14.json --network xnetNeptune
+ *    npx hardhat social-migrator upload 0x8E34Fc67034b8A593E87d5f2644D098A3dBd2Fe7 --migration-file ./backup/ynet/social/pointsocial-2022-08-14.json --network xnetNeptune
  */
 const EMPTY =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
@@ -462,12 +462,12 @@ task('social-migrator', 'Will download and upload data to pointSocial contract')
       const directory = taskArgs.migrationFile.replace('.json', '-data');
 
       if (!fs.existsSync(taskArgs.migrationFile)) {
-        console.log(`File does not exists: ${taskArgs.migrationFile}`);
+        console.log(`File does not exist: ${taskArgs.migrationFile}`);
         return false;
       }
 
       if (!fs.existsSync(directory)) {
-        console.log(`Directory does not exists: ${directory}`);
+        console.log(`Directory does not exist: ${directory}`);
         return false;
       }
 
