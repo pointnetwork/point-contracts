@@ -28,6 +28,10 @@ task(
     'fromBlock',
     'The first block that should be considered to download data for migrations'
   )
+  .addOptionalParam(
+    'toBlock',
+    'Latest block that should be considered to download data for migrations'
+  )
   .setAction(async (taskArgs, hre) => {
     const { ethers } = hre;
 
@@ -46,7 +50,13 @@ task(
     if (taskArgs.fromBlock !== undefined) {
       fromBlock = parseInt(taskArgs.fromBlock);
     }
-    console.log(fromBlock);
+    console.log("from: " + fromBlock);
+
+    let toBlock = (await hre.ethers.provider.getBlock("latest")).number;
+    if (taskArgs.toBlock !== undefined) {
+      toBlock = parseInt(taskArgs.toBlock);
+    }
+    console.log("to: " + toBlock);
 
     const contract = await hre.ethers.getContractAt(
       'Identity',
@@ -61,10 +71,10 @@ task(
 
       const identitiesFilter = contract.filters.IdentityRegistered();
       const identityCreatedEvents = await contract.queryFilter(
-        identitiesFilter, fromBlock
+        identitiesFilter, fromBlock, toBlock
       );
       const ikvSetFilter = contract.filters.IKVSet();
-      const ikvSetEvents = await contract.queryFilter(ikvSetFilter, fromBlock);
+      const ikvSetEvents = await contract.queryFilter(ikvSetFilter, fromBlock, toBlock);
 
       if (identityCreatedEvents.length == 0) {
         console.log('No identities found.');
@@ -85,6 +95,7 @@ task(
             owner: identityOwner,
             keyPart1: commPublicKey.part1,
             keyPart2: commPublicKey.part2,
+            blockNumber: e.blockNumber
           };
 
           identityData.push(identity);
@@ -107,6 +118,7 @@ task(
             key,
             value,
             version,
+            blockNumber: e.blockNumber
           };
 
           ikvData.push(ikv);
