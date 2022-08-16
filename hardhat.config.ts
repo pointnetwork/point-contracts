@@ -10,7 +10,6 @@ import 'solidity-coverage';
 import '@openzeppelin/hardhat-upgrades';
 import './tasks/importer/identity';
 import './tasks/importer/blog';
-import './tasks/importer/social-migrator';
 import './tasks/importer/sms';
 import './tasks/importer/identity-clone';
 import './tasks/identity/identity-update-contract';
