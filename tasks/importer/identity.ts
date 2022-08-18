@@ -278,6 +278,7 @@ task(
         }
         console.log('Everything processed and uploaded, lock file removed.');
         await contract.finishMigrations();
+        await contract.setDevMode(false);
       }
     } else if (taskArgs.action == 'latestBlockMigrated') {
 
