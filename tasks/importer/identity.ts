@@ -189,8 +189,6 @@ task(
 
       try {
         console.log(`found ${data.identities.length}`);
-        console.log('setting handle length to 21');
-        await contract.setMaxHandleLength(21);
         await (await contract.setMigrationApplied(false)).wait()
         await (await contract.setDevMode(true)).wait()
         for (const identity of data.identities) {
