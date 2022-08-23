@@ -33,6 +33,7 @@ contract Identity is
     mapping(string => mapping(string => string)) public ikversion;
     mapping(string => address[]) private _identityDeployerList;
     mapping(string => mapping(address => uint256)) private _identityDeployerBlock;
+    string[] public dappsList;
 
     struct IdentityQuery{
         string handle;
@@ -325,6 +326,14 @@ contract Identity is
         ikversion[identity][key] = version;
     }
 
+    function dappsListImport(string memory identity) public onlyBeforeMigrations {
+        dappsList.push(identity);
+    }
+
+    function isDapp(string memory identity) public view returns (bool){
+        return bytes(ikv[identity]["zdns/routes"]).length != 0;
+    }
+
     function ikvGet(string memory identity, string memory key)
         public
         view
@@ -514,6 +523,13 @@ contract Identity is
             ikvList[identity].push(key);
         }
 
+        string memory dappsKey = "zdns/routes";
+        if (_compareStrings(key, dappsKey) == true){
+            if (bytes(ikv[identity]["zdns/routes"]).length == 0) {
+                dappsList.push(identity);
+            }
+        }
+
         ikv[identity][key] = value;
         ikversion[identity][key] = version;
 
@@ -572,8 +588,28 @@ contract Identity is
         return _deployersList;
     }
 
-    
+    function getDappsLength() public view returns (uint){
+        return dappsList.length;
+    }
 
-    
+    function getPaginatedDapps(uint256 cursor, uint256 howMany) public view returns (IdentityQuery[] memory) {
+        uint256 length = howMany;
+        if(length > dappsList.length - cursor) {
+            length = dappsList.length - cursor;
+        }
+
+        IdentityQuery[] memory _dapps = new IdentityQuery[](length);
+        for (uint256 i = length; i > 0; i--) {
+            string memory identity = dappsList[dappsList.length - cursor - i];
+            address owner = identityToOwner[identity];
+
+            _dapps[length-i] = IdentityQuery(identity, owner, true);
+        }
+        return _dapps;
+    }
+
+    function _compareStrings(string memory a, string memory b) private pure returns (bool) {
+        return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
+    }
 
 }

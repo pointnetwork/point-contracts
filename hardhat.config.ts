@@ -9,6 +9,8 @@ import 'hardhat-gas-reporter';
 import 'solidity-coverage';
 import '@openzeppelin/hardhat-upgrades';
 import './tasks/importer/identity';
+import './tasks/importer/ikversion';
+import './tasks/importer/dapps';
 import './tasks/importer/blog';
 import './tasks/importer/social-migrator';
 import './tasks/importer/sms';
