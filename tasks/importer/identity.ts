@@ -1,6 +1,7 @@
 import { task } from 'hardhat/config';
 import fs = require('fs');
 
+// npx hardhat identity-importer upload 0xD61e5eFcB183418E1f6e53D0605eed8167F90D4d --migration-file ./backup/ynet/identities/identity-1660314395.json  --network development
 // npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
@@ -189,8 +190,6 @@ task(
 
       try {
         console.log(`found ${data.identities.length}`);
-        console.log('setting handle length to 21');
-        await contract.setMaxHandleLength(21);
         await (await contract.setMigrationApplied(false)).wait()
         await (await contract.setDevMode(true)).wait()
         for (const identity of data.identities) {

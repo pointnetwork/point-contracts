@@ -30,6 +30,9 @@ contract Identity is
     mapping(string => mapping(address => bool)) private _isIdentityDeployer;
     address private oracleAddress;
     bool private devMode;
+    mapping(string => mapping(string => string)) public ikversion;
+    mapping(string => address[]) private _identityDeployerList;
+    mapping(string => mapping(address => uint256)) private _identityDeployerBlock;
 
     struct IdentityQuery{
         string handle;
@@ -37,11 +40,25 @@ contract Identity is
         bool hasDomain;
     }
 
+    struct IKVSetQuery{
+        string identity;
+        string key; 
+        string value; 
+        string version;
+    }
+
+    struct DeployersQuery{
+        string identity;
+        address deployer;
+        bool allowed;
+        uint256 blockNumber;
+    }
+
     function initialize() public initializer onlyProxy {
         __Ownable_init();
         __UUPSUpgradeable_init();
         migrationApplied = false;
-        MAX_HANDLE_LENGTH = 16;
+        MAX_HANDLE_LENGTH = 32;
         oracleAddress = 0x8E2Fb20C427b54Bfe8e529484421fAE41fa6c9f6;
         devMode = false;
     }
@@ -300,6 +317,14 @@ contract Identity is
         ikvSet(identity, key, value, version);
     }
 
+    function ikVersionImport(
+        string memory identity,
+        string memory key,
+        string memory version
+    ) public onlyBeforeMigrations {
+        ikversion[identity][key] = version;
+    }
+
     function ikvGet(string memory identity, string memory key)
         public
         view
@@ -309,9 +334,16 @@ contract Identity is
         return ikv[identity][key];
     }
 
+    function ikVersionGet(string memory identity, string memory key)
+        public
+        view
+        returns (string memory value)
+    {
+        return ikversion[identity][key];
+    }
+
     function finishMigrations() external override {
         migrationApplied = true;
-        MAX_HANDLE_LENGTH = 16;
     }
 
     function transferIdentityOwnership(string memory handle, address newOwner)
@@ -363,6 +395,8 @@ contract Identity is
         );
 
         _isIdentityDeployer[handle][deployer] = true;
+        _identityDeployerList[handle].push(deployer);   
+        _identityDeployerBlock[handle][deployer] = block.number;
 
         emit IdentityDeployerChanged(handle, deployer, true);
     }
@@ -383,6 +417,7 @@ contract Identity is
         );
 
         _isIdentityDeployer[handle][deployer] = false;
+        _identityDeployerBlock[handle][deployer] = block.number;
 
         emit IdentityDeployerChanged(handle, deployer, false);
     }
@@ -480,6 +515,7 @@ contract Identity is
         }
 
         ikv[identity][key] = value;
+        ikversion[identity][key] = version;
 
         emit IKVSet(identity, key, value, version);
     }
@@ -508,5 +544,36 @@ contract Identity is
         }
         return _identities;
     }
+
+    function getIkvList(string calldata identity) public view returns (IKVSetQuery[] memory) {
+        uint256 length = ikvList[identity].length;
+        IKVSetQuery[] memory _ikvList = new IKVSetQuery[](length);
+        for (uint256 i = 0; i < length; i++) {
+            string memory key = ikvList[identity][i];
+            string memory value = ikv[identity][key];
+            string memory version = ikversion[identity][key];
+            _ikvList[i] = IKVSetQuery(identity, key, value, version); 
+        }
+        return _ikvList;
+    }
+
+    function getDeployersList(string calldata identity) public view returns (DeployersQuery[] memory) {
+        uint256 length = _identityDeployerList[identity].length;
+        DeployersQuery[] memory _deployersList = new DeployersQuery[](length);
+        for (uint256 i = 0; i < length; i++) {
+            address addr = _identityDeployerList[identity][i];
+            _deployersList[i] = DeployersQuery(
+                identity, 
+                addr,
+                _isIdentityDeployer[identity][addr],
+                _identityDeployerBlock[identity][addr]
+                );
+        }
+        return _deployersList;
+    }
+
+    
+
+    
 
 }
