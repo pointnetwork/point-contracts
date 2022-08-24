@@ -34,6 +34,7 @@ contract Identity is
     mapping(string => address[]) private _identityDeployerList;
     mapping(string => mapping(address => uint256)) private _identityDeployerBlock;
     string[] public dappsList;
+    mapping(address => string[]) public ownerToSubidentitiesList;
 
     struct IdentityQuery{
         string handle;
@@ -258,6 +259,7 @@ contract Identity is
         identityToCommPublicKey[fullHandle] = commPublicKey;
         lowercaseToCanonicalIdentities[fullHandleLowercase] = fullHandle;
         identityList.push(fullHandle);
+        ownerToSubidentitiesList[identityOwner].push(fullHandle);
 
         emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
     }
@@ -328,6 +330,10 @@ contract Identity is
 
     function dappsListImport(string memory identity) public onlyBeforeMigrations {
         dappsList.push(identity);
+    }
+
+    function subidentitiesListImport(address owner, string memory subidentity) public onlyBeforeMigrations {
+        ownerToSubidentitiesList[owner].push(subidentity);
     }
 
     function isDapp(string memory identity) public view returns (bool){
@@ -610,6 +616,10 @@ contract Identity is
 
     function _compareStrings(string memory a, string memory b) private pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
+    }
+
+    function getSubidentitiesByOwner(address owner) public view returns (string[] memory){
+        return ownerToSubidentitiesList[owner];
     }
 
 }
