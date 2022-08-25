@@ -1,0 +1,1322 @@
+{
+    "identities": [
+        {
+            "handle": "isuru654",
+            "owner": "0x72C5C2F0F85d3cC4080b503c6f34EDDB87CFBAAa",
+            "keyPart1": "0x6f7c9fc13539e77bef466f88f075f6222e2f12e8de0b9300dafd9d83a2f38750",
+            "keyPart2": "0x108abf62fd69f2d94ff9da97f50d087b658a28f6b9f82fc96bcd4d3db63d3eef",
+            "blockNumber": 152911
+        },
+        {
+            "handle": "lakmina37237112",
+            "owner": "0x2D1506Fb2D27deAed0E2ba060ecD2b1cf3600056",
+            "keyPart1": "0x447e30ba8afa4044824d9b740ffedb231d82b7ba29675a501c9af2001cb76e4d",
+            "keyPart2": "0x86349ab340731b286e3c8c36d4bf80b7d83001b9c907dac348fcf10fd1ab4f51",
+            "blockNumber": 152913
+        },
+        {
+            "handle": "Alejand80469376",
+            "owner": "0x0e5Ba4615CbEf7752FE23720f8FD8B3C068dF8FC",
+            "keyPart1": "0xd123ece4fc6f3c07cdfd181a373f9fff25999594602d34946977f968fd79f241",
+            "keyPart2": "0xbe9d25eae5040ad848b0a56e0bb7efce843afcafca54b63b7204745d0a14ba9b",
+            "blockNumber": 152914
+        },
+        {
+            "handle": "carrillocoronel",
+            "owner": "0xDBdC99D68CEa913D4734acB06Af5EB32ea8B8533",
+            "keyPart1": "0xe495440838bc0b3676b403b2d6a08cd1fcc3f2a0e327b17077af91de1e0a50b8",
+            "keyPart2": "0xd985cd48edd36de53f644cfe4a0d7ad7b1b371fa1906ee9e9cb61bbfa921bd9e",
+            "blockNumber": 152915
+        },
+        {
+            "handle": "FreeEbooks30",
+            "owner": "0x5B696f0f8CF8170d8F00418BF99997B583A48e67",
+            "keyPart1": "0x349530f3c60dc003de2202f0b0ecbd2fc201d7e53d726270be4e86dde97cd0d8",
+            "keyPart2": "0x1981425915bc4ac11d59135f0e0f7645b47ee83ab967cbbc67244aa811c410fb",
+            "blockNumber": 152916
+        },
+        {
+            "handle": "T_Sunfyre",
+            "owner": "0xb8d951DE56CEE44D1FE4d8562BE422827945F311",
+            "keyPart1": "0x1d7499297ec58bffd22d1293deb27b183eb3e1b40ac3cabc297ee5ee66e7d948",
+            "keyPart2": "0x8aff1e2a0f4e0ea448915afc3c764c94149ca71f63719a6649db7c1d50da5ee5",
+            "blockNumber": 152918
+        },
+        {
+            "handle": "Crismora1598",
+            "owner": "0x1D7aC42711939E3439c9d306278076f88d9848a5",
+            "keyPart1": "0x79324d15a22ee9aadcd30c8eb88a78ad0f70a3f5ad786d7cd2e497cb8a601289",
+            "keyPart2": "0xd82dd960d0754a19ee707d09406f950e3b6276c0eac6bae512cf4597c8ebe077",
+            "blockNumber": 152919
+        },
+        {
+            "handle": "jahidxyz44",
+            "owner": "0x42e7392ed87805a9BC90A4DA2a43348E910f3CA8",
+            "keyPart1": "0x695360f620a2c1d68807b1da1739d1102d61799405dce62aa166adcec6379d60",
+            "keyPart2": "0xcb852feb33aa0f34a07446db4996b033d0296d511ddbcad9e7f88b5cfe446255",
+            "blockNumber": 152920
+        },
+        {
+            "handle": "Rockethashan",
+            "owner": "0x497fA9cDC049f21a45ce4455fD2970Ffef5a0393",
+            "keyPart1": "0xd5bd42ca555676ecadc1979beb5a1ab16c8164f72331379fcec2191f82a9140b",
+            "keyPart2": "0x190f703434a2c4d64c2860eba6a2b726062e4d5e5b472bac9234693a9a538b09",
+            "blockNumber": 152921
+        },
+        {
+            "handle": "akilad101",
+            "owner": "0xF790547345be8E8CD1E99BAa3F1589987D01d3dC",
+            "keyPart1": "0xe4f411025fadf0818528cc1e73e3401ffeb2007aee22d0dd6ec532eca8ab3ebc",
+            "keyPart2": "0xa51dc7ffa0d6dc59aca7bec716bef17e434818acbf5f8eb8dbded9f54333b010",
+            "blockNumber": 152923
+        },
+        {
+            "handle": "tajamdingin",
+            "owner": "0x2Cc56a72cAF889f417e87FC044a3e56E61ADF6C3",
+            "keyPart1": "0x3a0a19d8671bb59e45cd3fd0dad20026fbe98e2de5f6224b255da5eb48576b3c",
+            "keyPart2": "0xb570efc7183c7ff32f1d1ceff0bdf9d6a1c6bc10bd1f224e484552643d6e33da",
+            "blockNumber": 152924
+        },
+        {
+            "handle": "alexispoint123",
+            "owner": "0x8C401B12e660D1F1F078AA5355b1412D113e7f1c",
+            "keyPart1": "0x5024ccc81219b3746757becd95e4bf12ba5667ac8c0e62f9ce8252a5b7d1db51",
+            "keyPart2": "0x6f6550d3cbe4b4243da259cf5633e7d1633e817a6ed5bcd5bc5a38b7d8dee43b",
+            "blockNumber": 152925
+        },
+        {
+            "handle": "VFounda",
+            "owner": "0x3Ebe7FFe686797a04Ccab5A39d2464218Ecd3Ad2",
+            "keyPart1": "0x95fc2c3de7983f0d7ed737c30cd65355faf59bc54532593ee26f6c02ad54ea49",
+            "keyPart2": "0xcc3f886defd8ae4ec275ab6948bde2ae083eaac6cb560a0a902efa1f92c5d00b",
+            "blockNumber": 152927
+        },
+        {
+            "handle": "AyoubSabirya",
+            "owner": "0x4D12436042EB3A88Bc033bb9Afa168cE83885532",
+            "keyPart1": "0xf0c792c3df6c0f204ff621ef8e1b155e7e0765307aabf66c630e6d85339822b1",
+            "keyPart2": "0x125d4d68019b8f811316173e7280842233242f629f820ee8f569f7440a47bcae",
+            "blockNumber": 152928
+        },
+        {
+            "handle": "mroozzy",
+            "owner": "0x34a0E0429E3FA6284890d0e66e533b0e64422566",
+            "keyPart1": "0x9d44fe216ba8c69f4f6a8194ef872c81df968b92245092c6a2bb2882bb2398b0",
+            "keyPart2": "0x8ea95cd3e3dc8f5d5d977b71cf0b25fe472eccc12935a7828c60885084a7f6a4",
+            "blockNumber": 152929
+        },
+        {
+            "handle": "Miner19711",
+            "owner": "0xd15B2F5B04233149AD81264C9D6c0cB9B2B1BaD1",
+            "keyPart1": "0x1149d601f244042d5797593c70cc19f7a397388885ee5c9811b7d3897c351e03",
+            "keyPart2": "0xd26b08e72337f930f7e22706092f2d7cbf1db5262480316bafd79a705ad26a41",
+            "blockNumber": 152930
+        },
+        {
+            "handle": "Molandrox",
+            "owner": "0x2caf134F740F2C00a701f5588eA691543E1c3e65",
+            "keyPart1": "0xd773759c846c2ab8282b9530c0538eb634c0beba161761eefee3a4a2405b1148",
+            "keyPart2": "0xfcfeddf51118902e2f2c2860d8b69a6bf22283c05eb0fce4ec3e8bcfb8bd5903",
+            "blockNumber": 152931
+        },
+        {
+            "handle": "I_am___AJ",
+            "owner": "0x56A7ABf90F2c2A26f1740a82AcD203A35e947615",
+            "keyPart1": "0x50702a737fa423af5972142c82707e31d2f678c58eee89747996e1fa9f2a1fa3",
+            "keyPart2": "0xb4d845091ca448a735cbb73e80a500664200df1147149aa30c71338b47c8cfd4",
+            "blockNumber": 152932
+        },
+        {
+            "handle": "GayanJayarathn7",
+            "owner": "0xe37F0E3C3B750eD3EFc20ebA97D5358E2Da586e7",
+            "keyPart1": "0x8285b673d1f1c62d917b1e6fa3055186ceb2200b552775714cdb9706884f70c2",
+            "keyPart2": "0xa6d7c64538729ea8423c23bc6d1a4724006a8843fc534054c2f0d81169c30a9b",
+            "blockNumber": 152934
+        },
+        {
+            "handle": "ReQsio_2137",
+            "owner": "0x2BF8A88936645e42EAC8089512EC79Ca3144b881",
+            "keyPart1": "0x2ad4d3f8c8a4bb8b570967f9e9af631248c247ae103b5e1ec80f524fea0639fa",
+            "keyPart2": "0x6d607480dd4f7f33b11b9309426942c8cd49dc4a415e5cbb08a6a3658c2c5690",
+            "blockNumber": 152935
+        },
+        {
+            "handle": "Hasibur29173152",
+            "owner": "0x8A36D691ea3CA1B4B4D9877878e1923Cbd0aa08d",
+            "keyPart1": "0x9bb5eb396bd9d03bb3219e79a4c748115f9185fe01b6a9969f5cd1df14c28737",
+            "keyPart2": "0xc168bc696e63def016eee98f631cf5257ab777a53bfee9bd7d8666b9546eeda5",
+            "blockNumber": 152936
+        },
+        {
+            "handle": "Alyaloo",
+            "owner": "0x00F6BE9aCa2c37B83eAA096431baeB714fB7f6Ba",
+            "keyPart1": "0x0c506cd627aa6a67d521837738ae7a9f02e24e8b9d0f36c1e4bd05ad6366ea7e",
+            "keyPart2": "0xfd74e9cf16ac861d9d1e6b19a5c1f810a29e068a23dd021cbb0b1eb8ac15367c",
+            "blockNumber": 152937
+        },
+        {
+            "handle": "SGFuturist",
+            "owner": "0x90F851cAFd2487b2714B138Ada447a6Df03F6418",
+            "keyPart1": "0xa617b5177419db03c5fa0714a8c611640945be5cc924092af8828576f342c059",
+            "keyPart2": "0xc81ee7274475d56f17c83cd96672eb3866abc4162d53add9a6adb9396e717ed3",
+            "blockNumber": 152939
+        },
+        {
+            "handle": "baohuiinvest",
+            "owner": "0xc9FFA6F08AA3420E3730cA6F46014c1C507C52C2",
+            "keyPart1": "0xd4cfea59d73f3a4648fccc3dbffb97f51f5e07812d957947e0a243474aeaa51a",
+            "keyPart2": "0x06775a1e39662c47c5ed8e93e265ddc0194a9a9aa7ead6f657348c67d8b0a5ee",
+            "blockNumber": 152941
+        },
+        {
+            "handle": "shemileri",
+            "owner": "0xb2cd202eb7eFADE91Bf4d3505A550Dbbc8084562",
+            "keyPart1": "0xf81583a9b9f71c56fc7c96b9939e90d26d9c074257c75e81757099a867a2aea0",
+            "keyPart2": "0xe5480a4d1d37fbffae7e47dc0beb7d6a2a220eff88ea48abf96cef37d994a1ce",
+            "blockNumber": 152941
+        },
+        {
+            "handle": "mediacomsid",
+            "owner": "0xC31A9cfF2aAa24414a97586263e3889fE96D1308",
+            "keyPart1": "0x5054266635948f963fa295248a31fad07eb6043d0fa8ea1e0efb353ad606d131",
+            "keyPart2": "0x1e5c5872b8b35cb79c2c85609bc8a4b24edad1de80449f24a607655e5a329eb4",
+            "blockNumber": 152942
+        },
+        {
+            "handle": "ilyas_zed",
+            "owner": "0x892AE908092896BF47e468421b33A5fC6a3E71FD",
+            "keyPart1": "0xf021b36200a258cfba6287eed1e6c06c917379ab073f0542eb27e8b8c57a700e",
+            "keyPart2": "0xd727b454a0409bb91305f28e4b9b5bb702d585f0d409996fde3d881320da1dfb",
+            "blockNumber": 152943
+        },
+        {
+            "handle": "khycing",
+            "owner": "0x8c11EFd366c04E0375e19a526ef7C815676E5947",
+            "keyPart1": "0x04d0e1b791ed0a18872fe96b7dc2c98e0697237c5133c3fb4bd06a63193864e6",
+            "keyPart2": "0x3c89ec3c3de14ec9d4678536f836e77655d31de96cbf74531e50a080db9444b3",
+            "blockNumber": 152944
+        },
+        {
+            "handle": "YoonaaNFT",
+            "owner": "0x951227A7CD77117e8D3C4E93D2594Eedb977C50b",
+            "keyPart1": "0xbcfe733a10418a90281af23db1791f0504b57b821cf7716dd0e271788c68b1e7",
+            "keyPart2": "0xda48094ddea62f9f99422b0bc013e76c68f9b8a3953d8a51313505470cf80f1e",
+            "blockNumber": 152945
+        },
+        {
+            "handle": "PhamRoy77",
+            "owner": "0xb56CEcFd94928291b2BFf7D31F69A6b624772960",
+            "keyPart1": "0xe6fbf743b699b832064529e79530328ad5fb0602e83d4cbcf78d9b42e03abf1c",
+            "keyPart2": "0x941aae69d6ae23edce85f2946ee7a412c2bf6fd1f95a63d420955085846b489f",
+            "blockNumber": 152946
+        },
+        {
+            "handle": "abdullahmhr64",
+            "owner": "0x6bbd16FAe990f6dab99F3C08988d3D040eAa8eD3",
+            "keyPart1": "0xb4ac69ff2f10ed8c7d16749f6ab1ca61de5b49a719981aebfa21c1e713c25b4c",
+            "keyPart2": "0x26d388728c608ce522311541d9b2690f9ad933c2d8516b799c3497bed4184040",
+            "blockNumber": 152947
+        },
+        {
+            "handle": "6ghhhhhh",
+            "owner": "0xff8D335F2148110679e437426211255DFc093800",
+            "keyPart1": "0xe5e63da1c074904e6fcbeccde608a5f158bc1448546f139a2cc261facb3d141c",
+            "keyPart2": "0xea3f35d2795c71dfc9ec4ae82a6f04d43ace9ad5ca2396906d3d5181c7e16456",
+            "blockNumber": 152949
+        },
+        {
+            "handle": "anispsari",
+            "owner": "0xAf54F6e3baa7f3cA51953Df8D73907AaaeE1064C",
+            "keyPart1": "0x9a31dd78c83e8512cc2d0d627273a32f6c0fa846b82b2bdc5f4b4af18d4d897c",
+            "keyPart2": "0x4bfff2cefbe997a447353817b7e0a9be8621d31a2934914d7718624623fc869c",
+            "blockNumber": 152950
+        },
+        {
+            "handle": "robyaiyraainu",
+            "owner": "0xb7667E7A3C42fE2348F03dAC652e20B5a17Ea892",
+            "keyPart1": "0x4bd15d0e7f5a248f9caa36012840b82146cd5ea5e7a34f740a2400a2811f74c2",
+            "keyPart2": "0x80b2858bce9d956738515c3d920d171774ffe5d081fcc2f201b2c12f3a522a3b",
+            "blockNumber": 152951
+        },
+        {
+            "handle": "chasamp2022",
+            "owner": "0x91B2855E51d3f52de3c56036f9497D7fCBa4B493",
+            "keyPart1": "0x3a1005faa3096d2904089a63695c74fe88cb86d3f7a205ec5eeb1951d1e31701",
+            "keyPart2": "0x69ad4a9b9da16a2a754397f40c7e2247e7cd392c6f68685596953c004656c510",
+            "blockNumber": 152953
+        },
+        {
+            "handle": "mishuahmed24",
+            "owner": "0xCBD221823137824748A06d9e8bd36E9f6179Ca78",
+            "keyPart1": "0xc6b8c0866e9f65ba76e94cdcbfb49171bffd1a117ace2cf35c3b82ce73d56af2",
+            "keyPart2": "0xbefb3776ba34acfc3a6f25397ef4f9df5696592c12efb4c5f0578b3a28b05733",
+            "blockNumber": 152954
+        },
+        {
+            "handle": "byinertia",
+            "owner": "0x02CdeaE04d30f109FB87b7459c431Cee6bc521D6",
+            "keyPart1": "0x75458ce3ca0e4df9ec1b566936b4c9f9d40b03e57fab5bde0f8cc24704376d6c",
+            "keyPart2": "0xf4cc6d68cc26e63b4cd55718174a58f00c3322364d29c65f42ac423a73df5f83",
+            "blockNumber": 152955
+        },
+        {
+            "handle": "nijatoes",
+            "owner": "0xE42C8E28fdd3fC1c68BC3e89fc57C26897dBc5b7",
+            "keyPart1": "0xb4fe8d9542ce91ee253892908f4ec3eb9330f957e212d7dce996ff0885445cab",
+            "keyPart2": "0x4cbd558775704f6eafeaa7d1d2b5d582aa32ca24c239f385f0efa6f064571d28",
+            "blockNumber": 152956
+        },
+        {
+            "handle": "SinkalaArthur",
+            "owner": "0x004e3DB5e2967632D52C3e0123a0220684cdA184",
+            "keyPart1": "0x5a370ae791bad9fc91ec472af4521756be1f386bb9fb98d2de60a34fa9d4ca11",
+            "keyPart2": "0x5e6e7b740c92fca56b33e1886c562b2adcc7baf12e6e5bbd857f467276438dc7",
+            "blockNumber": 152957
+        },
+        {
+            "handle": "cryptoloss1",
+            "owner": "0x39692c23F5f4158C255195883740c04961F575D7",
+            "keyPart1": "0x0f4c46d5bdb82772165b421f39adff4b6d2c6129e1f478e266b58e17cd304733",
+            "keyPart2": "0x544191bcaed0fd2b08d7ce042f882e48715248b40e869c05aa1a7fa3b446bfd4",
+            "blockNumber": 152958
+        },
+        {
+            "handle": "0xOguzhan",
+            "owner": "0xa1c0c2Bd8Ba3bA8FB067a2a0e7b63bC390d489e3",
+            "keyPart1": "0x5d3890273f3016fc3d9be087abcacd0058d1330479670bcdc8c7a6c59ae608d7",
+            "keyPart2": "0xd8622812f0b179fb32f2bac1d915592381e0d94e7a3ef9e41a464e1e9c590949",
+            "blockNumber": 152960
+        },
+        {
+            "handle": "kripto3335",
+            "owner": "0xbde27B3FC3b884d4F42D5840D4fa3cC28E21d56e",
+            "keyPart1": "0x0ff8bf693eb78e41dc541ae8a6aef013d35f6813fd5bf5786aa940cf6ef1f4b8",
+            "keyPart2": "0x626f9471138045c66abf56515dbe9d5e1610d7209b0739360ebdb5704233e6b8",
+            "blockNumber": 152961
+        },
+        {
+            "handle": "gemdator",
+            "owner": "0x78d058d3c618031c1F09aA0B38a7fa7499f476F8",
+            "keyPart1": "0xbcf20f22a19b84e826be7ce8efb1841a05db1ff959f73f1dadb7f7ab1a49368a",
+            "keyPart2": "0x9c3f9f26d71b28cfa9e36caa4f232d525dca158ca313efd9a36e5607eeb4ad05",
+            "blockNumber": 152962
+        },
+        {
+            "handle": "InFlamess01",
+            "owner": "0xaA8746eDBeA70586453d4e1D8649BC0B8A9225C2",
+            "keyPart1": "0x06cd559e6002ad7c437f9229a583f44f62aec16b050388c9e10b142c6dfd8596",
+            "keyPart2": "0xf334a04956006a9b56c0b626ba42f620f40465cbcb8c2c4ff24cb6f24bb3b3e8",
+            "blockNumber": 152963
+        },
+        {
+            "handle": "ltomruk17",
+            "owner": "0xeA0B2652d7dFa1e11d18f86c599839522082aC6B",
+            "keyPart1": "0x771beaebf6c09fe9df841f14d74a666ceebf54e0a42832d4ab15b5a1a53eacfb",
+            "keyPart2": "0xe577ddc8b65dd45b5a8e332a552509bb67a4a6ea559002533aaf27967354970a",
+            "blockNumber": 152965
+        },
+        {
+            "handle": "widenyour",
+            "owner": "0x0d4e9B02f5ffF33890385fD9AF599D761aceC41C",
+            "keyPart1": "0x116e4728e560688a4c3aa8e3a87b8bdaed3ac051ce1f4a38b39af8f7c2d80da9",
+            "keyPart2": "0xe816b410ca7daa3f157b72ed6753e15a9da5b48943ef4ee88e5083cef1e0cc86",
+            "blockNumber": 152966
+        },
+        {
+            "handle": "necatikaya758",
+            "owner": "0xCDC070d90b6e859616E9583CE46432758F533159",
+            "keyPart1": "0x23af669bb2cfc668516e1d9997bbe6390a9fe2735bb242c33a057ff319ab7635",
+            "keyPart2": "0x2be331c05c60571f5d435ebae235d920fc83d978b62b4cc1a588fcfe66c0eeb6",
+            "blockNumber": 152967
+        },
+        {
+            "handle": "kurtcabbar2",
+            "owner": "0x4d61a8cCDaEbF2e0aD1Ca8016e8F3ACD94470A56",
+            "keyPart1": "0x9662b05632049ce19f2f6a85138865085fabe67e5e7a4c033f8624f71c89d599",
+            "keyPart2": "0x58acfee6741ef9f8654f6d58242c4d216a297cf2ee32d307ef6a4da77bfba4ad",
+            "blockNumber": 152968
+        },
+        {
+            "handle": "ss910459ss1",
+            "owner": "0x96a7BAd8C30ae9BcEe1c394938b61941b9C83B16",
+            "keyPart1": "0xf3ae7e7f4fe9ba8021e9ff8cddc4359e5e2a0b4319dff5eb0230c5feb28b8966",
+            "keyPart2": "0xe0e675a9d30ee0d5f972fbb306506d15ab073aa52eb3d41ca646f60bfdc94b5c",
+            "blockNumber": 152970
+        },
+        {
+            "handle": "MdPrant03",
+            "owner": "0x2689A38981Ff7fFE72E590F73E3C41246E9c281b",
+            "keyPart1": "0xd4e4c07f3173c60f2f68c1a327207afe0b29c64226e6192d06ed64980471b3de",
+            "keyPart2": "0x118fba27285145f6ddab06e452733e3b8d95e23fd18f1f7a6af8ffa9815b6835",
+            "blockNumber": 152971
+        },
+        {
+            "handle": "sunny_saimon",
+            "owner": "0xdb6Dbf18fbf4e4bb4987BE06565821ab9781eD15",
+            "keyPart1": "0xb63c10df4dbe64a5c8f8bfedaf945b3e564fd016f52686168a1a5f987e53fc47",
+            "keyPart2": "0xed01f34fd5ef225bbeecfd5b43327938f423a9a90c52fab65e56c9243fd4e984",
+            "blockNumber": 152972
+        },
+        {
+            "handle": "SarkarSandipto",
+            "owner": "0xC00F6C11F2bB4165Ffec56e69E25946702D2D131",
+            "keyPart1": "0x9422457561e5a3b35e523c525a2fd7d1fa6cc49fd9e0dd9b27919e3135b62316",
+            "keyPart2": "0x1f79351b8459c14e4faae5281cad8600b3387b44ce1c34d144437a283600b683",
+            "blockNumber": 152973
+        },
+        {
+            "handle": "cakmaosmanli",
+            "owner": "0xa12abc0A3a6AfFf77804182EC648490E7FBcc648",
+            "keyPart1": "0x58f413c65e9de78659d0d2740bee57378a921418fcb6c08b863338d196730d0c",
+            "keyPart2": "0x35678f1a93bb951f598c3b8d59d5c825a6944b91f113f1f4286ba4ec5d77f4dc",
+            "blockNumber": 152974
+        },
+        {
+            "handle": "przem69uwu",
+            "owner": "0xAa0e62891F6b372636e88AeB0A36846cDa523c08",
+            "keyPart1": "0x92bf2198ac5933b9f1b330dbaa86eb38a4717e3d468850e34626cccd4bb2bc43",
+            "keyPart2": "0xf12db96bf2fa84591b0d739ad86b6100004de8b1aef4f19ed49595fe5804ca80",
+            "blockNumber": 152976
+        },
+        {
+            "handle": "zeyninisebin",
+            "owner": "0xa364Ba1b1DdcD1AE5f8F7A362aFcfB3aA8185490",
+            "keyPart1": "0xa8094d5bed5857ed2a52e82a46c59f8ce69fead2b09ed20b79a460b68902ae17",
+            "keyPart2": "0x076ec076ef7fcaab99b9869705fff813af2d368233fe0d5de88a878c0106749b",
+            "blockNumber": 152976
+        },
+        {
+            "handle": "PykMyk1",
+            "owner": "0xB80208c71377FB46D8C5dc5d5894b0210c8f414C",
+            "keyPart1": "0x2ea78d9c524f5ec698312dafcba31c50049c9c98ba9f26c5c341015a37d47c0c",
+            "keyPart2": "0xcc7f79fe31ae0c677d47695e04a9b900d90c76e87bfc9c8e8dd00fb64b047e5b",
+            "blockNumber": 152977
+        },
+        {
+            "handle": "TanvirPrince20",
+            "owner": "0x7dA95b2A1210e08c1C840395FCc0D9E82350Ce93",
+            "keyPart1": "0xbfdd7ca218c8d335e3b18d77528a4f900b17e2790785e836bf220f1c5795e1d8",
+            "keyPart2": "0x43ae0d56b2d485ce2660a5ba0feb4080012710977bbd26905cb89216cb724b40",
+            "blockNumber": 152978
+        },
+        {
+            "handle": "smedsoliman",
+            "owner": "0x958a4D1Ab4E632795E5A79e3d32034884E613882",
+            "keyPart1": "0x250e1adbe7900fe387bac6c5b66419e813bd7cba2aec1a052b608229fa29d602",
+            "keyPart2": "0x8b270e6f7807076e6381fdaabc65ddc68b8692e99dd5dc0ab60ca0fc27b7af2f",
+            "blockNumber": 152980
+        },
+        {
+            "handle": "BADHA011",
+            "owner": "0x2805B3f785811f888083Deda5cACe93253a4E96D",
+            "keyPart1": "0x0d6aaaf20df892f5bb9d93f385253fd8852ea8de9f8e09b0bbe1d4d755f7be39",
+            "keyPart2": "0x7bd940406a27c294116887e1495a8fbb075e5db0a6382200713de467c176aaf9",
+            "blockNumber": 152981
+        },
+        {
+            "handle": "ysncgm",
+            "owner": "0x60bdb8c8636eA48E53280c937ad50De276184650",
+            "keyPart1": "0x5b5f582845ea49f589bfea57522b69b7cc92a05498d04e877ca726fd4c5ebbf3",
+            "keyPart2": "0x4d7f234fd2aa4cbba2f46685d17d84c944ec0949e9fb8eab36a60630f47e8704",
+            "blockNumber": 152982
+        },
+        {
+            "handle": "enkirde",
+            "owner": "0x3CE96872dab0Ad2f73189e1e27424A738AD9D9AB",
+            "keyPart1": "0x429a02926857851f55462fd39089590684e8bfcaad73acefdd91d5be4b79efd2",
+            "keyPart2": "0x523536d50828158dcfab54f9fa23a9402925c93b690403d90194be286516e0be",
+            "blockNumber": 152983
+        },
+        {
+            "handle": "halil_ibo80",
+            "owner": "0xC6Eadf095086A27a3c2B190494b508E0EAFfd20b",
+            "keyPart1": "0x1f23482cc2fea0b043a00087da26bc6a49818162fb12df183a1acd6becc9a165",
+            "keyPart2": "0x6b219bb80d234689d62e79077dcd40c3200df90b5d791e16c1cfecee249d2a38",
+            "blockNumber": 152985
+        },
+        {
+            "handle": "logdfdfgd",
+            "owner": "0x96E4cfc9ABa4465DA5dc7F7a1b284975b2a0Ed25",
+            "keyPart1": "0x82abfb510afcffd54af5c227e75b385122fdb5b473e56b8d20bc31c1d9777878",
+            "keyPart2": "0x9609ebe4a5614f09ec83768e9586316698c2450ccc1b30e986282c057e55f181",
+            "blockNumber": 152986
+        },
+        {
+            "handle": "atillaarslan73",
+            "owner": "0x9A7202454f323db758bdF4b7D24573F690BE9E16",
+            "keyPart1": "0x6a61b848803e1dbf1af216c20c78bfcee5621ad9d5dd75605cf27d8852229282",
+            "keyPart2": "0x9473fd751399c7a17019dd099ef50f0e2eb73a54894a8191ddd3392caa3a7433",
+            "blockNumber": 152987
+        },
+        {
+            "handle": "no_piu_cap",
+            "owner": "0x1018cCCBD12e35dE1Dc1Ee00776A83043Aa8976D",
+            "keyPart1": "0x367c8531c417644108c7e1354b46acc0aa8919c125107541375de61aad07e83c",
+            "keyPart2": "0x2a719fed617c6193fd0a84602c2c3efed8dac2d32452b37a6410414ef0dbd71d",
+            "blockNumber": 152988
+        },
+        {
+            "handle": "NetizenBank",
+            "owner": "0x429CE0934495d3A580aFb877F5D28849b8De7Fa3",
+            "keyPart1": "0x46cbe88a587659a54798597a65cadaff9f7363026595f02e4adcd4314fd80a86",
+            "keyPart2": "0x9ed3621a090178dfdc4144e1a9593ec4899db6f8b73159d2d53731ba20d6d3a9",
+            "blockNumber": 152990
+        },
+        {
+            "handle": "YaRa13601313",
+            "owner": "0x7887e6C36bb9303f975dD29360135D80C2662c7e",
+            "keyPart1": "0x20804714e0dc68a56740ceced87c631928f9a644f5467fe397572bed714971b2",
+            "keyPart2": "0x20f4de129b6caefa7bb059074160807064b9beaf194572cf826dbf24605a8664",
+            "blockNumber": 152991
+        },
+        {
+            "handle": "ismetarisal",
+            "owner": "0x88a421C23615e4E66b14890484CDf0d3b05659F4",
+            "keyPart1": "0x1ed831b19a58a15ecddd8d520089ac19e61bea0d5796f5b21bee45903bcdf846",
+            "keyPart2": "0x00c92166d0e6b09c9e014e473fa049d3672a8b39af196086efbc94331df5561d",
+            "blockNumber": 152992
+        },
+        {
+            "handle": "toexecution",
+            "owner": "0x3FC7371A912d83f887F5001045b106875bE238F3",
+            "keyPart1": "0x29ae1294456963954b4565d2a04eddef82c5aea7d020bf0d050005d913e3d493",
+            "keyPart2": "0x75179c4e8c738210d52cdeee4a2c68d558b021bd29d0fda2e956373516d1487c",
+            "blockNumber": 152992
+        },
+        {
+            "handle": "100200sol",
+            "owner": "0x6bc50415AA565e77B6b8bdb37DEa7F4B020D829E",
+            "keyPart1": "0x94a96edaa59e348422b6f2d042c62a0101aefc51e06e180f58b7143353e4762e",
+            "keyPart2": "0x3169705d5661a2c0c6de8bdee7ae433bfba9fdcb8b0968021f842b3a6209ecdf",
+            "blockNumber": 152993
+        },
+        {
+            "handle": "0x0nur",
+            "owner": "0xD80259D49d18541F03E9893E0F7F74868D29B391",
+            "keyPart1": "0x809aa2d447f3f37e262b0eef1cb8882d3eda66cd140ff29ad54cef636492ac93",
+            "keyPart2": "0xdfa1510811f0354b345e058a600e7b5e3502ea503eab0d89258606c18db6d8fc",
+            "blockNumber": 152995
+        },
+        {
+            "handle": "iamhierat",
+            "owner": "0x1413040800536f3b2CaaccEB7006b5760A038D8C",
+            "keyPart1": "0x46cb83194a77d541c06522c388ba6d5fffb475bcb63af44f102b37d2cfb5b8c3",
+            "keyPart2": "0x83ddbf7a6423d468f57666d11ca597be27023182113a81d23ac356a916c20bc3",
+            "blockNumber": 152996
+        },
+        {
+            "handle": "diepln1",
+            "owner": "0x95A992E701a0a9A4D34813515b06d7A2D41D9A96",
+            "keyPart1": "0xf6f35302cc0d438bcbf03d33cf89ac156ea3f6dba0844a3da1d660feb648cefa",
+            "keyPart2": "0xa22230480503d0a87920549c1818e7783462e83d875f918880ce8e2d8abb5a6a",
+            "blockNumber": 152997
+        },
+        {
+            "handle": "DezTerinAlex",
+            "owner": "0xf59c1237A8826AB1cFbC201ac6231E3d6CFd3B58",
+            "keyPart1": "0x45fe0451cca8c9930d3be2856098762b7ccc527bbf8743313d403df636a2a917",
+            "keyPart2": "0x6d5d2388febc704f3d0ae13e8ec204725c5d08fa2ee58d514c40065f9a557010",
+            "blockNumber": 152998
+        },
+        {
+            "handle": "mark_duarte",
+            "owner": "0xC8d2daA6313F484fD12144be144633f3D69185f2",
+            "keyPart1": "0xaf4e5eaa198ac650c3996ddb1b917da7c6ab8815a27f66c63cd14e3ee3f7b111",
+            "keyPart2": "0xf531b20e41b489e7cade8914f9b3e7f1f3a163bcae85dd02d4722bd14d10fed4",
+            "blockNumber": 153001
+        },
+        {
+            "handle": "stantonhitz",
+            "owner": "0xEb4fEFfE9F74033F1feFD4493215Da5140ecAc54",
+            "keyPart1": "0xa135ef85b03e9c38301ebbbd9b57727583e721fbdc11a4eb4c8d4fde52e70799",
+            "keyPart2": "0x943b26761f04e70447745bd219fb585d4f00e286c2e929a4018f462a2357540d",
+            "blockNumber": 153001
+        },
+        {
+            "handle": "ChTalha1221",
+            "owner": "0x6B127950F3293B15209E29A25fbac387DDc96B0e",
+            "keyPart1": "0x648a3905a5584eac5ee02c358ca72a5d1dc5ca670aa77e5def0fbcfc6f61d72b",
+            "keyPart2": "0x9e3ff45e46b7b90085d373377f6461454d4fe4ee6d9f25e3114c8d5d55943ae9",
+            "blockNumber": 153002
+        },
+        {
+            "handle": "hkninan",
+            "owner": "0x27a22BcDC208E4866340E415678F6e186EAd776f",
+            "keyPart1": "0x0c666d9c004bfea522385901b17b9d7255a7a829a0a207502fd0e28430698302",
+            "keyPart2": "0x12df2428c8636b411fd2a1c96b8c1d2237b839f011ffeb55e45b5fef8b5d2018",
+            "blockNumber": 153004
+        },
+        {
+            "handle": "AsimJavaid123",
+            "owner": "0x34fC397bfB1f9453bf22dCc0B778E8eaf6394Bf7",
+            "keyPart1": "0xc55fd0aee9ba95cf7bd399b7a6927bd912479032a964ecda120ebee622951479",
+            "keyPart2": "0xd504c6e8a90ce02a5a331c49d3a59165f6b5ab70a7210f2496ae3959578d5e57",
+            "blockNumber": 153005
+        },
+        {
+            "handle": "offroadmann",
+            "owner": "0xE53FcBccE701B6cc0a5C20d42766c5faD4489825",
+            "keyPart1": "0x571a492e87653ff9aad732a4160bec74fe1f9df29ef4834157785245e33d0879",
+            "keyPart2": "0x802492e24697c1136c159162e5c2d1f4f09b517bdec3f940a36a6922fb1b02ff",
+            "blockNumber": 153006
+        },
+        {
+            "handle": "alieelitok",
+            "owner": "0xC7313F3F93E87fE27F5d5D559Ff57DbA394cc839",
+            "keyPart1": "0x732ed4380cb9da7a01bd953667e37b159a20100fa11b7b3b2458330b9e132452",
+            "keyPart2": "0x202293b5eb17574fb9280f694ba8f14d9cb445f34732c5541016e200c08528f2",
+            "blockNumber": 153007
+        },
+        {
+            "handle": "alltcoindr",
+            "owner": "0x249060eD73eD1EcE0C78c7cb1218c2c00405D12D",
+            "keyPart1": "0x4c6e6ca8a841e3874ba4697fd62d00aa2457fdcdd780d19852edf47ce0488bec",
+            "keyPart2": "0x78ae35cb07f53a9a4d0c3a1863df48838ab1dbbaffea3014bd1a7a8e32862ee1",
+            "blockNumber": 153008
+        },
+        {
+            "handle": "vitaminbee",
+            "owner": "0x079066A13C604dbC524311Ab5086F3d4648Bc5Bd",
+            "keyPart1": "0x831f9bbdccce0d9af9bb6910d3e11d8d5d297126677712a2e6ec60d34fbe9d9a",
+            "keyPart2": "0xe802c83b0a7bc1a99a428442c0a51d198c49c3b9e24efa06cd8b473347891331",
+            "blockNumber": 153009
+        },
+        {
+            "handle": "neupane007a",
+            "owner": "0xFa92ebf38C881802d46C407B067514de0b6b78C4",
+            "keyPart1": "0x75cc94ad4f8bada562300c9d26bd8466900b6fbe8b23b8a3f1ed488f8e30abcc",
+            "keyPart2": "0x8724823b7dc065ad87d0e2e2838274c7009c2241f250d28c0fbfc566ad724ce2",
+            "blockNumber": 153010
+        },
+        {
+            "handle": "creauniverse",
+            "owner": "0x399A0118A6Bd726a868B4E021B5Ad6A8E826fF2F",
+            "keyPart1": "0xe29c0dd1069180f6313b7685717d6bdbdbafdb4dcf5f977ac6d8e2185082e27c",
+            "keyPart2": "0x95e53eb552d24f0dec95253d8e74c83bcc306bc5ff57cd007a4800ae84323622",
+            "blockNumber": 153012
+        },
+        {
+            "handle": "nidhananjaya",
+            "owner": "0xBaE26e69d48927cEE67D40b762e17Ba7255242DA",
+            "keyPart1": "0xa0485965381f53caca917b1a41e366cb86468e4ccda6d35648c7209ccc2a3f07",
+            "keyPart2": "0x1ea3dc907e28edddc0c2f88aa9da05c451a307dfc9fe351f7e130e1313fb8346",
+            "blockNumber": 153012
+        },
+        {
+            "handle": "0xindividualist",
+            "owner": "0x79517345573C3b57e0Bca61D5dF3E3c22b2e9350",
+            "keyPart1": "0x0223ceecef17dc03e7efafbbf8e2e468e5824aa269476d4d82f9d7886b17c3ca",
+            "keyPart2": "0xdf01cef9a25da42faf15f696dd0ad66d5cc21ae28d175a6da927518ce64bb287",
+            "blockNumber": 153013
+        },
+        {
+            "handle": "mimi982298",
+            "owner": "0x093c0b559A71bd113dcdF431088e6E5e3F6dA128",
+            "keyPart1": "0x1f857ed2c15760ba215ccf08305d9cdfabb425311ff8d57dcb47485947f8e966",
+            "keyPart2": "0xf81f207ec7f9c8a3c0a41e76574e749bb09590f35608c2cd3e766266af0803e1",
+            "blockNumber": 153015
+        },
+        {
+            "handle": "helloxnet",
+            "owner": "0x0767EF6C22d48c7C7A0706f065F83f4C24b05B48",
+            "keyPart1": "0xf84d7d6de077ab231d27dab497fad140c8347b8da49a01ab28a3009d0331e6bb",
+            "keyPart2": "0x868e488e318cfdfcf573c50c03801f6f23f7416753bc7b44902aa8e36af70b71",
+            "blockNumber": 210509
+        },
+        {
+            "handle": "VanFinNft",
+            "owner": "0x0E6C2D350D18c10eE6ab6a8a941571fDeA7A9C74",
+            "keyPart1": "0xe9e5814eef78de2bc7cec0d432cd75241365847437df05f7aaba793930bdf608",
+            "keyPart2": "0x363bb1052ff7f155f6fb2da30f63e37224731c2212eb7cc041bf49c7d584a728",
+            "blockNumber": 216936
+        },
+        {
+            "handle": "arkapania",
+            "owner": "0xc0065AA9a2C1Ea929C24D1cB48Ac06170Bd36E25",
+            "keyPart1": "0x98544f1b736b3d56b19cf23101bb3d637d5604f8ecb09b17f8a26d815d88e396",
+            "keyPart2": "0x0b830e1de218096005e574141b2b6f2a11f5e8acd636d0ee380c10541ab781c7",
+            "blockNumber": 242982
+        },
+        {
+            "handle": "fatihsenel",
+            "owner": "0xff449ef45493F420F13771871CF3DeB9D06BE1B5",
+            "keyPart1": "0x4d8ee3b90acd1f0f8a4cd37cca649214ae1b0dd571fa42a17bd4255c30dd1a78",
+            "keyPart2": "0xe5167ae70fb392b6325a81c9d88f31cc8394da3f4a90984ce1699f9e072a9471",
+            "blockNumber": 255439
+        },
+        {
+            "handle": "josephyys",
+            "owner": "0x02c632FC761f4810cdef439DFc5c8BdbdCF25d1E",
+            "keyPart1": "0x599ae1047d67a4fc99e56fd9e3613320b3c2351349963706199cbefa8d8f641a",
+            "keyPart2": "0x3053c06122869a8f2d29e978b1b565279e8b459d15f3d9b7dd6733af1069fa74",
+            "blockNumber": 263044
+        },
+        {
+            "handle": "Agnidhra_LPT",
+            "owner": "0xaf4D617e4F8770BD36F53cffeFfDcbd5966268f5",
+            "keyPart1": "0x8b74feef85ec23c33fcfbaae1d9818c60e35ce81cc06c03791a61c019330eaa0",
+            "keyPart2": "0xf9f14156d713f655f5d0a2d087766c9a9aa6b1715013d0522d90b9487f6dfd88",
+            "blockNumber": 265039
+        },
+        {
+            "handle": "techiethetechie",
+            "owner": "0xBC8aeeCc8C5C6F1305DBB41CCb94ecdf435bD8A1",
+            "keyPart1": "0xb088515b3963657d14bec74648a9eda79fd0ea711057167b022f9cd48def7f45",
+            "keyPart2": "0xeb8a576c286e72d84666f75bbc91bddf8438a8c207960f1bf7a4d82b65b7e351",
+            "blockNumber": 266190
+        },
+        {
+            "handle": "lightdm01",
+            "owner": "0x1CeB027EC8bAFe8e34AbC5E044305E26eDe0e89C",
+            "keyPart1": "0xfe4cdba156fb990bdc984e8950fc4157f1095ed5ae1bc3b950ed9d75bfcac05b",
+            "keyPart2": "0xeb65e455c49271880b60fcaf1009a1d0889d131ebee40cfc13c86acf8703c998",
+            "blockNumber": 270134
+        },
+        {
+            "handle": "pellogris",
+            "owner": "0x5D2a0197f91293b013CCc94B5425B5A1D9eF1708",
+            "keyPart1": "0x66058880e21463fc5d81c5d7e3f164fb7d969391a4f6d19508652cb2de3ba2e4",
+            "keyPart2": "0x47fe7b7b16f07e4eceb7f2f767b335104a9b5989146080a71ffa260da1870fa3",
+            "blockNumber": 274478
+        },
+        {
+            "handle": "sergedeployer",
+            "owner": "0x0D2642fb429Fc06A3b56C9a0c17DC556509a05A4",
+            "keyPart1": "0x2e84945c846edde79b9e444a25fb9faaf50387682df1ae0f4c24efb7395d84ac",
+            "keyPart2": "0x957a75d9b09b4bcf85d8830ea0268ace72f2552d3c8c15bd805f97e8af43efa1",
+            "blockNumber": 286341
+        },
+        {
+            "handle": "belladonnaband",
+            "owner": "0x1acAA95C12706e8D0a8B55520F70aD5DB5608057",
+            "keyPart1": "0x4b4fa73cce32f09833bab025bfb5c11a12a0d082e66c820b741f0a039f0e2d20",
+            "keyPart2": "0x3ce53684916829174f2fc919900afce3afc561f2cb191c60870ab7b9a54114e7",
+            "blockNumber": 289269
+        },
+        {
+            "handle": "elchortan",
+            "owner": "0x7b34513582a7DFC678843Dda114271C121f82012",
+            "keyPart1": "0xbd68bd737a46a5ed67b4a54dfc55540a996d46f9d570cb5ba94550edf6f7cdb1",
+            "keyPart2": "0xadf1948422e786c2e988513ea661bbe3249285231b38250138d5ebc56637b142",
+            "blockNumber": 296314
+        },
+        {
+            "handle": "arbignay",
+            "owner": "0xE71B0595Ae4d6F5e03bbd65964363EE3aA53a133",
+            "keyPart1": "0x741f9411ee1185b1780e4b797b909bb202ed3991b3a88f65fcb726348593650b",
+            "keyPart2": "0x58e596b014a89d37ee162b53c1a783faa3860a6dec4c9e9f88e13e2c057cdb5f",
+            "blockNumber": 308414
+        },
+        {
+            "handle": "drbignay",
+            "owner": "0x6fda4865EA8baE59Ad2DC6D6917C969133008FC7",
+            "keyPart1": "0xf06aa31584610018e45df221bfcfcafbfd3277cfd218e4398136c14b4cd885c9",
+            "keyPart2": "0x04fc65fb4a10105a341b7897ab745bd719f3f0661bdcda784dda2eb392716a7c",
+            "blockNumber": 308909
+        },
+        {
+            "handle": "rrbignay",
+            "owner": "0x9D19E46c43EA592Ff34286A3a9Cee1aF9cC1FaD7",
+            "keyPart1": "0x59c0725dc3d9f6caa25a98cc3c1043628bc1e0d4f79e53f4ab6791914b289adc",
+            "keyPart2": "0x8eabc467f7a53970a9294037df300c937f6732ca47ac754ec49bdcc5ab40b491",
+            "blockNumber": 309495
+        },
+        {
+            "handle": "_amherag",
+            "owner": "0x469dA988305d1C5d079472216CEA3Ad3f1dFAe1e",
+            "keyPart1": "0x7a1ff4220716da1d9bb68e3c818919e937ae30ef2ae015f98941df8bc28bedff",
+            "keyPart2": "0xdac44fa77b04aaabfec9934bac78d532a528ef0bc88e30eb729d646336ce843b",
+            "blockNumber": 329042
+        },
+        {
+            "handle": "kamga_y",
+            "owner": "0xD83AB9E82532dA2e41D30b639d976AA34618aCc4",
+            "keyPart1": "0x75b972a4643f8b595b84f0e22e652aeb9d2280c0382a4dc4d3c600e098948fe2",
+            "keyPart2": "0xa6ba1125c32d6aaac6bb69b50085f0e07019c1245a3e3faebfe1106c1efe6c83",
+            "blockNumber": 329064
+        },
+        {
+            "handle": "testingInDaDay",
+            "owner": "0xf53d69Cc9dFE8eF3C20955819873713E3B580742",
+            "keyPart1": "0x38678c504f6d9d9bb15e3f3f2f13a7cbac6847fbc0198b6923bc44262f2ddb06",
+            "keyPart2": "0x85358c46cfc8cbdd0f9f47fb7130cec740737c0dfd744d4247ad6916f5d72e5e",
+            "blockNumber": 332562
+        },
+        {
+            "handle": "kekcrkkdkd",
+            "owner": "0x7db9ae29b146aD84d23bADdE186BBFAaaB92e909",
+            "keyPart1": "0x119d16c710c95ded51692590943de883c3709bf62d8d1fb5366ef242405c0762",
+            "keyPart2": "0x4618fc04ab5e147265e8a0cb46b860201669d1c206883b517a493a621e4ffe41",
+            "blockNumber": 332632
+        },
+        {
+            "handle": "kdkdcvvv",
+            "owner": "0xa3153D33db6edD0c5B794342794Ba1b13A85DCaf",
+            "keyPart1": "0xb5bfe31cb7ba6c0494ea61a5ab3b5b1d12579c7dc46f56210fd9fb375776a67c",
+            "keyPart2": "0x8692e427cc35be284f9aa097101c9f0d29e129fa5dbf0fe219b24cd69dfdabaa",
+            "blockNumber": 333166
+        },
+        {
+            "handle": "gachihacker",
+            "owner": "0x524a911572535C3A374923f545fECd2b6D9Ade90",
+            "keyPart1": "0x9f95cfe79bcc74212a16dcb947e21760a52b587f93b31cf9bfb67f767298fb29",
+            "keyPart2": "0x75841a197bb17b2e90049a57fa590becfaf95c227f74741d033c79d83defe366",
+            "blockNumber": 334505
+        },
+        {
+            "handle": "AhamedAaqil9",
+            "owner": "0x979a7abf37e87e1A46A8A360A57E23A8977Cfa46",
+            "keyPart1": "0xf109aef6e92e550871e41399e1e491e3e858c52ab0f042596d2c1d48a664c523",
+            "keyPart2": "0x6b1f40e2b01ccc019cc1afe1c5694e4dff8b2ee8c3e1679fba45a7cfdbbca857",
+            "blockNumber": 334563
+        },
+        {
+            "handle": "pasans16",
+            "owner": "0x781A4D7A22c54ce9e26Fa75ABdeB020f68457748",
+            "keyPart1": "0xb832433ef6b5db8d2208301c55c0d299def15b22c70fefe95364cb9d695a6aa3",
+            "keyPart2": "0x824c2ce1317fef8afca67ec2ddf7254a93a439bc2319d30393c221b73a4a6fa7",
+            "blockNumber": 334640
+        },
+        {
+            "handle": "greenarmor",
+            "owner": "0x7ED6049Be214509B1B849Aa339F8B2aCe45a3DE1",
+            "keyPart1": "0x4c1c2016b753a34ca80d123ba1e90e7ef0c2c3d5370982ae63e471da60e4cfa2",
+            "keyPart2": "0xcb3f60b92188a3ee800023f08fdd171502bbb4e267908864e2df13f7c66ed8b3",
+            "blockNumber": 336630
+        },
+        {
+            "handle": "luiz_coder",
+            "owner": "0xdc6e9B7424a14EA3426fdfDdA93afc95225dfC06",
+            "keyPart1": "0x4158fffd05b6b70159100aab693a45325fb94822f9d6503665f8dc58323a57f2",
+            "keyPart2": "0xd1369a39b7a3d6a855c29d9420d3042f3e1b499472aec93f3760e6ac42e161cc",
+            "blockNumber": 343331
+        },
+        {
+            "handle": "nft_mashed",
+            "owner": "0x1Ff3d2c2c6B05B03369B1b9fF31f27ad6728945e",
+            "keyPart1": "0x62a517b7f561c3c38c4b4d5bc183b1325e37b4b972bf54fb127e8f399b8887d5",
+            "keyPart2": "0x197dfa2cbcc8dfad22291d3578bb2bff8b8d37dce22ae8792231ecac35e0480d",
+            "blockNumber": 343748
+        },
+        {
+            "handle": "qV4lT",
+            "owner": "0x1C5160AADC2A08Ece3886d61538e27d0C18CF6C8",
+            "keyPart1": "0x5811496bd2c06d813e65f15e5958ea625acff275fca2d1b95d2f85036f9f5ae6",
+            "keyPart2": "0x238311ad7b8f4e5757ed3a8a6f2bdfda78454874a6e47369a7d821485fc68dc5",
+            "blockNumber": 345023
+        },
+        {
+            "handle": "joaotesting000",
+            "owner": "0x22485f9f0c245551CC27cF4a0A6dE45d872E9B65",
+            "keyPart1": "0x18a691950e14dc64fe370343e73c6957548d6d3f5c6780b35d0d6291d8b7f6d1",
+            "keyPart2": "0x244d6267ecfe6fba297fbab3c0863bc8d2d4194893470383cfcb575e755c902d",
+            "blockNumber": 350524
+        },
+        {
+            "handle": "zhengyizhishi10",
+            "owner": "0xE407DC8e6D9b682133Dc9730Cd515062068dd54f",
+            "keyPart1": "0xcfd7ad13f5c18d0fce6ec329a4c66cebdd3605d6b3675c8509868bd4216e41ad",
+            "keyPart2": "0xb043307622552689dc2b9538d21fee3441f55638876967c445efe9e2deb4214b",
+            "blockNumber": 350572
+        }
+    ],
+    "ikv": [
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "fbe8b6310ffd8a52dd9066180c0752cf5f648bc60f08cba9ba1f061466006adc",
+            "version": "0.1.8",
+            "blockNumber": 155102
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.8",
+            "blockNumber": 155104
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.8",
+            "blockNumber": 155106
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0x3F2A28AAFFEC7b4bD4b5925992Fd99e908aB36A0",
+            "version": "0.1.9",
+            "blockNumber": 155185
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "105cb1ec9b3d90d9703a0eacff68a1bbd756bd718836cd4cf00467e11a1c08f6",
+            "version": "0.1.9",
+            "blockNumber": 155188
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "544f2561e305ebceaf6af86f244079e019dbc2f6319ae31cdf73bf437ec1f353",
+            "version": "0.1.9",
+            "blockNumber": 155194
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "7ee4f643b2f6ab982eb9a7e9a00e74f8306fb43f8b1099c12ca2025050a0a84f",
+            "version": "0.1.9",
+            "blockNumber": 155200
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.9",
+            "blockNumber": 155202
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.9",
+            "blockNumber": 155204
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.10",
+            "blockNumber": 156608
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "105cb1ec9b3d90d9703a0eacff68a1bbd756bd718836cd4cf00467e11a1c08f6",
+            "version": "0.1.10",
+            "blockNumber": 156611
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "d255df9684c8dbd89fa731972ad03d341ef84a6f472e11b30e9c562a4f67754e",
+            "version": "0.1.10",
+            "blockNumber": 156617
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "380c353786adcfe26f53d59c4c9d0e71b634036ea3e9809ffe3eeb5435ca4513",
+            "version": "0.1.10",
+            "blockNumber": 156622
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.10",
+            "blockNumber": 156625
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.10",
+            "blockNumber": 156628
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.11",
+            "blockNumber": 157935
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "8cd55fa659c5a128b7c51a0ff37c7db9d2ff6d82b61ee04bf86a157620a8e207",
+            "version": "0.1.11",
+            "blockNumber": 157938
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "a7e148e1016f829e369d41e5aa40c6a03b3dd5d0bffadb02e7adfeb4e1dcdb6c",
+            "version": "0.1.11",
+            "blockNumber": 157944
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "68ec5c8214d9960063628a00123bb032018396ce12d073ea9e464522af1d04aa",
+            "version": "0.1.11",
+            "blockNumber": 157950
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.11",
+            "blockNumber": 157952
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.11",
+            "blockNumber": 157954
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.12",
+            "blockNumber": 158058
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "52550c0c9cf54d7ca06157c9a0971e79668a8f9e620442c6b5abbd310b919af5",
+            "version": "0.1.12",
+            "blockNumber": 158061
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "1ec37efb65f8e4b50c644a04402616c2fc6f035b50ec0179ec6ce13df5bfaaad",
+            "version": "0.1.12",
+            "blockNumber": 158067
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "5318ad7f2db6242ece9eceb4521d571c1bec437c2836d3b40ad6ede9c41e01ab",
+            "version": "0.1.12",
+            "blockNumber": 158073
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.12",
+            "blockNumber": 158075
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.12",
+            "blockNumber": 158077
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.13",
+            "blockNumber": 158221
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "b9d1fa2879a90c5936750ac1d7948c3f00b52dbdc9047a2059d027081021631e",
+            "version": "0.1.13",
+            "blockNumber": 158223
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "2e71546ad2ddb99e0ee47e096bda9565c16dc09ff74ce1e897a28f491a24e942",
+            "version": "0.1.13",
+            "blockNumber": 158228
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "e36b01941aef484f9a15541ad1813c424420267e3b6f5a6a4371824d53beafcd",
+            "version": "0.1.13",
+            "blockNumber": 158234
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.13",
+            "blockNumber": 158237
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.13",
+            "blockNumber": 158240
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.14",
+            "blockNumber": 158344
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "82fe22593df9afda90b0c8d53ef4cf69c373ccd3f25f3bdc342153fb7476b43a",
+            "version": "0.1.14",
+            "blockNumber": 158346
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "ad570b3a9b4eed8242b3ebbf4ca20589e92a590fd141edf25b9f71e427c621c0",
+            "version": "0.1.14",
+            "blockNumber": 158352
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "e59d497e2ba8872b0f04e81a9509541162bfdfb995f8a8a5355c798826ea009d",
+            "version": "0.1.14",
+            "blockNumber": 158357
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.14",
+            "blockNumber": 158360
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.14",
+            "blockNumber": 158363
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.15",
+            "blockNumber": 158453
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "9c9cff9005a29d7f8bf2b9afe82ac35e86c3f8bff6d7bf4ec89c74436e99ef23",
+            "version": "0.1.15",
+            "blockNumber": 158456
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "fd514098502c76fd1c6412dea0c503369e67b2d8bd1f39978c2c9eb305589d9d",
+            "version": "0.1.15",
+            "blockNumber": 158462
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "77b878ca82208aeb621cfd16eeb353c864efe6837bebf5cdb9ad72c1e3433675",
+            "version": "0.1.15",
+            "blockNumber": 158468
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.15",
+            "blockNumber": 158471
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.15",
+            "blockNumber": 158474
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.16",
+            "blockNumber": 158550
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "2de60d51dfe1fb45a67275e18ff04a1e42e0a9eaa6ad09a8304d9c9751679a02",
+            "version": "0.1.16",
+            "blockNumber": 158553
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "227ef6ea6134a6c7e3d82580ea0f6348b89114c46c381cd7aaadf20b2fb063a2",
+            "version": "0.1.16",
+            "blockNumber": 158558
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "10d9507e111cfb8d564c2b8d52bfd3b3a5e051b1367eb56a82102c325d720048",
+            "version": "0.1.16",
+            "blockNumber": 158564
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.16",
+            "blockNumber": 158567
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.16",
+            "blockNumber": 158569
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0xB736c9249E734103B2fF544D33C431c4ECFE6256",
+            "version": "0.1.17",
+            "blockNumber": 158632
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "17799057d065513b9d2689707beb26645a2482e7f7e9d828e2315a76154e9651",
+            "version": "0.1.17",
+            "blockNumber": 158635
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "227ef6ea6134a6c7e3d82580ea0f6348b89114c46c381cd7aaadf20b2fb063a2",
+            "version": "0.1.17",
+            "blockNumber": 158637
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "1ab57bbd93ef3963b2ddf40fafd67b3fabf985d24fa9f23e1ceba846b92fe725",
+            "version": "0.1.17",
+            "blockNumber": 158643
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.17",
+            "blockNumber": 158646
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.17",
+            "blockNumber": 158649
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/address/PointSocial",
+            "value": "0x3fd644413a4e89591D5269B96F08E1D40E024e7c",
+            "version": "0.1.18",
+            "blockNumber": 160437
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/abi/PointSocial",
+            "value": "76f0096c54cf36f279c039bbe7ed56a7e3929bca1a577cef4401129f64e95015",
+            "version": "0.1.18",
+            "blockNumber": 160441
+        },
+        {
+            "handle": "social",
+            "key": "zweb/contracts/proxy/metadata",
+            "value": "4b7707283ec9f5558f92f6254b490f34de2c77ace3e8e6495812be1ef0e26e0b",
+            "version": "0.1.18",
+            "blockNumber": 160447
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "5fcaa9fab34ca1148bd341b20eeed96da4d30b0b5f6783abc6b4244595ac8927",
+            "version": "0.1.18",
+            "blockNumber": 160453
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.18",
+            "blockNumber": 160456
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "6b6be933bf0fbce80ae0077294c36b881e83e030\n",
+            "version": "0.1.18",
+            "blockNumber": 160459
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "234d7f86344dc97b9158ee3dcbb820b94de8aeb8f43d1ce67ced8c702bc3d648",
+            "version": "0.1.15",
+            "blockNumber": 208639
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.15",
+            "blockNumber": 208642
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.15",
+            "blockNumber": 208645
+        },
+        {
+            "handle": "mmmd.ynet_testtest",
+            "key": "zdns/routes",
+            "value": "c610eae90f7d344183a30049fb217c1c057760fc276ac9acac8bbaf1511ff273",
+            "version": "latest",
+            "blockNumber": 346769
+        },
+        {
+            "handle": "mmmd.ynet_testtest",
+            "key": "::rootDir",
+            "value": "ffa3b86fab14aba6e53f893daeca6f0566e462cc18fee3a14c9a3ff550b1e7ea",
+            "version": "latest",
+            "blockNumber": 346798
+        },
+        {
+            "handle": "mmmd.ynet_testtest",
+            "key": "zweb/contracts/address/Blog",
+            "value": "0x5ec8209364f3e189f7e50deb5bfefa514900d386",
+            "version": "latest",
+            "blockNumber": 346862
+        },
+        {
+            "handle": "mmmd.ynet_testtest",
+            "key": "zweb/contracts/abi/Blog",
+            "value": "214cdea80f7acb699d380cf16c0eb3533c9f1e4f77910cbd607523f4070bb995",
+            "version": "latest",
+            "blockNumber": 346882
+        },
+        {
+            "handle": "mmmd.ynet_testtest",
+            "key": "::rootDir",
+            "value": "10c0366c3bb407a0448f8d1f3c88b4f6f4865e2827c0611e871f3348a8848a6c",
+            "version": "latest",
+            "blockNumber": 346965
+        }
+    ]
+}
