@@ -30,6 +30,11 @@ contract Identity is
     mapping(string => mapping(address => bool)) private _isIdentityDeployer;
     address private oracleAddress;
     bool private devMode;
+    mapping(string => mapping(string => string)) public ikversion;
+    mapping(string => address[]) private _identityDeployerList;
+    mapping(string => mapping(address => uint256)) private _identityDeployerBlock;
+    string[] public dappsList;
+    mapping(address => string[]) public ownerToSubidentitiesList;
 
     struct IdentityQuery{
         string handle;
@@ -37,11 +42,25 @@ contract Identity is
         bool hasDomain;
     }
 
+    struct IKVSetQuery{
+        string identity;
+        string key; 
+        string value; 
+        string version;
+    }
+
+    struct DeployersQuery{
+        string identity;
+        address deployer;
+        bool allowed;
+        uint256 blockNumber;
+    }
+
     function initialize() public initializer onlyProxy {
         __Ownable_init();
         __UUPSUpgradeable_init();
         migrationApplied = false;
-        MAX_HANDLE_LENGTH = 16;
+        MAX_HANDLE_LENGTH = 32;
         oracleAddress = 0x8E2Fb20C427b54Bfe8e529484421fAE41fa6c9f6;
         devMode = false;
     }
@@ -240,6 +259,7 @@ contract Identity is
         identityToCommPublicKey[fullHandle] = commPublicKey;
         lowercaseToCanonicalIdentities[fullHandleLowercase] = fullHandle;
         identityList.push(fullHandle);
+        ownerToSubidentitiesList[identityOwner].push(fullHandle);
 
         emit SubidentityRegistered(handle, subhandle, identityOwner, commPublicKey);
     }
@@ -300,6 +320,26 @@ contract Identity is
         ikvSet(identity, key, value, version);
     }
 
+    function ikVersionImport(
+        string memory identity,
+        string memory key,
+        string memory version
+    ) public onlyBeforeMigrations {
+        ikversion[identity][key] = version;
+    }
+
+    function dappsListImport(string memory identity) public onlyBeforeMigrations {
+        dappsList.push(identity);
+    }
+
+    function subidentitiesListImport(address owner, string memory subidentity) public onlyBeforeMigrations {
+        ownerToSubidentitiesList[owner].push(subidentity);
+    }
+
+    function isDapp(string memory identity) public view returns (bool){
+        return bytes(ikv[identity]["zdns/routes"]).length != 0;
+    }
+
     function ikvGet(string memory identity, string memory key)
         public
         view
@@ -309,9 +349,16 @@ contract Identity is
         return ikv[identity][key];
     }
 
+    function ikVersionGet(string memory identity, string memory key)
+        public
+        view
+        returns (string memory value)
+    {
+        return ikversion[identity][key];
+    }
+
     function finishMigrations() external override {
         migrationApplied = true;
-        MAX_HANDLE_LENGTH = 16;
     }
 
     function transferIdentityOwnership(string memory handle, address newOwner)
@@ -363,6 +410,8 @@ contract Identity is
         );
 
         _isIdentityDeployer[handle][deployer] = true;
+        _identityDeployerList[handle].push(deployer);   
+        _identityDeployerBlock[handle][deployer] = block.number;
 
         emit IdentityDeployerChanged(handle, deployer, true);
     }
@@ -383,6 +432,7 @@ contract Identity is
         );
 
         _isIdentityDeployer[handle][deployer] = false;
+        _identityDeployerBlock[handle][deployer] = block.number;
 
         emit IdentityDeployerChanged(handle, deployer, false);
     }
@@ -479,7 +529,15 @@ contract Identity is
             ikvList[identity].push(key);
         }
 
+        string memory dappsKey = "zdns/routes";
+        if (_compareStrings(key, dappsKey) == true){
+            if (bytes(ikv[identity]["zdns/routes"]).length == 0) {
+                dappsList.push(identity);
+            }
+        }
+
         ikv[identity][key] = value;
+        ikversion[identity][key] = version;
 
         emit IKVSet(identity, key, value, version);
     }
@@ -507,6 +565,61 @@ contract Identity is
             }
         }
         return _identities;
+    }
+
+    function getIkvList(string calldata identity) public view returns (IKVSetQuery[] memory) {
+        uint256 length = ikvList[identity].length;
+        IKVSetQuery[] memory _ikvList = new IKVSetQuery[](length);
+        for (uint256 i = 0; i < length; i++) {
+            string memory key = ikvList[identity][i];
+            string memory value = ikv[identity][key];
+            string memory version = ikversion[identity][key];
+            _ikvList[i] = IKVSetQuery(identity, key, value, version); 
+        }
+        return _ikvList;
+    }
+
+    function getDeployersList(string calldata identity) public view returns (DeployersQuery[] memory) {
+        uint256 length = _identityDeployerList[identity].length;
+        DeployersQuery[] memory _deployersList = new DeployersQuery[](length);
+        for (uint256 i = 0; i < length; i++) {
+            address addr = _identityDeployerList[identity][i];
+            _deployersList[i] = DeployersQuery(
+                identity, 
+                addr,
+                _isIdentityDeployer[identity][addr],
+                _identityDeployerBlock[identity][addr]
+                );
+        }
+        return _deployersList;
+    }
+
+    function getDappsLength() public view returns (uint){
+        return dappsList.length;
+    }
+
+    function getPaginatedDapps(uint256 cursor, uint256 howMany) public view returns (IdentityQuery[] memory) {
+        uint256 length = howMany;
+        if(length > dappsList.length - cursor) {
+            length = dappsList.length - cursor;
+        }
+
+        IdentityQuery[] memory _dapps = new IdentityQuery[](length);
+        for (uint256 i = length; i > 0; i--) {
+            string memory identity = dappsList[dappsList.length - cursor - i];
+            address owner = identityToOwner[identity];
+
+            _dapps[length-i] = IdentityQuery(identity, owner, true);
+        }
+        return _dapps;
+    }
+
+    function _compareStrings(string memory a, string memory b) private pure returns (bool) {
+        return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
+    }
+
+    function getSubidentitiesByOwner(address owner) public view returns (string[] memory){
+        return ownerToSubidentitiesList[owner];
     }
 
 }

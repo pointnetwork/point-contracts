@@ -1,6 +1,7 @@
 import { task } from 'hardhat/config';
 import fs = require('fs');
 
+// npx hardhat identity-importer upload 0xD61e5eFcB183418E1f6e53D0605eed8167F90D4d --migration-file ./backup/ynet/identities/identity-1660314395.json  --network development
 // npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
@@ -28,6 +29,10 @@ task(
     'fromBlock',
     'The first block that should be considered to download data for migrations'
   )
+  .addOptionalParam(
+    'toBlock',
+    'Latest block that should be considered to download data for migrations'
+  )
   .setAction(async (taskArgs, hre) => {
     const { ethers } = hre;
 
@@ -46,7 +51,13 @@ task(
     if (taskArgs.fromBlock !== undefined) {
       fromBlock = parseInt(taskArgs.fromBlock);
     }
-    console.log(fromBlock);
+    console.log("from: " + fromBlock);
+
+    let toBlock = (await hre.ethers.provider.getBlock("latest")).number;
+    if (taskArgs.toBlock !== undefined) {
+      toBlock = parseInt(taskArgs.toBlock);
+    }
+    console.log("to: " + toBlock);
 
     const contract = await hre.ethers.getContractAt(
       'Identity',
@@ -61,10 +72,10 @@ task(
 
       const identitiesFilter = contract.filters.IdentityRegistered();
       const identityCreatedEvents = await contract.queryFilter(
-        identitiesFilter, fromBlock
+        identitiesFilter, fromBlock, toBlock
       );
       const ikvSetFilter = contract.filters.IKVSet();
-      const ikvSetEvents = await contract.queryFilter(ikvSetFilter, fromBlock);
+      const ikvSetEvents = await contract.queryFilter(ikvSetFilter, fromBlock, toBlock);
 
       if (identityCreatedEvents.length == 0) {
         console.log('No identities found.');
@@ -85,6 +96,7 @@ task(
             owner: identityOwner,
             keyPart1: commPublicKey.part1,
             keyPart2: commPublicKey.part2,
+            blockNumber: e.blockNumber
           };
 
           identityData.push(identity);
@@ -107,6 +119,7 @@ task(
             key,
             value,
             version,
+            blockNumber: e.blockNumber
           };
 
           ikvData.push(ikv);
@@ -177,8 +190,6 @@ task(
 
       try {
         console.log(`found ${data.identities.length}`);
-        console.log('setting handle length to 21');
-        await contract.setMaxHandleLength(21);
         await (await contract.setMigrationApplied(false)).wait()
         await (await contract.setDevMode(true)).wait()
         for (const identity of data.identities) {
@@ -266,6 +277,7 @@ task(
         }
         console.log('Everything processed and uploaded, lock file removed.');
         await contract.finishMigrations();
+        await contract.setDevMode(false);
       }
     } else if (taskArgs.action == 'latestBlockMigrated') {
 

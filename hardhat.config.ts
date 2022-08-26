@@ -9,6 +9,8 @@ import 'hardhat-gas-reporter';
 import 'solidity-coverage';
 import '@openzeppelin/hardhat-upgrades';
 import './tasks/importer/identity';
+import './tasks/importer/ikversion';
+import './tasks/importer/dapps';
 import './tasks/importer/blog';
 import './tasks/importer/sms';
 import './tasks/importer/identity-clone';
@@ -68,11 +70,14 @@ const devaddress = `http://${host}:${port}`;
 
 const ynetConfig: HttpNetworkUserConfig = {url: 'http://ynet.point.space:44444'};
 const xnetPlutoConfig: HttpNetworkUserConfig = {url: 'https://xnet-pluto-1.point.space'};
+const xnetNeptuneConfig: HttpNetworkUserConfig = {url: 'http://xnet-neptune-1.point.space:8545'};
 
 if (productionPrivateKey){
     ynetConfig.accounts = [productionPrivateKey];
     xnetPlutoConfig.accounts = [productionPrivateKey];
     xnetPlutoConfig.gasPrice = 1;
+    xnetNeptuneConfig.accounts = [productionPrivateKey];
+    xnetNeptuneConfig.gasPrice = 7;
 }
 
 // You need to export an object to set up your config
@@ -120,6 +125,7 @@ const config: HardhatUserConfig = {
     },
     ynet: ynetConfig,
     xnetPluto: xnetPlutoConfig,
+    xnetNeptune: xnetNeptuneConfig,
   },
 };
 
