@@ -12,7 +12,6 @@ import './tasks/importer/identity';
 import './tasks/importer/ikversion';
 import './tasks/importer/dapps';
 import './tasks/importer/blog';
-import './tasks/importer/social-migrator';
 import './tasks/importer/sms';
 import './tasks/importer/identity-clone';
 import './tasks/identity/identity-update-contract';
