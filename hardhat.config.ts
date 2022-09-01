@@ -71,6 +71,7 @@ const devaddress = `http://${host}:${port}`;
 const ynetConfig: HttpNetworkUserConfig = {url: 'http://ynet.point.space:44444'};
 const xnetPlutoConfig: HttpNetworkUserConfig = {url: 'https://xnet-pluto-1.point.space'};
 const xnetNeptuneConfig: HttpNetworkUserConfig = {url: 'http://xnet-neptune-1.point.space:8545'};
+const mainnetConfig: HttpNetworkUserConfig = {url: 'http://rpc-mainnet-1.point.space:26657'};
 
 if (productionPrivateKey){
     ynetConfig.accounts = [productionPrivateKey];
@@ -78,6 +79,8 @@ if (productionPrivateKey){
     xnetPlutoConfig.gasPrice = 1;
     xnetNeptuneConfig.accounts = [productionPrivateKey];
     xnetNeptuneConfig.gasPrice = 7;
+    mainnetConfig.accounts = [productionPrivateKey];
+    mainnetConfig.gasPrice = 1;
 }
 
 // You need to export an object to set up your config
@@ -126,6 +129,7 @@ const config: HardhatUserConfig = {
     ynet: ynetConfig,
     xnetPluto: xnetPlutoConfig,
     xnetNeptune: xnetNeptuneConfig,
+    mainnet: mainnetConfig,
   },
 };
 
