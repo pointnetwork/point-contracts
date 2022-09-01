@@ -1,0 +1,325 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x47204DA8c773Aec5E2947055a081fC312A5C82cf",
+      "txHash": "0x24022259ec898a8f83f2ebb9836d6f698866e90246a0b2d95ed5cd5279bc5fc4",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "0f707c1005b4e77069ad552bda2b08eac4ce2883680587c80d800441a8e19df6": {
+      "address": "0x7D43C0F1190d18e8f114CD3de4aE5Ee1319Cca57",
+      "txHash": "0xf5a3c9cc6c6f863033d030584896ba955b81d9b42d05aee198871f51fa786e5f",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+          },
+          {
+            "label": "identityToOwner",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_mapping(t_string_memory_ptr,t_address)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:18"
+          },
+          {
+            "label": "ownerToIdentity",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_mapping(t_address,t_string_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:19"
+          },
+          {
+            "label": "ikv",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_mapping(t_string_memory_ptr,t_mapping(t_string_memory_ptr,t_string_storage))",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:20"
+          },
+          {
+            "label": "ikvList",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_mapping(t_string_memory_ptr,t_array(t_string_storage)dyn_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:21"
+          },
+          {
+            "label": "lowercaseToCanonicalIdentities",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_string_memory_ptr,t_string_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:23"
+          },
+          {
+            "label": "identityToCommPublicKey",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(PubKey64)1346_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:24"
+          },
+          {
+            "label": "identityList",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_array(t_string_storage)dyn_storage",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:25"
+          },
+          {
+            "label": "migrationApplied",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_bool",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:26"
+          },
+          {
+            "label": "MAX_HANDLE_LENGTH",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_uint256",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:28"
+          },
+          {
+            "label": "_isIdentityDeployer",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_bool))",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:30"
+          },
+          {
+            "label": "oracleAddress",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_address",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:31"
+          },
+          {
+            "label": "devMode",
+            "offset": 20,
+            "slot": "211",
+            "type": "t_bool",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:32"
+          },
+          {
+            "label": "ikversion",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_string_memory_ptr,t_mapping(t_string_memory_ptr,t_string_storage))",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:33"
+          },
+          {
+            "label": "_identityDeployerList",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_mapping(t_string_memory_ptr,t_array(t_address)dyn_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:34"
+          },
+          {
+            "label": "_identityDeployerBlock",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_uint256))",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:35"
+          },
+          {
+            "label": "dappsList",
+            "offset": 0,
+            "slot": "215",
+            "type": "t_array(t_string_storage)dyn_storage",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:36"
+          },
+          {
+            "label": "ownerToSubidentitiesList",
+            "offset": 0,
+            "slot": "216",
+            "type": "t_mapping(t_address,t_array(t_string_storage)dyn_storage)",
+            "contract": "Identity",
+            "src": "contracts/Identity.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_string_storage)dyn_storage)": {
+            "label": "mapping(address => string[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_string_storage)": {
+            "label": "mapping(address => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_address)": {
+            "label": "mapping(string => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_array(t_address)dyn_storage)": {
+            "label": "mapping(string => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_array(t_string_storage)dyn_storage)": {
+            "label": "mapping(string => string[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_bool))": {
+            "label": "mapping(string => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(string => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_mapping(t_string_memory_ptr,t_string_storage))": {
+            "label": "mapping(string => mapping(string => string))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_string_storage)": {
+            "label": "mapping(string => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(PubKey64)1346_storage)": {
+            "label": "mapping(string => struct IIdentity.PubKey64)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PubKey64)1346_storage": {
+            "label": "struct IIdentity.PubKey64",
+            "members": [
+              {
+                "label": "part1",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "part2",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

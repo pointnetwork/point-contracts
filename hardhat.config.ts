@@ -80,7 +80,7 @@ if (productionPrivateKey){
     xnetNeptuneConfig.accounts = [productionPrivateKey];
     xnetNeptuneConfig.gasPrice = 7;
     mainnetConfig.accounts = [productionPrivateKey];
-    mainnetConfig.gasPrice = 1;
+    mainnetConfig.gasPrice = 7;
 }
 
 // You need to export an object to set up your config
