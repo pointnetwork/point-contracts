@@ -1,12 +1,17 @@
 import { task } from 'hardhat/config';
 import fs = require('fs');
 
+
+// UPLOAD EXAMPLES
 // npx hardhat identity-importer upload 0xD61e5eFcB183418E1f6e53D0605eed8167F90D4d --migration-file ./backup/ynet/identities/identity-1660314395.json  --network development
 // npx hardhat identity-importer upload 0x001fc9C398BF1846a70938c920d0351722F34c83 --migration-file ../resources/migrations/identity-1647299819.json  --network ynet --handle-prefix ynet
+// npx hardhat identity-importer upload 0xD61e5eFcB183418E1f6e53D0605eed8167F90D4d --migration-file ./backup/ynet/identities/identity-1660314395.json  --network development
+
+// DOWNLOAD EXAMPLES
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --network ynet
 // npx hardhat identity-importer download 0x1411f3dC11D60595097b53eCa3202c34dbee0CdA --save-to ../resources  --network ynet
-// npx hardhat identity-importer latestBlockMigrated 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --handle An77u --network ynet
 // npx hardhat identity-importer download 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --from-block 8496819 --network ynet
+// npx hardhat identity-importer latestBlockMigrated 0x1574E97F7a60c4eE518f6d7c0Fa701eff8Ab58b3 --handle An77u --network ynet
 // npx hardhat identity-importer latestIdentityMigrated 0x8E34Fc67034b8A593E87d5f2644D098A3dBd2Fe7 --network xnetPluto
 
 task(
