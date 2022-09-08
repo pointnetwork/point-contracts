@@ -1,0 +1,412 @@
+{
+    "identities": [
+        {
+            "handle": "lakez007",
+            "owner": "0x4D9178ABe4a7256B5c060b49759f92cc5057b60F",
+            "keyPart1": "0xeb9ed67f7a86d5cad184faa59900e933aed90ec6f181d566459e08a48fa031a3",
+            "keyPart2": "0x0a7b2ab748e8f28dd423fea21a8768b41afb6ac89eddd82ecf8cc22d87853b92",
+            "blockNumber": 1369643
+        },
+        {
+            "handle": "edwardkariukim3",
+            "owner": "0x4b284528AEA531EE95685732e1e56Dc0f19c9382",
+            "keyPart1": "0xc6ed35bce16a8dffa0148d7b95c83add00acaad1bb04f7e6e26baa6813152e6e",
+            "keyPart2": "0xe86b8a9a845a78c6594d855382b902e3aa06323fadbc1f28a4a2332a7ac5d3fb",
+            "blockNumber": 1373952
+        },
+        {
+            "handle": "amrviiiii",
+            "owner": "0x4d5a0Ad938A0F26D2d1636f54d9d1b64cbbE967c",
+            "keyPart1": "0x3dc3f703956d47e8be968557079525f798b34ca2130056fca1eef77c63e6101c",
+            "keyPart2": "0x023212ac60f853decc0faef6bed7b82859ce8d29ef8eb1066b60460a51097e8c",
+            "blockNumber": 1377614
+        },
+        {
+            "handle": "bradextra",
+            "owner": "0xd1c328EBd9FF27A5b91220615E6fEf9576b7a8e5",
+            "keyPart1": "0xd7c0127bd9eedb1dc5c216bebd0e4e6b5df352555b5cd813252fe7edccb4d993",
+            "keyPart2": "0xabefceec2339167c78c165ef9ccae3e3814840ba16ac90a97f9d774f7b683ea5",
+            "blockNumber": 1378309
+        },
+        {
+            "handle": "cryptojodub",
+            "owner": "0x33a0Fc1db593e34407A812fA5611f9b4239CD5fE",
+            "keyPart1": "0x59a1ec0589d7656f9ae4064769ec485ea7de2d0abb9bc93343efa84e6d24d3f6",
+            "keyPart2": "0xfcebf431043a795eb522619caf9355cdc783879bbeb2a4b3c71289d541a70b97",
+            "blockNumber": 1392541
+        },
+        {
+            "handle": "maque2099",
+            "owner": "0x1bDD21e055832C0f1b28A2a38BA361CD33D7d411",
+            "keyPart1": "0x2c9d3e35ea79bfc0562ed31ee23edee1a45e2a41aad38672204a3744d6d1a448",
+            "keyPart2": "0x2136c5e0d78160949fd5e1eed049297c4c7b64ae7b25646fb6db8f09f22fea8f",
+            "blockNumber": 1394315
+        },
+        {
+            "handle": "TutorKita",
+            "owner": "0x5871a9e97B36d4Be502bc15f879928003ff29DEA",
+            "keyPart1": "0x80dbedc3f5477a45eeb4a125bb28975ccc7d8ccb7d9cfe0696964217e413df95",
+            "keyPart2": "0x14b2d6852b6da33b60dbf8afab2ffd645c9002bf3072baf1e5e8a993d3b4ea30",
+            "blockNumber": 1399136
+        },
+        {
+            "handle": "8d__b8",
+            "owner": "0xa53B65E8f4eCEDf926604cF474ccA8EE3800Aeee",
+            "keyPart1": "0x948c356a33da93d3fb9f9544db6e045fea43b0d1f5cb6df6115ea15353876a87",
+            "keyPart2": "0xe805a9c9cbe103fa9a50d0323a991f2324d50ba2ddd59c08d1267464e4f986b5",
+            "blockNumber": 1399541
+        },
+        {
+            "handle": "David_Renovatio",
+            "owner": "0x0232831693a42bE5e7AA9dCA7D53CDa7E3233e91",
+            "keyPart1": "0xc1c2b6053613431783dc67adf6bed44c0e2d6e4ffe87d09818c1b03e17a3cedf",
+            "keyPart2": "0x3e1daf958877df036ab8f4ec744c225e8c0edc58fa0a776ce8150203360cda39",
+            "blockNumber": 1405922
+        },
+        {
+            "handle": "web3site",
+            "owner": "0x7C86c47d23Bed368a8Df91c9B56f9768898d1b78",
+            "keyPart1": "0xe97d8e9f7ea54afcfd155b72c52a3e75d409ca36482ecbe4d68f8692ffdf7ea8",
+            "keyPart2": "0x5355ad12aa25e796c4b45b538a3a35647e6660b396e8af72bcd8cce131bc2581",
+            "blockNumber": 1407490
+        },
+        {
+            "handle": "dmdmdmdmmdmsss",
+            "owner": "0xA662Aa7E7112563D272E8EdB97eC7f84E2f0B3D5",
+            "keyPart1": "0xace4a317b5afb28488336f6cf612f51f5857b4bb514159dc9f169d5094f72c0f",
+            "keyPart2": "0x9cdf669951215ef5a92d897b86b89ac683250997ad9cbf16b8868b05c1620c34",
+            "blockNumber": 1407783
+        },
+        {
+            "handle": "hbhbjjjjjj",
+            "owner": "0xd700E17d408B6Bb5216b8e2E77b80D5403fc1e95",
+            "keyPart1": "0x4b8576e45fa4a0a942bae7068d37c467dc7ac22b019a590f53a9b2efaf6c5ab0",
+            "keyPart2": "0x2204e7f35574803bc8f738d47fa73927b1afd19c0eef8ff02ba5e6fffe59a15d",
+            "blockNumber": 1408057
+        },
+        {
+            "handle": "dgdggdgdnn",
+            "owner": "0x2A989861C415b6B4D9363c7F53300A4e413f0058",
+            "keyPart1": "0x8bd505d4beefaf7ce6a906741c2b3595c1d41df3c573e2854598fc9302bb95ef",
+            "keyPart2": "0x6b6f5fa12b859e49608ae9ad6daf19528e5b6020e6a9501e702a5ac0cac7e4d5",
+            "blockNumber": 1410074
+        },
+        {
+            "handle": "huh2et223",
+            "owner": "0xfa3E9BfE712e47ea03455735C6205A8b9cC9AA49",
+            "keyPart1": "0x9d2dc3788fd2aa5f17ae0a53c55282d0cec4abdc3f75309d6c364499f847e2c7",
+            "keyPart2": "0x1caf1b0661c09ac765df61d5e8519fe3ea643fea0c716629ad8c34beea1fefa2",
+            "blockNumber": 1415098
+        },
+        {
+            "handle": "uuouououu22",
+            "owner": "0x1550557Ae96d7030974CbBF0fD0df74E9Cc7420F",
+            "keyPart1": "0x3f58a55d61b1a41aa21131817fb8cd5ef93eccc7728809426906ae782991b917",
+            "keyPart2": "0xbd0fcd16fdc520a7e7f55754474962c60dc76a838ab88ca9b6398a510ffe53f5",
+            "blockNumber": 1415766
+        },
+        {
+            "handle": "uuu111uupuu",
+            "owner": "0x06f4f1dB83CcA91d8826f2DE1ceD8476fcF814F7",
+            "keyPart1": "0xbb54e587948a8bfdc5e839080f72be8d0b6595a1e42fbd9d8f209297658c27ee",
+            "keyPart2": "0x91c699a6407325667a69895e859daa5b28529993cb7e59eaf0a1fac3c8bee72e",
+            "blockNumber": 1416422
+        },
+        {
+            "handle": "bdbdbdbdmd",
+            "owner": "0xcc32e8b06001AAF3fe6d4e7eEEE29261c24739d5",
+            "keyPart1": "0xf4e51c8fa6228a234b55adabc68520195e3321515f8aac0caae7d78539c6e24c",
+            "keyPart2": "0x8fe2dcf0867a1b5ca29aabe009c4649ae10d06e5536152d2f78e54e2fa5b5d40",
+            "blockNumber": 1416993
+        },
+        {
+            "handle": "jeyk_rocky",
+            "owner": "0x50ddBF6B19F197640f36d6F7FF56B9639B168C7c",
+            "keyPart1": "0x000db4c7cd38db976137b5c636eca4685ab9d5c6b40f2c5f1d44862d6776a637",
+            "keyPart2": "0xf4173cd8ecdfa25eece3819ddc792381c1965fbd8827243a9974a69b17924b83",
+            "blockNumber": 1426242
+        },
+        {
+            "handle": "GoldenBoy1224",
+            "owner": "0x707ea7BaAAc5dF151aFB8319f6B7cF85E6Fd84a5",
+            "keyPart1": "0xec8733ada44e912588f3d8eb8893b6836948b0cc54d827c39d260e4b8fea1c5e",
+            "keyPart2": "0xdf303262f6de9557f0322ee6bdb76c8f005672ce4d04a1d9aedce5b84dfbcf59",
+            "blockNumber": 1427475
+        },
+        {
+            "handle": "falsdkdslf",
+            "owner": "0x48202e77040b19aABa362d85AdF5208282967688",
+            "keyPart1": "0xcd51d1a1740ed90b0ac43be0acfe0a886cca6bca6fcdf8df6aa0b38a9213423f",
+            "keyPart2": "0x19ea6018a0065d72254b70241c7facdd9e10403cba539e920410e73d0a9f45f6",
+            "blockNumber": 1428433
+        },
+        {
+            "handle": "lakshithat82",
+            "owner": "0x4b975A882292B9f7Cb4Fa6c7CB986C81bBe26fD4",
+            "keyPart1": "0xc10d0b9811041bf6c6198b9d909726c787bcbfe04c45f487269970579e3b73a1",
+            "keyPart2": "0x6d4d5e45e735a86632a2affc3af814027e37070bbead349d17f6f828d2fdcc2d",
+            "blockNumber": 1429679
+        },
+        {
+            "handle": "antiantydodo",
+            "owner": "0xf5CaE2eb8F50fb75c0B3C959274EF976a1271f34",
+            "keyPart1": "0xa743d572dcd60ad36d1993a713e1d4aa6c68e4852244c889e96d7cd9f1c460a3",
+            "keyPart2": "0x55e4b69dcc624d2c8d6676d829ab26490b80a454d2c2d3a68103cc6787188cdc",
+            "blockNumber": 1430827
+        },
+        {
+            "handle": "dodoitcpc",
+            "owner": "0x75f3cEd47e0924bC05b224bEB98fB5fC3739CE45",
+            "keyPart1": "0xde849503ab24bcdd03757b85cbfac17eed9762e7d292acdb745e8c01e6d7599e",
+            "keyPart2": "0x8790feb8898cee69b6b6d7f257e4bfbe1e002e82a550928c38bedce4a282c4b4",
+            "blockNumber": 1431406
+        },
+        {
+            "handle": "sasan_karan",
+            "owner": "0xfd9D60523842d6588c6589d01c9d06f7178acA42",
+            "keyPart1": "0x3cdfbea7ac53d2d33ed3366b7ca0b0494e20974562d95424b6089d2468a81560",
+            "keyPart2": "0xa9a6789cc23cfa852816f67b9e7976196e492fcc9d66cf5b2ca3665ebb49897b",
+            "blockNumber": 1431954
+        },
+        {
+            "handle": "lasaroso",
+            "owner": "0x9AC8b099E9c89dAD92249ac24C19fB5A5276e7ec",
+            "keyPart1": "0xf24d4fa92b95c95b8af72af2faf936ebca45b1a93a09d6f666f8e7ca4fb1f9df",
+            "keyPart2": "0x6df807ed32f887730a65029df17ae236f1f07f5f417a9727ff3c79fbc53ff11b",
+            "blockNumber": 1434532
+        },
+        {
+            "handle": "ubnintl",
+            "owner": "0xD81FEA3e163A7B31C1606Cf2eD8ddA054f9b234f",
+            "keyPart1": "0x3e04e09546d16ffd07a1dd65283e48673111341ff06336d7ab974543e6160476",
+            "keyPart2": "0x0355a08d4ebeef3ff586417a3de02bb277685ebf3337f30a26973abc1e91bf2c",
+            "blockNumber": 1435921
+        },
+        {
+            "handle": "TMakwana13",
+            "owner": "0x6778E16481528cBC9bF9CF1Caf28B9C822A603B9",
+            "keyPart1": "0x79e0d004c0e04a124fa9004a22c111f90c0a4e1672522101f91dc6144dd3d24b",
+            "keyPart2": "0x60eafad69201045cd44b1ec9e5866e9bfa1ade04d85ab98be08a5f68c50a5733",
+            "blockNumber": 1438383
+        },
+        {
+            "handle": "MahdaliaNoni",
+            "owner": "0xCC244727D20ee79f420ce46248e3167070127B80",
+            "keyPart1": "0x01ddb37061c39a9cc0be8a3fd6b546e125fc231f847ff0f1360397bcfdd77fac",
+            "keyPart2": "0x3d6a7b8f756d51c46b993006a2da45bda65ab2f361b78b124c1d0221b8b24f80",
+            "blockNumber": 1443330
+        },
+        {
+            "handle": "MichaelMKeene1",
+            "owner": "0x4CddDE348B796309c66741f6B5537faE59a44521",
+            "keyPart1": "0x6897b89e876616885375508eede0d7c24bba1ff93e349e30f865cc5f7dad0fbd",
+            "keyPart2": "0x327130e0e68404d9845ac517f263617076a918a492917b9782d79cf511254a30",
+            "blockNumber": 1447321
+        },
+        {
+            "handle": "Rotish12",
+            "owner": "0x5F3e5741A176DdcB26f7198402544baFaB8b91fd",
+            "keyPart1": "0xbe51ede5143ff47037d588289c6771b3856e5cabbe946e6bdcd5ac941077f4fb",
+            "keyPart2": "0x3093f0a242ac902710a676b3e97f14f6eb92b40c9e93f7ff3dd1a2a23dc4da01",
+            "blockNumber": 1447749
+        },
+        {
+            "handle": "Faizanu39250469",
+            "owner": "0xd263eFFBFBdd1E21A69aCb02E349c123E262df9a",
+            "keyPart1": "0xfb3af742e3f089b150a3521bf1511eb7e8ea5e2c6795dd48f9f874aee84dae05",
+            "keyPart2": "0xfcbe2228445a56ca34d8def6e979070ac033fe60c82a34ed37a2728f3b2ddd95",
+            "blockNumber": 1451041
+        },
+        {
+            "handle": "abir_faiyaz",
+            "owner": "0x1dD5CfeeBdE4207715F2280176ed47fBDA9448b7",
+            "keyPart1": "0x78fe6095d0cbce2fb2d553199c2c7179f21244c4805ff255e45b9a54f4b47381",
+            "keyPart2": "0xce9fe1fb0377d8618379ece1a60364410c32b3225d8421338ee61c73f19c5338",
+            "blockNumber": 1451947
+        },
+        {
+            "handle": "ahsanytmail",
+            "owner": "0x10CFa336c266E3fCc260a5F80618123FE798De4C",
+            "keyPart1": "0xf73451a60a55ab77a99d3b2883940d9a0b94f8199ee57249e3bbf894d5039ca6",
+            "keyPart2": "0x67519b42fd479714c83cee3fbe7d2374617ce242e8b40f7ef5b4e8798880fde5",
+            "blockNumber": 1452151
+        },
+        {
+            "handle": "neerajgarwal",
+            "owner": "0x75e6C42b9e83cAb4549df4fA0DfEBe97F7aafc00",
+            "keyPart1": "0xaed13feb71eb1b55a78825ea3ed8013653feccf0e2c83277d24c89d7f8143c71",
+            "keyPart2": "0xb2c3873e8b904df6ab4cab9627faf02ffa431f5d04f8e42fe8cff306a0b5eef0",
+            "blockNumber": 1452339
+        },
+        {
+            "handle": "sreshik",
+            "owner": "0xEbA23aDF73F0a7c976F3c14A868D94cb3c82d585",
+            "keyPart1": "0xe2db95c902ffa3a5e934612968674d44f4ff27c529ea7c4faf7d7dc2e8a1a1eb",
+            "keyPart2": "0x46d13aa4da091f35454a0268f7b5518500fc64c7385d4e880efb44fdbfdfa55e",
+            "blockNumber": 1452370
+        },
+        {
+            "handle": "FazlulKarim9199",
+            "owner": "0x3Ed0502feA9431F6db60d65cdc01e2Da7c88C370",
+            "keyPart1": "0x460dc6597b90ed3856a7cb6cb2002d576d5e68b3d24d5b3ffff82dd5807918ae",
+            "keyPart2": "0xbfe9a12ea6850368482da90ac5c972a10b0d4c13c4a1c6e123abd3de4fee2ff1",
+            "blockNumber": 1452575
+        },
+        {
+            "handle": "Ninja3lit3",
+            "owner": "0x4eb673c6F3F0a39509216344a96f0BA86B1d5141",
+            "keyPart1": "0xc037795fa1f54b3d88c79d61376be2e731d960feae6fb5da74c39932e9b46bdf",
+            "keyPart2": "0xdf26b1065e92148f8c3438056f1944ae2062b9a4c3bded3b9b00b5fc26c1c7c5",
+            "blockNumber": 1454240
+        },
+        {
+            "handle": "ianaw98",
+            "owner": "0xFa9A02A5194e794e773244dD7340cd08e68d78ec",
+            "keyPart1": "0xfb5eb0e63b067ad7897ed207205b10c0cb74cd2032506d176dd2eec6d43c1922",
+            "keyPart2": "0x4a24150707b8cfd6982700718af2d7311b53ea964604ae4892c6fc5f1142b4e4",
+            "blockNumber": 1454298
+        },
+        {
+            "handle": "Avocado68604958",
+            "owner": "0x116181202157CF77254Df30102BA1a85eB817387",
+            "keyPart1": "0xa4ad0a0d1d097ee5efc1c732a3c81c18cffbf252ada7b7a88102689d2ea8c656",
+            "keyPart2": "0x74a9c5569f510f04247568f99960543dd5dd488b7e7365b25c3fd6936b6a291e",
+            "blockNumber": 1459762
+        },
+        {
+            "handle": "MehmetK11590041",
+            "owner": "0x605D49d94B5c52eF13f9d452b69b32a3d2527E7b",
+            "keyPart1": "0xe765dc93b8072a1cf9ce6243397f0b81a9977f1d375ae238e9de53a8ab3f3304",
+            "keyPart2": "0xb36dd9d85ee25b7cffdcbe0f951c6d4c9812f7772c3623cd5fcb39d4e92db3e6",
+            "blockNumber": 1462338
+        }
+    ],
+    "ikv": [
+        {
+            "handle": "bradextra",
+            "key": "::rootDir",
+            "value": "f50a513b9e224e6f6c4c01e6331905956178386c28202108435cfc21e48e7ed8",
+            "version": "0.1.0",
+            "blockNumber": 1378934
+        },
+        {
+            "handle": "bradextra",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1378936
+        },
+        {
+            "handle": "social",
+            "key": "::rootDir",
+            "value": "4609c35dc934f05eb09ad57597107d6dd320f3b92a6e69d30ff25cbc7c0dcc5f",
+            "version": "0.1.19",
+            "blockNumber": 1384601
+        },
+        {
+            "handle": "social",
+            "key": "zdns/routes",
+            "value": "0x921ddc3ff9f2251a9728e4343c4947c595e6827b4ad774ef9c08046e1c83f059",
+            "version": "0.1.19",
+            "blockNumber": 1384604
+        },
+        {
+            "handle": "social",
+            "key": "zweb/git/commit/sha",
+            "value": "1331e853e4d9499be254bf3dddf53c4b6f47e484\n",
+            "version": "0.1.19",
+            "blockNumber": 1384607
+        },
+        {
+            "handle": "acousticmoron",
+            "key": "::rootDir",
+            "value": "f50a513b9e224e6f6c4c01e6331905956178386c28202108435cfc21e48e7ed8",
+            "version": "0.1.0",
+            "blockNumber": 1400418
+        },
+        {
+            "handle": "acousticmoron",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1400420
+        },
+        {
+            "handle": "blog",
+            "key": "zweb/contracts/address/Blog",
+            "value": "0x7B19e38622A1dFBD7314659b116e25906903e748",
+            "version": "0.1.2",
+            "blockNumber": 1405079
+        },
+        {
+            "handle": "blog",
+            "key": "zweb/contracts/abi/Blog",
+            "value": "37ae174c96dd18aaa79f31c7d0f32b97fcb74fe168edd1f1006a23d7e980bdd0",
+            "version": "0.1.2",
+            "blockNumber": 1405082
+        },
+        {
+            "handle": "blog",
+            "key": "::rootDir",
+            "value": "3ab7afb76bc46e5521aa821d8eb097cc3999a8a8abe5d94c9f229a2509562ce6",
+            "version": "0.1.2",
+            "blockNumber": 1405085
+        },
+        {
+            "handle": "blog",
+            "key": "zdns/routes",
+            "value": "0x8fd491e39b7e26ad37b7e64799beffd4f3dc60661b17ea99920d8cd20d1b9e85",
+            "version": "0.1.2",
+            "blockNumber": 1405088
+        },
+        {
+            "handle": "blog",
+            "key": "zweb/git/commit/sha",
+            "value": "ae5c3742beb1bb5d982bbbbe32b87408d6b301ab\n",
+            "version": "0.1.2",
+            "blockNumber": 1405091
+        },
+        {
+            "handle": "suzume_erc20",
+            "key": "::rootDir",
+            "value": "05f528dd3289a9e3a8889458e66fc60e620538e7f7f649dea95ff60c69ff9f62",
+            "version": "0.1.3",
+            "blockNumber": 1409627
+        },
+        {
+            "handle": "suzume_erc20",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.3",
+            "blockNumber": 1409629
+        },
+        {
+            "handle": "web3site",
+            "key": "::rootDir",
+            "value": "870a86fd2eec35d559e948e99bcdb2520e87c7e67e3b5643037f47298e40598f",
+            "version": "0.1.0",
+            "blockNumber": 1430888
+        },
+        {
+            "handle": "web3site",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1430891
+        },
+        {
+            "handle": "web3site",
+            "key": "::rootDir",
+            "value": "4dd0fecf6647864d703083d723510eb0c80ee90f11030d565315cb8e3587bd31",
+            "version": "0.1.1",
+            "blockNumber": 1431123
+        },
+        {
+            "handle": "web3site",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.1",
+            "blockNumber": 1431126
+        }
+    ]
+}

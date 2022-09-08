@@ -2109,23 +2109,23 @@
         },
         {
             "handle": "social",
-            "owner": "0xD2986Dd0E0164B511f305e3F42172d6912aAc7e0",
-            "keyPart1": "0xb59f205d85d43d6eca812721910d77531238f52109529aeab2cfeaf4412d882a",
-            "keyPart2": "0x6e04466ddec4ec25e0efa12590d8a3345f40352b9115ad6eded1b0cc99db0746",
+            "owner": "0xf336ceeae583749535dc0f5b7e96c9c1ba14c59e",
+            "keyPart1": "0xf2af682011311b4ae037dd0a696bb60fdc672020c2bc3edad01d7219f5be8bac",
+            "keyPart2": "0x17b8b3ea8308c979b840f91d6a509e8110cf2b9d0f536dbd0e5bf693ae7903e6",
             "blockNumber": 30846
         },
         {
             "handle": "email",
-            "owner": "0xE8eC230867750dbB27E77fED9d5eD0Ab4248C5A2",
-            "keyPart1": "0x1a89785e6e227717495bbae8f5ce08faeda023d41e81893769408370394f447b",
-            "keyPart2": "0x2715a0835ee3d4d11c341b5f31ba68fe2fd9049b3083305e670cf409f9e0370a",
+            "owner": "0x12474ec105f0bd93c0b06e4c2ea94c71a3d02d7d",
+            "keyPart1": "0xd5d96f4f3e505b039c3e33ab2e70d5d9dd1689a7cad650a137b9db52c433b0fe",
+            "keyPart2": "0x7d7f40df78ac258e472d60dade8b478f1b4723dcdb4cf2fda89d8d6200746cf9",
             "blockNumber": 30846
         },
         {
             "handle": "blog",
-            "owner": "0x617d59a78b689Fa9Dbc9a66e15Fce1Ba302eFe3e",
-            "keyPart1": "0xc7051518ed636385d85a4a0dffdd76dc87ce2e631e81e745acfc0aa89224bd71",
-            "keyPart2": "0x830ba152e740cb053d8bf77bd85f4bf29f69ea775065f69d2e2b49ea21214950",
+            "owner": "0xd2348911b1c2ec48be6fa387142179f812786044",
+            "keyPart1": "0xd1fe20dd59e1c5ab721225cc94c7cde53e550fff0f3dd71fb8cb1dbd809f6a0b",
+            "keyPart2": "0xca7551ac268f87cc44bce55f96ae238937d75ae6a5a564bcefa932847cbde1c2",
             "blockNumber": 30846
         },
         {
@@ -2333,9 +2333,9 @@
         },
         {
             "handle": "todo",
-            "owner": "0xDF6000De23652f2E3C320D060810286d927dD4cA",
-            "keyPart1": "0x39489204bce180bb5a63d8a743893d188b9c908cacb2e49df677f49a3ccb16e7",
-            "keyPart2": "0x3b9a5fb7832a4ef352a468abcd4c0126eaf87fb1e83ba4be9608af291d25ecfb",
+            "owner": "0x023c44a3f0fbb8fd344ff7863d92f2108b3bb47f",
+            "keyPart1": "0x4fa0322591f9a3e03cb2d3cf400b7c090a8e592913a4b4208229c93f94739dca",
+            "keyPart2": "0x0ae235b2505155efca57f11fac969b20fcdeecb2f6b835ae649c8231dd4c0f42",
             "blockNumber": 30852
         },
         {
@@ -8017,9 +8017,9 @@
         },
         {
             "handle": "drive",
-            "owner": "0xCCbDD535cC841f5437041305C4cC28d771074b91",
-            "keyPart1": "0xe7061e6498c6110bc0b5243f468a9e72df0d1762339cc0771525651204d5db5a",
-            "keyPart2": "0xbf1c7176a61c90decba4f6e0b35623082fbf63218ded0e5c87f4d37cfd81e4a7",
+            "owner": "0xd22c7f903ca5dfb17b827b0b17eb475099264f8d",
+            "keyPart1": "0xacc935fc633abe4d21b4bc7f7d831e27760be45e3d6fc7a5ca17ea0c7fd17ed0",
+            "keyPart2": "0x58ff7aa03fdb55b1226b7fc78f0af1cafa75ce31cb502d6bcd68561da7dd2aa7",
             "blockNumber": 31002
         },
         {
