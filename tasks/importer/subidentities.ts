@@ -46,14 +46,13 @@ task(
     let migrationFolder = './resources/';
     const lockFilePath = './resources/identity-subidentities-lock.json';
 
-    if (taskArgs.migrationFile === undefined) {
-      console.log(
-        'Please inform the migration file with `--migration-file /path/to/file.json`'
-      );
-      return false;
-    }
-
     if (taskArgs.action == 'upload') {
+      if (taskArgs.migrationFile === undefined) {
+        console.log(
+          'Please inform the migration file with `--migration-file /path/to/file.json`'
+        );
+        return false;
+      }
 
       const lockFileStructure = {
         contract: taskArgs.contract.toString(),
