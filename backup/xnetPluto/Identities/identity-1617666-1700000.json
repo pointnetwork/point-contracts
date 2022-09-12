@@ -1,0 +1,734 @@
+{
+    "identities": [
+        {
+            "handle": "NephosWalker",
+            "owner": "0x755302DD47183D53bc347d477096d2a5f25De9da",
+            "keyPart1": "0xf3932408380f02c11db0157567fb16af8fc2844064d33329126f2595a9b3f39c",
+            "keyPart2": "0x5dc7d92be431a97054ddb5d23d89668abab3884e17a19a65e062929587c3d0d6",
+            "blockNumber": 1617777
+        },
+        {
+            "handle": "styxmomin09",
+            "owner": "0xA61Cb68b2E3C797D47854C9710f4AEE1cAEee7E4",
+            "keyPart1": "0x1c243485970da2f98dae17d3c97a50bf5a21256ba19487d9f9c1ca412a64c86e",
+            "keyPart2": "0xd24415b2aa93ff3d69252a32a1f99527dd6f69dec7e8adec562248bbf3da6fde",
+            "blockNumber": 1620679
+        },
+        {
+            "handle": "mcceranda",
+            "owner": "0x4369aE51967C764B8CD7947D7Ac5BE8ad29e21d5",
+            "keyPart1": "0xe102fab63637e3fe2f634b6f27485db582f71438785e023f610e3e1db4a14561",
+            "keyPart2": "0x841ced4cd1b53222d7f22a8b4590344232a18c138a71176e5a3659d8c6ad4b28",
+            "blockNumber": 1621101
+        },
+        {
+            "handle": "sniper9xx",
+            "owner": "0x00914c4761fd52167820f2807dfaDC8AB3703819",
+            "keyPart1": "0xade177903d6cdce7900cb6b1b624447287ae0124dcef52f395340487eaff1aab",
+            "keyPart2": "0xb731f57c1e11bdc2446be5241a397ecfda0c7590a8b8163b30c01c0e5fab4a91",
+            "blockNumber": 1623464
+        },
+        {
+            "handle": "tirtcrypto",
+            "owner": "0xb6d7847BBdc1cDfb4b6745A11694B779D1a46C56",
+            "keyPart1": "0xa71470b0c4102cf523bb1f0e5b28992e4f1813c7d38917fdf08f0be4f170d851",
+            "keyPart2": "0xc229434ddca112ea025b88ade06ceb9c717af6ca45322c7b1de6cf2ada610ea6",
+            "blockNumber": 1624873
+        },
+        {
+            "handle": "oOohoangxuanoOo",
+            "owner": "0xF69c67dE42369B75AA118Ff0c3CCCf8352CC6563",
+            "keyPart1": "0x1af2555067967986d3c74e54ca3bdcc89a63b48c075b48761132eda55132f781",
+            "keyPart2": "0xcafcfd02f232a911b32fdaa196f51e1ff9d246c9dc03bde4e26d65955b16c87a",
+            "blockNumber": 1626179
+        },
+        {
+            "handle": "jacortesmahmud",
+            "owner": "0x58C843cdD1395202ee0cfE4f75BA71f50B025833",
+            "keyPart1": "0x1126726154ceb4f264a0f68148f31378de04d0f493d8e4fdbb9b39ddf1314672",
+            "keyPart2": "0x0368aaed6486ff8bc576333ab207dc7a4e90b0ac101692726b545069b2badc56",
+            "blockNumber": 1629007
+        },
+        {
+            "handle": "XxXGreenBud",
+            "owner": "0x7E11D334F1cA50Bf9ae4a4f590cBD6962b7D0dc2",
+            "keyPart1": "0x25f9ad48983e9f7a701f6c41ff0440b59f0082c788ffbb1b0b7a76d2d45fbdbd",
+            "keyPart2": "0x1052fabe09db94e64f2cc064ac273916905da306ee9803dbbdc1b0e7079df38a",
+            "blockNumber": 1631324
+        },
+        {
+            "handle": "B1ZZLENOTTZ",
+            "owner": "0x9Eef08062376925AD2d1300fD08bAceD211Df00E",
+            "keyPart1": "0xa3d2517ce4d0f9ba0a535707e10fea84ba40b02f2d5797705e8a0476b7a1e75a",
+            "keyPart2": "0x886af45a6be25d26237ea7ea02397634031b3ef02a198829a41ab389353f4e5f",
+            "blockNumber": 1635652
+        },
+        {
+            "handle": "Loc33461879",
+            "owner": "0x9e3516DddE1e663C01B98e7747a212370C35C4C8",
+            "keyPart1": "0xdfac1b6dd3842e1d638f677f1e1bd7fc380286bc92f940614a96af9d8fac8966",
+            "keyPart2": "0x7a09b4cf37cc50a94e18997c6982bca98e81934d5e2b785f8eec3f4e4fabb5a2",
+            "blockNumber": 1647438
+        },
+        {
+            "handle": "dc662418",
+            "owner": "0xe5CBeA57056B9bAbaD41d1a233c1687F9387522A",
+            "keyPart1": "0x93d97979f01893b885c2b6b988032a7b5a753c357aac801582d98dfec0f1b3bc",
+            "keyPart2": "0x1832ab6400d69ffece24c0c53c8dce87308dbd24d2fcd12bcc57979b46db9bbd",
+            "blockNumber": 1653819
+        },
+        {
+            "handle": "swaggod44",
+            "owner": "0xD37529f2d526A020457103791505C78f012Fb021",
+            "keyPart1": "0xfd92329d8b89d3353dd26d690785c8f0106dfaa24cbb87bc5c7d673711f5433c",
+            "keyPart2": "0x26a14c782188f0ec298e6748de1c1a705a44804ec6cdf85388fe9b48b67d7694",
+            "blockNumber": 1655078
+        },
+        {
+            "handle": "atestdapp",
+            "owner": "0xeB88C2a9e46Fe4299124e984386300E7548d5Ab9",
+            "keyPart1": "0xb1781f4760d5b21d011dd45c60a062adb1c93c92bcf780319847b75d702b3b57",
+            "keyPart2": "0xdd42746078ce2e2d5f408ab956a4aa2e878a1cf2cbfd2ec2001bee5e7a5d5663",
+            "blockNumber": 1656923
+        },
+        {
+            "handle": "mattyyapp",
+            "owner": "0x729B93F3e622871400b114A7ddE5506b71a5a7C4",
+            "keyPart1": "0x25aaeeed8679131f341d52687d1f8a5f38a24d70bcdd735a426cce8051a7b471",
+            "keyPart2": "0x9108451a5a455943487eb9c0373638e446ed4fd96c9f7f1cdf0a50cab8d77d33",
+            "blockNumber": 1659413
+        },
+        {
+            "handle": "ath2world",
+            "owner": "0x0CC6B10aF4648e770449Daed8ef0573F41Daf6A6",
+            "keyPart1": "0x6110582b96efa5a1b45bbaa737469b8534471a9e90faf48d6bb77715bcef06a0",
+            "keyPart2": "0x6ff5efea1429e0b67256a9cfecaf416f5daffdf5e8e63a6dd59ce641898473ec",
+            "blockNumber": 1663033
+        },
+        {
+            "handle": "IssamuTatch",
+            "owner": "0xC79C2554561550a3BBc0545955bf2A4D15C4E73c",
+            "keyPart1": "0x3d876de1df42c6c47a672ea184238616a13d4a7f6d1789e7c875679cbebaa2ad",
+            "keyPart2": "0x63d15ca635cf2fc2d4fdcdd3d61960647f655d1f4b759428a1d7c956bc7c019b",
+            "blockNumber": 1663138
+        },
+        {
+            "handle": "camorris74",
+            "owner": "0x2dC8e35aE23D975164166879888948C780adEa3b",
+            "keyPart1": "0xedd29c834b1fd811b459183e47cca61e427412973bcb430d8eef52c6590f45e3",
+            "keyPart2": "0x9dcf02eb29bc299fc816967010667a053dfa549c5e85b5cb04d624a078e115e8",
+            "blockNumber": 1668956
+        },
+        {
+            "handle": "shigekochain",
+            "owner": "0x1c8642b3BbD7D27af6eDe8e4c84dC530F975726A",
+            "keyPart1": "0x552a8de116e4d5dc2c72693e5545b57a1702a89408329f3540f20dcda2ee63a5",
+            "keyPart2": "0xa005be06fc451187adc704109a6efcedf4bfce5d2f5cf7e57ac9da41c7472215",
+            "blockNumber": 1670033
+        },
+        {
+            "handle": "RhyanJill",
+            "owner": "0x472BF10a8D36B373186f12758C7f17F0e161AA53",
+            "keyPart1": "0x89f306903697f79221a4c0f715fae24063dfaf0393ed49865fe13bda88914ed6",
+            "keyPart2": "0xdef104cc7d9ddc1fea6f15a71c1e17cf9a60682eaa3639aaaed633db590eb383",
+            "blockNumber": 1670542
+        },
+        {
+            "handle": "JaxisVonAxis",
+            "owner": "0xD96727a6B8Fad9cC7f3781Ea830aEc3fC3EfB7EE",
+            "keyPart1": "0xefe325bb63974bfd119c289be97df908428e2bf1334fe53fa69da679c3ca0461",
+            "keyPart2": "0xe0506d21f31a5034d82b7d9b406d2a45317289e4b52a354988c09a6dcf2259b4",
+            "blockNumber": 1671193
+        },
+        {
+            "handle": "eab1984",
+            "owner": "0xDcE6B5829EDF6aCbA9e20624692A870105b465ed",
+            "keyPart1": "0xa7dc9bb001b7f8d216e3b6a42f6ffe4241c011b5fcb83fb2a1bebb2c92208b33",
+            "keyPart2": "0xb1a517b10ac2a21d6238d3ca4a7b6339284e7ba5f36a92366f7b4fa22ddf5a3c",
+            "blockNumber": 1674421
+        },
+        {
+            "handle": "1John5v1415",
+            "owner": "0x4054D1e7E666c9fB790f43C1dFFFC58E618213Ed",
+            "keyPart1": "0x55595b46b5fc8ce9616743f8b89ecd66eea56505392824b9e61ecd2102ca827e",
+            "keyPart2": "0xdb259b7d8359a61173a6eb65c90c0095d0cd170e4c6837ba15eb7cbdf7b16da7",
+            "blockNumber": 1689542
+        },
+        {
+            "handle": "rahad88r",
+            "owner": "0xDF3521B8520F126F446f137901224B4F05471550",
+            "keyPart1": "0xc4dba6f669242355f122af93c4f79567914254319f1e8f0ea47b68603251d9df",
+            "keyPart2": "0x4c3804f8fba8481a6fd917bd5440a8318002ce734667d061176aff8426da7920",
+            "blockNumber": 1699254
+        },
+        {
+            "handle": "mhegomaa",
+            "owner": "0x5b88df5cFE304160fC00528B037Cd2FBec26308E",
+            "keyPart1": "0x8a052fe066486caeb4916a497cb5c5a241afdadb4523c8cc008772366ea85b35",
+            "keyPart2": "0xb320b10c903963f0aa736b24d9f8175e2fa4fa1621125a8e1827ee20388e60e5",
+            "blockNumber": 1699696
+        }
+    ],
+    "ikv": [
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "37d2ba3f9b19497a7e39bc3464012a1d534dad4de3f9f84e63605eaa8da1a509",
+            "version": "0.1.19",
+            "blockNumber": 1623191
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.19",
+            "blockNumber": 1623194
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.19",
+            "blockNumber": 1623197
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "67458be595825ccf91e0fb4be53a1926cb8d9bbf20b37558c0d5fa880b5db2d4",
+            "version": "0.1.20",
+            "blockNumber": 1623279
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.20",
+            "blockNumber": 1623282
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.20",
+            "blockNumber": 1623285
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "8de93fb88d2c7f6c1f49d06998b4245ef2af02e2923cf182fb01e98a00d8e95b",
+            "version": "0.1.21",
+            "blockNumber": 1624161
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.21",
+            "blockNumber": 1624164
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.21",
+            "blockNumber": 1624167
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "00a22e6bf6cb0eb6d64673612ead20479d889737dcf8d6fc47b7b47ad057f58e",
+            "version": "0.1.22",
+            "blockNumber": 1624390
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.22",
+            "blockNumber": 1624393
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.22",
+            "blockNumber": 1624396
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "00a22e6bf6cb0eb6d64673612ead20479d889737dcf8d6fc47b7b47ad057f58e",
+            "version": "0.1.23",
+            "blockNumber": 1625015
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.23",
+            "blockNumber": 1625018
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.23",
+            "blockNumber": 1625021
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "00a22e6bf6cb0eb6d64673612ead20479d889737dcf8d6fc47b7b47ad057f58e",
+            "version": "0.1.24",
+            "blockNumber": 1625114
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.24",
+            "blockNumber": 1625117
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.24",
+            "blockNumber": 1625120
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "00a22e6bf6cb0eb6d64673612ead20479d889737dcf8d6fc47b7b47ad057f58e",
+            "version": "0.1.25",
+            "blockNumber": 1625133
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.25",
+            "blockNumber": 1625136
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.25",
+            "blockNumber": 1625139
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "00a22e6bf6cb0eb6d64673612ead20479d889737dcf8d6fc47b7b47ad057f58e",
+            "version": "0.1.26",
+            "blockNumber": 1625166
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.26",
+            "blockNumber": 1625169
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.26",
+            "blockNumber": 1625172
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "7628c7c32f773fe0db0841930f1758b1246022bb92ff0a67541203936500fac8",
+            "version": "0.1.27",
+            "blockNumber": 1628698
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.27",
+            "blockNumber": 1628701
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.27",
+            "blockNumber": 1628704
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "cd9cda23afb6acb9d5873abc1beb05a9fa54b71d2cacd4cb802c18e0ad3bb7d4",
+            "version": "0.1.28",
+            "blockNumber": 1629095
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.28",
+            "blockNumber": 1629098
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.28",
+            "blockNumber": 1629101
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/contracts/address/Minimum",
+            "value": "0xad788396Fc3Fb6684e36B4046049fA0Bb40339e7",
+            "version": "0.1.29",
+            "blockNumber": 1629148
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/contracts/abi/Minimum",
+            "value": "c9c1759c25df17a87d186072f6ad4f6c0ba1828a3f179814e929d0b9387092f4",
+            "version": "0.1.29",
+            "blockNumber": 1629151
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "cd9cda23afb6acb9d5873abc1beb05a9fa54b71d2cacd4cb802c18e0ad3bb7d4",
+            "version": "0.1.29",
+            "blockNumber": 1629154
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.29",
+            "blockNumber": 1629157
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.29",
+            "blockNumber": 1629160
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "196fa0f0da8df318247b60733dfa23852a5ee21efbebdf03817919403b756ac9",
+            "version": "0.1.0",
+            "blockNumber": 1629381
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1629384
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "74ba6df5edf447350a09b8bd08db8073227e975b7519d5bdaecb37a269f8ec21",
+            "version": "0.1.1",
+            "blockNumber": 1629539
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x32199b3cdbd1339cee9300efe58080c04316ff1b7509c82dd7b3a379ed6eef9c",
+            "version": "0.1.1",
+            "blockNumber": 1629541
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "1c275c0cdebc70f315fd9e79bd667cd70cacdf534ead9701a381dd9b97140f98",
+            "version": "0.1.1",
+            "blockNumber": 1629543
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x32199b3cdbd1339cee9300efe58080c04316ff1b7509c82dd7b3a379ed6eef9c",
+            "version": "0.1.1",
+            "blockNumber": 1629546
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "d655f3f1df748eb237ffaa812a07dd717eb4e9ddea24d6508696e35f1230345c",
+            "version": "0.1.2",
+            "blockNumber": 1629579
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x32199b3cdbd1339cee9300efe58080c04316ff1b7509c82dd7b3a379ed6eef9c",
+            "version": "0.1.2",
+            "blockNumber": 1629582
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "ed90729baf72b5dc1197b5367b5455b6a630a95dba06fe61e13395c283aba15e",
+            "version": "0.1.3",
+            "blockNumber": 1629602
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x32199b3cdbd1339cee9300efe58080c04316ff1b7509c82dd7b3a379ed6eef9c",
+            "version": "0.1.3",
+            "blockNumber": 1629605
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "::rootDir",
+            "value": "d655f3f1df748eb237ffaa812a07dd717eb4e9ddea24d6508696e35f1230345c",
+            "version": "0.1.4",
+            "blockNumber": 1629614
+        },
+        {
+            "handle": "jacortesmahmud",
+            "key": "zdns/routes",
+            "value": "0x32199b3cdbd1339cee9300efe58080c04316ff1b7509c82dd7b3a379ed6eef9c",
+            "version": "0.1.4",
+            "blockNumber": 1629617
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "5519440a54851d40aba90b837792075f0ed34923526d6f6b079d1b00b734d91b",
+            "version": "0.1.30",
+            "blockNumber": 1634451
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.30",
+            "blockNumber": 1634454
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.30",
+            "blockNumber": 1634457
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/contracts/address/Minimum",
+            "value": "0xcede022AA2Ae9cdDA059ff611dd7706EebB49FFe",
+            "version": "0.1.31",
+            "blockNumber": 1634632
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/contracts/abi/Minimum",
+            "value": "6ef570d05df470c4d919668988385f60ab066a5ceb03ef6ba0b85fd0be30d214",
+            "version": "0.1.31",
+            "blockNumber": 1634635
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "5519440a54851d40aba90b837792075f0ed34923526d6f6b079d1b00b734d91b",
+            "version": "0.1.31",
+            "blockNumber": 1634638
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.31",
+            "blockNumber": 1634641
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.31",
+            "blockNumber": 1634644
+        },
+        {
+            "handle": "bitnautas_cu",
+            "key": "::rootDir",
+            "value": "c2b5d98a7989da1f833ba83379ab8debec11e2e4a76ca5eebb35c5c3371918d3",
+            "version": "0.1.1",
+            "blockNumber": 1645275
+        },
+        {
+            "handle": "bitnautas_cu",
+            "key": "::rootDir",
+            "value": "3e7ba2ff0901c5b4ca85f5cd410c18ac071b60d20af5205a649f78a11da67728",
+            "version": "0.1.1",
+            "blockNumber": 1645278
+        },
+        {
+            "handle": "bitnautas_cu",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.1",
+            "blockNumber": 1645282
+        },
+        {
+            "handle": "atestdapp",
+            "key": "::rootDir",
+            "value": "e28014ba6251cde6bc90e2b737d0e07f25824483aa81e1aace21a9876ed986c6",
+            "version": "0.1.0",
+            "blockNumber": 1656944
+        },
+        {
+            "handle": "atestdapp",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1656946
+        },
+        {
+            "handle": "atestdapp",
+            "key": "zweb/git/commit/sha",
+            "value": "6660ec70130ac48e2fc10105dc37e3e7c0038b4b\n",
+            "version": "0.1.0",
+            "blockNumber": 1656949
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "3e79e8b1b66b6510e0376e191c6f8a48175e4d722985484a8a6451805da6c298",
+            "version": "0.1.32",
+            "blockNumber": 1665494
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.32",
+            "blockNumber": 1665497
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.32",
+            "blockNumber": 1665500
+        },
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "a3be829e4e8f4210786473caf1c6099db46437ad9fd11ae729c23f7b4338813d",
+            "version": "0.1.20",
+            "blockNumber": 1669529
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.20",
+            "blockNumber": 1669532
+        },
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "952298bb993a133f4087ab4b9ceda10308324bd2f0f356fca83c06711b55ae0c",
+            "version": "0.1.21",
+            "blockNumber": 1671005
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.21",
+            "blockNumber": 1671008
+        },
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "a4b43710e80de9958907a5251d540cb0666739b0d358ea04b0706705ee0d547d",
+            "version": "0.1.22",
+            "blockNumber": 1671443
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.22",
+            "blockNumber": 1671446
+        },
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "8f6f9a0b0b42a1adf745b82b37e87b72247c70bdffa8c4cd911702ae07767d84",
+            "version": "0.1.23",
+            "blockNumber": 1671613
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.23",
+            "blockNumber": 1671616
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "06695c4701152cdbd9d60b4d25715d6461ca152235625b62d4d610a140a04b2a",
+            "version": "0.1.33",
+            "blockNumber": 1675469
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.33",
+            "blockNumber": 1675472
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.33",
+            "blockNumber": 1675475
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "::rootDir",
+            "value": "bfc4d51866010fb2b2e188e743c92d68529122f70f46a03f867900df2c3e1f28",
+            "version": "0.1.34",
+            "blockNumber": 1675954
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.34",
+            "blockNumber": 1675957
+        },
+        {
+            "handle": "ynet_bareminimum",
+            "key": "zweb/git/commit/sha",
+            "value": "390d3518ef2b5ca2411cdba372387706533bc1e1\n",
+            "version": "0.1.34",
+            "blockNumber": 1675960
+        },
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "5b266c47818daa27a3e99ddb9d131ad8fc51ada51e5c521536be0e8fb457a715",
+            "version": "0.1.24",
+            "blockNumber": 1694909
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.24",
+            "blockNumber": 1694913
+        }
+    ]
+}

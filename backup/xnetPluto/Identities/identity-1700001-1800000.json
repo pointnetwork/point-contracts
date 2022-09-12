@@ -1,0 +1,111 @@
+{
+    "identities": [
+        {
+            "handle": "lldevaras",
+            "owner": "0x8e2aEb6e91c07845E65e84E1F17b391cc1791cac",
+            "keyPart1": "0x1750806900bc6f2bb13c06c1242d768df4c309c8712e2af851011bebf3304787",
+            "keyPart2": "0x82b1473856eec2b4c56adc4dab0e055e0da0bc0addeb47bdae30dd6cefabd417",
+            "blockNumber": 1706941
+        },
+        {
+            "handle": "hameeddanish85",
+            "owner": "0x5EBea7B0463d1C8fbcD5321966316b02B7FD57C7",
+            "keyPart1": "0x47c2bb2276cfbf94a35ffcf38a662b2258e6a66ae0388471838ec1f0d5364099",
+            "keyPart2": "0x50f5ff4f58dc8e0288e299ce60672538ca230144389d8f8297fd9f1ce9d7a02c",
+            "blockNumber": 1707500
+        },
+        {
+            "handle": "5aum7gam9",
+            "owner": "0xeD2c55212CA7E83948dB20a7C82D342293E3cC0d",
+            "keyPart1": "0x13b16941d3064f78d2b75840ec6af2cf1ebf399db6ba210d853d1fc62fcb3faf",
+            "keyPart2": "0xa43bf9970cb3ff032e367ace74e40787d5760a678928abef00c24ef6de598643",
+            "blockNumber": 1709370
+        },
+        {
+            "handle": "Rainbownftworld",
+            "owner": "0xf0d0c7c75bffF77508E2890cA13872b4B3918EEB",
+            "keyPart1": "0x82e7fec45f87e0436a0e4dc04805b876b6c38ecc8a63bdf45718d14bb625eb51",
+            "keyPart2": "0x19facc4f18e282e76f15f38d3870f407a78aebaac45ab2516b3ccb25dc539190",
+            "blockNumber": 1716490
+        },
+        {
+            "handle": "Hilcamibue",
+            "owner": "0x5b252ba10844D15c2911b862B5Db7b717a44bd18",
+            "keyPart1": "0x666b805fc0dc16216fa230778318c57277a0d066cecb3b9932eaedaf5cf7a7ff",
+            "keyPart2": "0xb5f5484a849fc13764312d1e39136313ab414ee19e317a9825c3fa6e3c5f37c1",
+            "blockNumber": 1731022
+        },
+        {
+            "handle": "shiv35265",
+            "owner": "0x9Bc6119124785ce9640FE1b733b3F5D12D6243e4",
+            "keyPart1": "0xfea83fda920aef745b98bb40d2818ccd52aa394dd908319b7b5e9a36e2bf8c73",
+            "keyPart2": "0xfad8d37d98f4c0812e009d3450bf37ee8b3128c0e1cfc180cd596701aeaff5e9",
+            "blockNumber": 1736909
+        },
+        {
+            "handle": "kendeelei",
+            "owner": "0x8e0ceA4e39C1483C7272E4A7e2330558A8450673",
+            "keyPart1": "0x9b3728e58cd95b6f8a547fd23b70574988a916fb4edc05c63885b35ec78d8c6c",
+            "keyPart2": "0xf4e6a90663db6fc161a27257ccbd3cfaf4409bbf66f6455329de1b5c994661c1",
+            "blockNumber": 1745578
+        },
+        {
+            "handle": "Plarconi",
+            "owner": "0x12612e95057FC035C465c65Eb5619930AE8d84DC",
+            "keyPart1": "0xb3468b92a6ced46e00d6e89b491d026bcbabca20ce65685dd2942c6ee6b69fd6",
+            "keyPart2": "0x208a9b8f778c300ee7d7c79b54fdf5ebb84419a30ed40e29cc23165bc38621d3",
+            "blockNumber": 1749873
+        },
+        {
+            "handle": "enounze",
+            "owner": "0xA9CE0e99236eb35E873A0a2D566A33C33fB98384",
+            "keyPart1": "0x0495fd6e665c19d2c9e07d3b7ede2f66e3f2e6b1e853f10d42ae5fe8af8ffcaa",
+            "keyPart2": "0x13bcbc8e6127085d63e87c8beefaffe943cc65a8662bc0ce6212b623423362d1",
+            "blockNumber": 1753724
+        },
+        {
+            "handle": "cyptoph",
+            "owner": "0xCB60CDa3cA351d859DBa7cBBF5e7F981F4BC1ce8",
+            "keyPart1": "0x57d37226219c4deb989798c6245472021b7ab047470204467c245a122205355a",
+            "keyPart2": "0x113724f2cd5dcad8de652286a6145b0d2b1e515428de504f8c5097cc59de6ec2",
+            "blockNumber": 1768935
+        },
+        {
+            "handle": "24costarica",
+            "owner": "0x3eD53599af65eF7CCE8C45757F414C7dE8086606",
+            "keyPart1": "0x87b2e1bbdde8702e2acaaa0423144cc746618bdb73075ca180badbc274e154ef",
+            "keyPart2": "0x028244643e73e6fbcaeb6f2d39992f1f553ab07d6a4dcc080467773abcb723d5",
+            "blockNumber": 1795488
+        }
+    ],
+    "ikv": [
+        {
+            "handle": "svmargarita",
+            "key": "::rootDir",
+            "value": "a7200a221fbb221c659249f9a95ca9699da0ce6d27dac2fb895ab0857b103864",
+            "version": "0.1.25",
+            "blockNumber": 1708783
+        },
+        {
+            "handle": "svmargarita",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.25",
+            "blockNumber": 1708787
+        },
+        {
+            "handle": "C_J_F_T",
+            "key": "::rootDir",
+            "value": "870a86fd2eec35d559e948e99bcdb2520e87c7e67e3b5643037f47298e40598f",
+            "version": "0.1.0",
+            "blockNumber": 1778833
+        },
+        {
+            "handle": "C_J_F_T",
+            "key": "zdns/routes",
+            "value": "0x339b11f3cd1fc986d77356f2be50544a38b01fe64b744262e656813827e6555d",
+            "version": "0.1.0",
+            "blockNumber": 1778836
+        }
+    ]
+}
