@@ -1,0 +1,209 @@
+{
+    "identities": [
+        {
+            "handle": "bitkube",
+            "owner": "0xE4f4c62B60f4EE092944a222FFFef1B0Ae84168F",
+            "keyPart1": "0x7f4b8384f06f1cca9b7c344d580ae131100a1519b3f3848e5046a4fef3eb8002",
+            "keyPart2": "0x06019dd3019c38937f6fd9f8474431cc2f82e769c280e42f310b6a4f3ae3fa50",
+            "blockNumber": 1802228
+        },
+        {
+            "handle": "kasicrypto1",
+            "owner": "0xf96824eCA308050E4aE2910f08EF291dbe7683E0",
+            "keyPart1": "0xab6992cc13f1c476c318767c9c116e709383810e2a8e1f0a6237b3d2018c1872",
+            "keyPart2": "0xf33d8683630e7d5b69436bd9a02fc90e6514274a489dca6d58df24ebce9a946e",
+            "blockNumber": 1809797
+        },
+        {
+            "handle": "cryptoisfun7",
+            "owner": "0xd47da7C5071Fd87a5330DBB5B596640C373ecDa5",
+            "keyPart1": "0x56eeb9ded17c99cf1b021d0dc0aa0947fd0bc129f1b4d051c1b43384c9cc7ca0",
+            "keyPart2": "0x3ebb2ba1d30061974eb9503188e8360135d834255781510305b29cfc0e2d7617",
+            "blockNumber": 1810967
+        },
+        {
+            "handle": "yngscc",
+            "owner": "0x48A09f1Eb75ad149e2A46D10248db3e35aFFb07e",
+            "keyPart1": "0xe79718e863c949dfb56417b31162df44e3c498f59226b7a8243e5ba9e588ae0e",
+            "keyPart2": "0x6ae61777423198e5b04b46e1f0ee9b1da670d72eee0c811d4f4c004a2779b81e",
+            "blockNumber": 1811772
+        },
+        {
+            "handle": "meziahgezeus",
+            "owner": "0x2213bCE1e22c84Fe045fE2E02Cc6c3a911E00013",
+            "keyPart1": "0x59d2ac2207a335602d8f8ad729a15233e34496074c48d30297201f83fc462cd5",
+            "keyPart2": "0x6a80257ee87040ee43e4c805689da96a8e745de35fcf113b8cb2b1c587793a68",
+            "blockNumber": 1825096
+        },
+        {
+            "handle": "IterationAlpha",
+            "owner": "0x93beC550D2FaD100B2D725fE18F74D8a09d4b675",
+            "keyPart1": "0x9a62c37fa1a185553e94b13ec4eaff1aae9bd0bbdb44e834fcea597c6e5c4456",
+            "keyPart2": "0x81648f00fbeffc4699ed2bb726cfc3ef788bba215b0fe9f6e4c8eb47cc0d3c2e",
+            "blockNumber": 1826721
+        },
+        {
+            "handle": "dingdingdot",
+            "owner": "0x8674297001e83843413717Fe81115440c2343DFd",
+            "keyPart1": "0xbf943050b2c778a8d1c159328369428ddaab1dca6d0133b3d64d23fa940ae7ee",
+            "keyPart2": "0x7ab17ee58b031e87f8e215abbcc5fbbe6fe0587100ee72a9ef3825ff5a0c4135",
+            "blockNumber": 1827849
+        },
+        {
+            "handle": "ZIG_ZAG_nz",
+            "owner": "0x7A6a0Ffa253Eb316598e02386E9FC1093802e54C",
+            "keyPart1": "0x8c5dc42baf18863ac6904eebfa4d23fba8cff21d9a37f10540132ef635a0f8dd",
+            "keyPart2": "0x27e47ca95beca4ce6579a5c705d5002b734b2f06e5a72c67587bb739e5c0a408",
+            "blockNumber": 1829339
+        },
+        {
+            "handle": "Ichitringer",
+            "owner": "0x8e27a46e0A50CFF49e31306fa1d6155e08aB69D6",
+            "keyPart1": "0xe97b96f508df86fc5943337d90cb9c32a9bde7a21b020fb3c57d68287612f179",
+            "keyPart2": "0xeb3fd69e6e4e84afc6000ee6be8cb14e058cb31729d7a65add4ede6846bdf132",
+            "blockNumber": 1830551
+        }
+    ],
+    "ikv": [
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "bf1ff498f48c2df8c6113c7bd84f2c69c9149ca59c6b52886cac9813d3493c12",
+            "version": "0.1.37",
+            "blockNumber": 1818151
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.37",
+            "blockNumber": 1818153
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "77c8dea78c3201ea958309e00a47102d84dc96b314773308bbe5c78f43c6ab54",
+            "version": "0.1.38",
+            "blockNumber": 1818299
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.38",
+            "blockNumber": 1818301
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "7f7acb4736085488a287c3389495f83ccfbf89c2a8813a9201ab44f0038533c0",
+            "version": "0.1.39",
+            "blockNumber": 1818338
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.39",
+            "blockNumber": 1818340
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "de20fd75fa1b8ddbde0cf5b7b69ed08711946ce27702e7b4295f777d21d583d6",
+            "version": "0.1.40",
+            "blockNumber": 1818374
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.40",
+            "blockNumber": 1818376
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "5196eda8c902afa70f2a28c4f9fb5180c67f48d916ea7535bf90e6b771f63430",
+            "version": "0.1.41",
+            "blockNumber": 1818436
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.41",
+            "blockNumber": 1818438
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "3c5cfc38639efb2851795d1347d12369ff2f5706f80814803de299a852d3bd16",
+            "version": "0.1.42",
+            "blockNumber": 1818483
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.42",
+            "blockNumber": 1818485
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "82085f2ad1f97a212595aa7a18384e3848e3138feed3987b1a1f6ab5374f592a",
+            "version": "0.1.43",
+            "blockNumber": 1818876
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.43",
+            "blockNumber": 1818878
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "0160577b2beceef14881fe24c122434f9c9820793e67fad767d1f8637b85aa8c",
+            "version": "0.1.44",
+            "blockNumber": 1819022
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.44",
+            "blockNumber": 1819024
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "706f1e9dc32527e305a4918910d175201c1f62e29efd8027571c69eb60324f7a",
+            "version": "0.1.45",
+            "blockNumber": 1819060
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.45",
+            "blockNumber": 1819062
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "::rootDir",
+            "value": "11bde0b09f8ad3ab5d5907df23470356ae80bf3ef4aa368b783b80da02996c6d",
+            "version": "0.1.46",
+            "blockNumber": 1819139
+        },
+        {
+            "handle": "adrianffreitas",
+            "key": "zdns/routes",
+            "value": "0x4ec0c7b5bdacd486a77459a684416d3803c8213a36efc7ba379484ec844b6686",
+            "version": "0.1.46",
+            "blockNumber": 1819141
+        }
+    ]
+}
