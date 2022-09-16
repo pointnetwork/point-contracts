@@ -3,7 +3,61 @@ import { Identity } from '../../../typechain';
 
 // TODO: don't we need specifying it by taskArg?
 const LOCKFILE_PATH = './resources/migrations/identity-lock.json';
-const TX_BUNDLE_SIZE = 100;
+const TX_BUNDLE_SIZE = 10;
+const TIMEOUT = 10000;
+
+const promiseTimeout = (promise: Promise<unknown>, ms: number) =>
+  Promise.race([
+    promise,
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error('Timeout'));
+      }, ms);
+    }),
+  ]);
+
+const registerIdentity = async (
+  identity: IdentityBackupRecord,
+  contract: Identity,
+  prefix: string
+) => {
+  try {
+    await promiseTimeout(
+      contract.register(
+        prefix + identity.handle,
+        identity.owner,
+        identity.keyPart1,
+        identity.keyPart2
+      ),
+      TIMEOUT
+    );
+    return true;
+  } catch (e) {
+    if (e.reason?.match('This identity has already been registered')) {
+      return true;
+    }
+    console.error(`Error adding identity ${identity.handle}`, e);
+    return false;
+  }
+};
+
+const registerIkv = async (ikv: IKV, contract: Identity, prefix: string) => {
+  try {
+    await promiseTimeout(
+      contract.ikvImportKV(
+        prefix + ikv.handle,
+        ikv.key,
+        ikv.value,
+        ikv.version
+      ),
+      TIMEOUT
+    );
+    return true;
+  } catch (e) {
+    console.error(`Error adding IKV ${ikv.handle}`, e);
+    return false;
+  }
+};
 
 type IdentityBackupRecord = {
   handle: string;
@@ -71,6 +125,7 @@ export const uploadData = async ({
   try {
     await (await contract.setMigrationApplied(false)).wait();
     await (await contract.setDevMode(true)).wait();
+    console.log('MigrationApplied set to true, dev mode set to false');
   } catch (e) {
     console.error(
       'CRITICAL: setMigrationApplied or setDevMode txs failed! Contract is in half-migrated stage!'
@@ -85,37 +140,30 @@ export const uploadData = async ({
     i < data.identities.length;
     i += TX_BUNDLE_SIZE
   ) {
+    console.log(
+      `Uploading identities batch from ${i} to ${i + TX_BUNDLE_SIZE - 1}`
+    );
     const addResults: boolean[] = await Promise.all(
       data.identities
         .slice(i, i + TX_BUNDLE_SIZE - 1)
-        .map(async (identity: IdentityBackupRecord) => {
-          try {
-            await contract.register(
-              prefix + identity.handle,
-              identity.owner,
-              identity.keyPart1,
-              identity.keyPart2
-            );
-            return true;
-          } catch (e) {
-            console.error(`Error adding identity ${identity.handle}`, e);
-            return false;
-          }
-        })
+        .map((identity: IdentityBackupRecord) =>
+          registerIdentity(identity, contract, prefix)
+        )
     );
 
     if (addResults.filter((res) => !!res).length === 0) {
       // All insertions failed, won't make any sense to continue
       console.error('All transaction in the batch failed, aborting');
-      // try {
-      //   await contract.setMigrationApplied(true);
-      //   await contract.setDevMode(false);
-      // } catch (e) {
-      //   console.error(
-      //     'CRITICAL: setMigrationApplied or setDevMode txs failed! Contract is in half-migrated stage!'
-      //   );
-      //   console.error(e);
-      // }
+      try {
+        await contract.setMigrationApplied(true);
+        await contract.setDevMode(false);
+        console.log('MigrationApplied set to false, dev mode set to true');
+      } catch (e) {
+        console.error(
+          'CRITICAL: setMigrationApplied or setDevMode txs failed! Contract is in half-migrated stage!'
+        );
+        console.error(e);
+      }
       return;
     }
     if (addResults.filter((res) => !res).length === 0) {
@@ -166,23 +214,9 @@ export const uploadData = async ({
       )}`
     );
     const addResults = await Promise.all(
-      failedIdentities.slice(i, i + TX_BUNDLE_SIZE - 1).map(async (idx) => {
-        try {
-          await contract.register(
-            prefix + data.identities[idx].handle,
-            data.identities[idx].owner,
-            data.identities[idx].keyPart1,
-            data.identities[idx].keyPart2
-          );
-          return true;
-        } catch (e) {
-          console.error(
-            `Error adding identity ${data.identities[idx].handle}`,
-            e
-          );
-          return false;
-        }
-      })
+      failedIdentities
+        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .map((idx) => registerIdentity(data.identities[idx], contract, prefix))
     );
 
     twiceFailedIdentities.push(
@@ -220,35 +254,26 @@ export const uploadData = async ({
 
   // Processing IKV
   for (let i = processIkvFrom; i < data.ikv.length; i += TX_BUNDLE_SIZE) {
+    console.log(`Uploading IKV batch from ${i} to ${i + TX_BUNDLE_SIZE - 1}`);
     const addResults: boolean[] = await Promise.all(
-      data.ikv.slice(i, i + TX_BUNDLE_SIZE - 1).map(async (ikv: IKV) => {
-        try {
-          await contract.ikvImportKV(
-            prefix + ikv.handle,
-            ikv.key,
-            ikv.value,
-            ikv.version
-          );
-          return true;
-        } catch (e) {
-          console.error(`Error adding IKV ${ikv.handle}`, e);
-          return false;
-        }
-      })
+      data.ikv
+        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .map((ikv: IKV) => registerIkv(ikv, contract, prefix))
     );
 
     if (addResults.filter((res) => !!res).length === 0) {
       // All insertions failed, won't make any sense to continue
       console.error('All transaction in the batch failed, aborting');
-      // try {
-      //   await contract.setMigrationApplied(true);
-      //   await contract.setDevMode(false);
-      // } catch (e) {
-      //   console.error(
-      //     'CRITICAL: setMigrationApplied or setDevMode txs failed! Contract is in half-migrated stage!'
-      //   );
-      //   console.error(e);
-      // }
+      try {
+        await contract.setMigrationApplied(true);
+        await contract.setDevMode(false);
+        console.log('MigrationApplied set to false, dev mode set to true');
+      } catch (e) {
+        console.error(
+          'CRITICAL: setMigrationApplied or setDevMode txs failed! Contract is in half-migrated stage!'
+        );
+        console.error(e);
+      }
       return;
     }
     if (addResults.filter((res) => !res).length === 0) {
@@ -297,20 +322,9 @@ export const uploadData = async ({
       )}`
     );
     const addResults = await Promise.all(
-      failedIkv.slice(i, i + TX_BUNDLE_SIZE - 1).map(async (idx) => {
-        try {
-          await contract.ikvImportKV(
-            prefix + data.ikv[idx].handle,
-            data.ikv[idx].key,
-            data.ikv[idx].value,
-            data.ikv[idx].version
-          );
-          return true;
-        } catch (e) {
-          console.error(`Error adding IKV ${data.ikv[idx].handle}`, e);
-          return false;
-        }
-      })
+      failedIkv
+        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .map((idx) => registerIkv(data.ikv[idx], contract, prefix))
     );
 
     twiceFailedIkv.push(
@@ -352,7 +366,7 @@ export const uploadData = async ({
     }
     console.log('Everything processed and uploaded, lock file removed.');
     try {
-      await contract.finishMigrations();
+      await contract.setMigrationApplied(true);
       await contract.setDevMode(false);
     } catch (e) {
       console.error(
