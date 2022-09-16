@@ -145,7 +145,7 @@ export const uploadData = async ({
     );
     const addResults: boolean[] = await Promise.all(
       data.identities
-        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .slice(i, i + TX_BUNDLE_SIZE)
         .map((identity: IdentityBackupRecord) =>
           registerIdentity(identity, contract, prefix)
         )
@@ -215,7 +215,7 @@ export const uploadData = async ({
     );
     const addResults = await Promise.all(
       failedIdentities
-        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .slice(i, i + TX_BUNDLE_SIZE)
         .map((idx) => registerIdentity(data.identities[idx], contract, prefix))
     );
 
@@ -257,7 +257,7 @@ export const uploadData = async ({
     console.log(`Uploading IKV batch from ${i} to ${i + TX_BUNDLE_SIZE - 1}`);
     const addResults: boolean[] = await Promise.all(
       data.ikv
-        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .slice(i, i + TX_BUNDLE_SIZE)
         .map((ikv: IKV) => registerIkv(ikv, contract, prefix))
     );
 
@@ -323,7 +323,7 @@ export const uploadData = async ({
     );
     const addResults = await Promise.all(
       failedIkv
-        .slice(i, i + TX_BUNDLE_SIZE - 1)
+        .slice(i, i + TX_BUNDLE_SIZE)
         .map((idx) => registerIkv(data.ikv[idx], contract, prefix))
     );
 
