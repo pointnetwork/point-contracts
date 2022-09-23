@@ -230,6 +230,23 @@ contract Identity is
         _selfReg(handle, identityOwner, commPublicKey);
     }
 
+    function registerMultiple(
+        string[] calldata handles,
+        address[] calldata identityOwners,
+        bytes32[] calldata commPublicKeysPart1,
+        bytes32[] calldata commPublicKeysPart2
+    ) public {
+        require(
+            handles.length == identityOwners.length &&
+            handles.length == commPublicKeysPart1.length &&
+            handles.length == commPublicKeysPart2.length,
+            "All the arguments should have the same length"
+        );
+        for (uint i=0; i < handles.length; i++) {
+            register(handles[i], identityOwners[i], commPublicKeysPart1[i], commPublicKeysPart2[i]);
+        }
+    }
+
     function registerSubidentity(
         string calldata subhandle,
         string calldata handle,
@@ -318,6 +335,23 @@ contract Identity is
         string memory version
     ) public override onlyBeforeMigrations {
         ikvSet(identity, key, value, version);
+    }
+
+    function ikvImportMultipleKV(
+        string[] calldata identities,
+        string[] calldata keys,
+        string[] calldata values,
+        string[] calldata versions
+    ) public {
+        require(
+            identities.length == keys.length &&
+            identities.length == values.length &&
+            identities.length == versions.length,
+            "All the arguments should have the same length"
+        );
+        for (uint i=0; i < identities.length; i++) {
+            ikvImportKV(identities[i], keys[i], values[i], versions[i]);
+        }
     }
 
     function ikVersionImport(
