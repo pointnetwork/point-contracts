@@ -45,7 +45,7 @@
   "scripts": {
     "start": "npx hardhat run scripts/deploy.ts --network development",
     "compile": "TS_NODE_TRANSPILE_ONLY=1 npx hardhat compile",
-    "build": "tsc",
+    "build": "npm run compile && TS_NODE_TRANSPILE_ONLY=0 tsc",
     "upload": "NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/scripts/upload.js",
     "fix": "eslint --ext .js --ext .ts --fix ./scripts",
     "lint": "eslint --ext .js --ext .ts ./scripts",
