@@ -82,6 +82,9 @@ const xnetNeptuneConfig: HttpNetworkUserConfig = {
 const mainnetConfig: HttpNetworkUserConfig = {
   url: 'https://rpc-mainnet-1.point.space/',
 };
+const uranusConfig: HttpNetworkUserConfig = {
+  url: 'https://xnet-uranus-1.point.space/',
+};
 
 if (productionPrivateKey) {
   ynetConfig.accounts = [productionPrivateKey];
@@ -91,6 +94,8 @@ if (productionPrivateKey) {
   xnetNeptuneConfig.gasPrice = 7;
   mainnetConfig.accounts = [productionPrivateKey];
   mainnetConfig.gasPrice = 7;
+  uranusConfig.accounts = [productionPrivateKey];
+  uranusConfig.gasPrice = 7;
 }
 
 // You need to export an object to set up your config
@@ -104,7 +109,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -113,7 +118,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -122,7 +127,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -140,6 +145,7 @@ const config: HardhatUserConfig = {
     xnetPluto: xnetPlutoConfig,
     xnetNeptune: xnetNeptuneConfig,
     mainnet: mainnetConfig,
+    uranus: uranusConfig,
   },
 };
 

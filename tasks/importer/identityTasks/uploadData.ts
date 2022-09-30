@@ -4,6 +4,7 @@ import { Identity } from '../../../typechain';
 // TODO: don't we need specifying it by taskArg?
 const LOCKFILE_PATH = './resources/migrations/identity-lock.json';
 const TX_BUNDLE_SIZE = 30;
+const TX_BUNDLE_SIZE_IKV = 15;
 
 type IdentityBackupRecord = {
   handle: string;
@@ -89,6 +90,7 @@ export const uploadData = async ({
     const identitiesToRegister = data.identities.slice(i, i + TX_BUNDLE_SIZE);
     await contract.registerMultiple(
       identitiesToRegister.map((id) => prefix + id.handle),
+      identitiesToRegister.map((id) => (prefix + id.handle).toLowerCase()),
       identitiesToRegister.map((id) => id.owner),
       identitiesToRegister.map((id) => id.keyPart1),
       identitiesToRegister.map((id) => id.keyPart2)
@@ -111,9 +113,9 @@ export const uploadData = async ({
   console.log('All identities uploaded');
 
   // Processing IKV
-  for (let i = processIkvFrom; i < data.ikv.length; i += TX_BUNDLE_SIZE) {
-    console.log(`Uploading IKV batch from ${i} to ${i + TX_BUNDLE_SIZE - 1}`);
-    const ikvToRegister = data.ikv.slice(i, i + TX_BUNDLE_SIZE);
+  for (let i = processIkvFrom; i < data.ikv.length; i += TX_BUNDLE_SIZE_IKV) {
+    console.log(`Uploading IKV batch from ${i} to ${i + TX_BUNDLE_SIZE_IKV - 1}`);
+    const ikvToRegister = data.ikv.slice(i, i + TX_BUNDLE_SIZE_IKV);
     await contract.ikvImportMultipleKV(
       ikvToRegister.map((ikv) => prefix + ikv.handle),
       ikvToRegister.map((ikv) => ikv.key),
@@ -129,7 +131,7 @@ export const uploadData = async ({
         migrationFilePath,
         identityLastProcessedIndex: data.identities.length - 1, // We processed all identities
         ikvLastProcessedIndex: Math.min(
-          i + TX_BUNDLE_SIZE - 1,
+          i + TX_BUNDLE_SIZE_IKV - 1,
           data.ikv.length - 1
         ),
       })

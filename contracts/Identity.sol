@@ -231,19 +231,21 @@ contract Identity is
     }
 
     function registerMultiple(
-        string[] calldata handles,
+        string[] calldata handlesCanonical,
+        string[] calldata handlesLowerCase,
         address[] calldata identityOwners,
         bytes32[] calldata commPublicKeysPart1,
         bytes32[] calldata commPublicKeysPart2
     ) public {
         require(
-            handles.length == identityOwners.length &&
-            handles.length == commPublicKeysPart1.length &&
-            handles.length == commPublicKeysPart2.length,
+            handlesCanonical.length == identityOwners.length &&
+            handlesCanonical.length == commPublicKeysPart1.length &&
+            handlesCanonical.length == commPublicKeysPart2.length,
             "All the arguments should have the same length"
         );
-        for (uint i=0; i < handles.length; i++) {
-            register(handles[i], identityOwners[i], commPublicKeysPart1[i], commPublicKeysPart2[i]);
+        for (uint i=0; i < handlesCanonical.length; i++) {
+            importReg(handlesCanonical[i], handlesLowerCase[i], identityOwners[i], commPublicKeysPart1[i], 
+            commPublicKeysPart2[i]);
         }
     }
 
@@ -654,6 +656,36 @@ contract Identity is
 
     function getSubidentitiesByOwner(address owner) public view returns (string[] memory){
         return ownerToSubidentitiesList[owner];
+    }
+
+        /// Regster one identity (for migration only)
+    /// @param handleCanonical - the handle in any case format
+    /// @param handleLowerCase - the handle in lower case format
+    /// @param owner - the address of the owner
+    /// @param commPublicKeyPart1 - Communication public key part 1
+    /// @param commPublicKeyPart2 - Communication public key part 2 
+    function importReg(string calldata handleCanonical, string calldata handleLowerCase, address owner,
+        bytes32 commPublicKeyPart1, bytes32 commPublicKeyPart2) public onlyBeforeMigrations {
+
+        PubKey64 memory commPublicKey = PubKey64(
+            commPublicKeyPart1,
+            commPublicKeyPart2
+        );
+
+        // Attach this identity to the owner address
+        identityToOwner[handleCanonical] = owner;
+        ownerToIdentity[owner] = handleCanonical;
+
+        // Attach public key for communication
+        identityToCommPublicKey[handleCanonical] = commPublicKey;
+
+        // Add canonical version
+        lowercaseToCanonicalIdentities[handleLowerCase] = handleCanonical;
+
+        // Add the handle to identity list so that it can be iterated over
+        identityList.push(handleCanonical);
+
+        emit IdentityRegistered(handleCanonical, owner, commPublicKey);
     }
 
 }
