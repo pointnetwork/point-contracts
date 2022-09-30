@@ -207,8 +207,11 @@ task(
             console.log(
               `${lastIdentityAddedIndex} migrating ${prefix + identity.handle}`
             );
-            await contract.register(
-              prefix + identity.handle,
+            let canonicalHandle = prefix + identity.handle;
+
+            await contract.importReg(
+              canonicalHandle,
+              canonicalHandle.toLocaleLowerCase(),
               identity.owner,
               identity.keyPart1,
               identity.keyPart2
