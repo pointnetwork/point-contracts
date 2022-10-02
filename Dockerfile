@@ -12,7 +12,13 @@ RUN npm -g config set user root
 RUN apk update && apk add --no-cache git
 
 COPY package.json ./
+COPY contracts /hardhat/contracts
+COPY scripts /hardhat/scripts
+COPY tasks /hardhat/tasks
+COPY hardhat.config.ts /hardhat/hardhat.config.ts
+COPY utils.ts /hardhat/utils.ts
+
 RUN npm install
 
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "start:docker"]
 

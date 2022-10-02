@@ -44,6 +44,7 @@
   },
   "scripts": {
     "start": "npx hardhat run scripts/deploy.ts --network development",
+    "start:docker": "./start.sh",
     "build": "tsc",
     "upload": "NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/scripts/upload.js",
     "fix": "eslint --ext .js --ext .ts --fix ./scripts",
