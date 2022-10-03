@@ -19,7 +19,8 @@ import './tasks/identity/identity-update-contract';
 import './tasks/identity/identity-add-deployer';
 import './tasks/identity/identity-remove-deployer';
 import './tasks/identity/identity-list-deployers';
-import './tasks/identity/deploy';
+import './tasks/importer/downloadIdentitiesAndDapps';
+import './tasks/identity/identitiesCheck';
 
 dotenv.config();
 
