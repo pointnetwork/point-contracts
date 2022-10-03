@@ -832,7 +832,7 @@ contract Identity is
 
         IdentityQuery[] memory _dapps = new IdentityQuery[](length);
         for (uint256 i = length; i > 0; i--) {
-            string memory identity = dappsList[dappsList.length - cursor - i];
+            string memory identity = canonical(dappsList[dappsList.length - cursor - i]);
             address owner = identityToOwner[identity];
 
             _dapps[length-i] = IdentityQuery(identity, owner, true);
