@@ -9,6 +9,15 @@ const BYTES32_ZERO =
 const FILE_PATH = path.resolve('./resources/identities.json'); // TODO
 const REPORT_PATH = path.resolve('./resources/identities-report.json'); // TODO
 
+// 1. identityToOwner[handle] not empty
+// 2. check ownerToIdentity[owner]:
+// if it's a subidentity, check that primary identity exists and ownerToIdentity[owner] points to it
+// else, check if ownerToIdentity[owner] === identity
+// 3. check identityToCommPublicKey.part1, part2 not empty
+// 4. lowercaseToCanonicalIdentities[identity.toLower()] == identity
+// 5. dappsList[i] exists in identities
+// 6. no duplicates in dappsList
+
 task('check-identities')
   .addPositionalParam('contract', 'Identity contract source address')
   .setAction(async (args, hre) => {
@@ -51,7 +60,22 @@ task('check-identities')
           if (identity === ADDRESS_ZERO) {
             console.log('ERROR: ownerToIdentity is missing');
             errors.push('ownerToIdentity_missing');
+          } else if (identityList[i].includes('.')) {
+            // it's a subidentity
+            // check if main identity exists
+            const mainIdentity =
+              identityList[i].slpit('.')[identityList[i].slpit('.').length - 1];
+            if (!identityList.includes(mainIdentity)) {
+              console.log('ERROR: subidentity exists, but no main identity');
+              errors.push('no_main_identity');
+            } else if (identity !== mainIdentity) {
+              console.log(
+                'ERROR: idenityToOwner for the subidentity owner does not match with the main identity'
+              );
+              errors.push('identityToOwner_main_identity_mismatch');
+            }
           } else if (identity !== identityList[i]) {
+            // it's normal identity, check if ownerToIdentity resolves to the same identity
             console.log('ERROR: ownerToIdentity mismatch');
             errors.push('ownerToIdentity_mismatch');
           }
@@ -139,9 +163,3 @@ task('check-identities')
       `Check completed, identity errors: ${identityErrors.length}, dapps errors: ${dappsErrors.length}`
     );
   });
-// 1. identityToOwner[handle] not empty
-// 2. ownerToIdentity[owner] == identity
-// 3. check identityToCommPublicKey.part1, part2 not empty
-// 4. lowercaseToCanonicalIdentities[identity.toLower()] == identity
-// 5. dappsList[i] exists in identities
-// 6. no duplicates in dappsList

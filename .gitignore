@@ -11,7 +11,7 @@ build
 resources/Identity-address.json
 resources/unknown-1337.json
 resources/identities.json
-resources/identities-report.json
+resources/identities-report_.json
 resources/migrations/*.json
 .openzeppelin
 dist
