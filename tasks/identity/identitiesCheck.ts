@@ -36,8 +36,8 @@ task('check-identities')
       const report = JSON.parse(
         await fs.promises.readFile(REPORT_PATH, 'utf8')
       );
-      identitiesStartIndex = report.identitiesLastProcessedIndex
-        ? report.identitiesLastProcessedIndex + 1
+      identitiesStartIndex = report.identityLastProcessedIndex
+        ? report.identityLastProcessedIndex + 1
         : 0;
       dappsStartIndex = report.dappsLastProcessedIndex
         ? report.dappsLastProcessedIndex + 1
@@ -64,7 +64,7 @@ task('check-identities')
             // it's a subidentity
             // check if main identity exists
             const mainIdentity =
-              identityList[i].slpit('.')[identityList[i].slpit('.').length - 1];
+              identityList[i].split('.')[identityList[i].split('.').length - 1];
             if (!identityList.includes(mainIdentity)) {
               console.log('ERROR: subidentity exists, but no main identity');
               errors.push('no_main_identity');
