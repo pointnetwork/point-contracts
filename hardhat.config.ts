@@ -19,6 +19,8 @@ import './tasks/identity/identity-update-contract';
 import './tasks/identity/identity-add-deployer';
 import './tasks/identity/identity-remove-deployer';
 import './tasks/identity/identity-list-deployers';
+import './tasks/importer/downloadIdentitiesAndDapps';
+import './tasks/identity/identitiesCheck';
 
 dotenv.config();
 
@@ -69,19 +71,32 @@ const buildPath = process.env.DEPLOYER_BUILD_PATH || './build';
 
 const devaddress = `http://${host}:${port}`;
 
-const ynetConfig: HttpNetworkUserConfig = {url: 'http://ynet.point.space:44444'};
-const xnetPlutoConfig: HttpNetworkUserConfig = {url: 'https://xnet-pluto-1.point.space'};
-const xnetNeptuneConfig: HttpNetworkUserConfig = {url: 'http://xnet-neptune-1.point.space:8545'};
-const mainnetConfig: HttpNetworkUserConfig = {url: 'https://rpc-mainnet-1.point.space/'};
+const ynetConfig: HttpNetworkUserConfig = {
+  url: 'http://ynet.point.space:44444',
+};
+const xnetPlutoConfig: HttpNetworkUserConfig = {
+  url: 'https://xnet-pluto-1.point.space',
+};
+const xnetNeptuneConfig: HttpNetworkUserConfig = {
+  url: 'http://xnet-neptune-1.point.space:8545',
+};
+const mainnetConfig: HttpNetworkUserConfig = {
+  url: 'https://rpc-mainnet-1.point.space/',
+};
+const uranusConfig: HttpNetworkUserConfig = {
+  url: 'https://xnet-uranus-1.point.space/',
+};
 
-if (productionPrivateKey){
-    ynetConfig.accounts = [productionPrivateKey];
-    xnetPlutoConfig.accounts = [productionPrivateKey];
-    xnetPlutoConfig.gasPrice = 1;
-    xnetNeptuneConfig.accounts = [productionPrivateKey];
-    xnetNeptuneConfig.gasPrice = 7;
-    mainnetConfig.accounts = [productionPrivateKey];
-    mainnetConfig.gasPrice = 7;
+if (productionPrivateKey) {
+  ynetConfig.accounts = [productionPrivateKey];
+  xnetPlutoConfig.accounts = [productionPrivateKey];
+  xnetPlutoConfig.gasPrice = 1;
+  xnetNeptuneConfig.accounts = [productionPrivateKey];
+  xnetNeptuneConfig.gasPrice = 7;
+  mainnetConfig.accounts = [productionPrivateKey];
+  mainnetConfig.gasPrice = 7;
+  uranusConfig.accounts = [productionPrivateKey];
+  uranusConfig.gasPrice = 7;
 }
 
 // You need to export an object to set up your config
@@ -95,7 +110,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -104,7 +119,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -113,7 +128,7 @@ const config: HardhatUserConfig = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 1000,
+            runs: 100,
           },
         },
       },
@@ -131,6 +146,7 @@ const config: HardhatUserConfig = {
     xnetPluto: xnetPlutoConfig,
     xnetNeptune: xnetNeptuneConfig,
     mainnet: mainnetConfig,
+    uranus: uranusConfig,
   },
 };
 
