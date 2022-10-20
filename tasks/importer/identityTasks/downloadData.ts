@@ -32,13 +32,13 @@ export const downloadData = async ({
     );
 
     console.log(
-      `Found ${identityCreatedEvents.filter((e) => !!e.args).length} identities`
+      `Found ${identityCreatedEvents.filter((e: any) => !!e.args).length} identities`
     );
 
     identities.push(
       ...identityCreatedEvents
-        .filter((e) => !!e.args)
-        .map((e) => {
+        .filter((e: any) => !!e.args)
+        .map((e: any) => {
           const { handle, identityOwner, commPublicKey } = e.args!;
           // console.log(`migrating handle ${handle} from ${identityOwner}`);
           return {
@@ -58,12 +58,12 @@ export const downloadData = async ({
       toBlockStep
     );
 
-    console.log(`Found ${ikvSetEvents.filter((e) => !!e.args).length} ikv`);
+    console.log(`Found ${ikvSetEvents.filter((e: any) => !!e.args).length} ikv`);
 
     ikv.push(
       ...ikvSetEvents
-        .filter((e) => !!e.args)
-        .map((e) => {
+        .filter((e: any) => !!e.args)
+        .map((e: any) => {
           const { identity, key, value, version } = e.args!;
           // console.log(`migrating key ${key} with value of ${value}`);
           return {
