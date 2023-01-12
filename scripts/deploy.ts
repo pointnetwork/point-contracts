@@ -20,6 +20,11 @@ async function main() {
   // await hre.run('compile');
 
   const identityAddressPath = path.join('resources', 'Identity-address.json');
+  const subscriptionAddressPath = path.join(
+    'resources',
+    'Subscription-address.json'
+  );
+  const wpointAddressPath = path.join('resources', 'WPOINT-address.json');
 
   if (fs.existsSync(identityAddressPath)) {
     // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
@@ -38,27 +43,51 @@ async function main() {
   const proxyMetadataFileName = await getProxyMetadataFileName(ethers.provider);
   const proxyMetadataFilePath = await getProxyMetadataFilePath(ethers.provider);
 
-  // We get the contract to deploy
+  // We get the contracts to deploy
   const Identity = await ethers.getContractFactory('Identity');
   const identity = await upgrades.deployProxy(Identity, [], { kind: 'uups' });
   await identity.deployed();
 
+  const Subscription = await ethers.getContractFactory('Subscription');
+  const subscription = await upgrades.deployProxy(Subscription, [], {
+    kind: 'uups',
+  });
+  await subscription.deployed();
+
+  const WPOINT = await ethers.getContractFactory('WPOINT');
+  const wpoint = await WPOINT.deploy();
+  // const wpoint = await upgrades.deployProxy(WPOINT, []);
+  // await wpoint.deployed();
+
   if (process.env.MODE === 'e2e' || process.env.MODE === 'zappdev') {
     console.log('Setting dev mode to true');
     await identity.setDevMode(true);
+    // await subscription.setDevMode(true);
   }
 
   console.log('Identity deployed to:', identity.address);
+  console.log('Subscription deployed to:', subscription.address);
+  console.log('WPOINT deployed to:', wpoint.address);
 
   fs.writeFileSync(
     identityAddressPath,
     JSON.stringify({ address: identity.address })
+  );
+  fs.writeFileSync(
+    subscriptionAddressPath,
+    JSON.stringify({ address: subscription.address })
+  );
+  fs.writeFileSync(
+    wpointAddressPath,
+    JSON.stringify({ address: wpoint.address })
   );
   fs.copyFileSync(
     proxyMetadataFilePath,
     path.join('resources', proxyMetadataFileName)
   );
   console.log('Identity abi was copied to build folder');
+  console.log('Subscription abi was copied to build folder');
+  console.log('WPOINT abi was copied to build folder');
 }
 
 // We recommend this pattern to be able to use async/await everywhere
